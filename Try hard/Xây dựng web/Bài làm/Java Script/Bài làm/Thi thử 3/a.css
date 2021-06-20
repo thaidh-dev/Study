@@ -1,0 +1,80 @@
+* {margin: 0; padding: 0; box-sizing: border-box}
+
+#bai1 {
+	width: 500px;
+	height: 500px;
+	margin: auto;
+}
+
+h1 {
+	text-align: center;
+}
+
+#bai1 .lain {
+	width: 500px;
+	height: 30px;
+	margin-top: 10px;
+}
+
+#bai1 .lain label {
+	float: left;
+	margin-left: 50px;
+	line-height: 30px;
+}
+
+#bai1 .lain input {
+	float: right;
+	margin-right: 50px;
+}
+
+#bai1 table {
+	margin-left: 30px;
+}
+
+tr td {
+	padding: 10px;
+}
+
+tr th {
+	padding: 10px;
+}
+
+#bai1 #thanhtoan {
+	width: 100px;
+	height: 30px;
+	margin-left: 200px;
+	margin-top: 20px;
+}
+
+#bai1 .txt {
+	width: 200px;
+}
+
+span {
+	color: red;
+	margin-left: 250px;
+}
+
+#bai2 {
+	width: 500px;
+	height: 500px;
+	margin: auto;
+	text-align: center;
+	position: relative;
+}
+
+#bai2 img {
+	width: 300px;
+	height: 300px;
+}
+
+#bai2 #tenanh {
+	position: absolute;
+	left: -30px;
+	top: 10px;
+	font-family: tahoma;
+	font-size: 20px;
+	color: white;
+	text-shadow: 0px 0px 5px red;
+	font-weight: bold;
+}

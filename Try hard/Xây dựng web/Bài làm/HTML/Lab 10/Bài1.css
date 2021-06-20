@@ -1,0 +1,55 @@
+/* CSS Document */
+*{margin: 0; padding: 0; box-sizing: border-box}
+
+body {
+	margin: auto;
+	width: 700px;
+	height: 500px;
+}
+
+form {
+	padding: 10px;	
+}
+
+p {
+	font-size: 20px;
+	font-variant: small-caps;
+	font-weight: bold;
+}
+
+#ten {
+	margin-bottom: 10px;	
+}
+
+#ten input {
+	width: 510px;
+	border-radius: 3px
+}
+
+#nuoc {
+	margin-bottom: 10px;
+}
+
+#nuoc input {
+	width: 510px;
+	border-radius: 3px
+}
+
+textarea {
+	border-radius: 3px
+}
+
+hr {
+	margin: 10px 0px 10px 0px;
+}
+
+#button input {
+	width: 70px;
+	height: 30px;
+	border-radius: 20px;
+	box-shadow: inset 0px 0px 20px 1px blue;
+}
+
+#button input:disabled {
+	box-shadow: inset 0px 0px 20px 1px darkgray;
+}

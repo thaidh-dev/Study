@@ -1,0 +1,26 @@
+/* CSS Document */
+*{margin: 0; padding: 0; box-sizing: border-box}
+
+body {
+	margin: auto;
+	width: 500px;
+}
+
+.dong12 {
+	background: #3C56B8;
+	color: white;
+	text-align: center;
+}
+
+.dongconlai {
+	height: 50px;
+	text-align: center
+}
+
+table {
+	border: 1px solid #4D5BC0;
+}
+
+table tr.dongconlai:nth-child(odd) {
+	background: #8796DD;
+}

@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1b4c9377-866e-40f6-b070-4700ef7fbe21" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="hibernate.cfg.xml/Hibernate" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="hibernate.cfg.xml/Hibernate" type="feb32156:DbDataSourceImpl" />
+        <item name="QuanLyTaiSan: database" type="ccb7ac2a:MsImplModel$Database" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="hibernate.cfg.xml/Hibernate" type="feb32156:DbDataSourceImpl" />
+        <item name="QuanLyTaiSan: database" type="ccb7ac2a:MsImplModel$Database" />
+        <item name="dbo: schema" type="2865ee2e:MsImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="hibernate.cfg.xml/Hibernate" type="feb32156:DbDataSourceImpl" />
+        <item name="QuanLyTaiSan: database" type="ccb7ac2a:MsImplModel$Database" />
+        <item name="dbo: schema" type="2865ee2e:MsImplModel$Schema" />
+        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="QuanLyTaiSan" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="C:/apache-maven-3.6.0" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1QfmCe92Rd4lNzwS16SBtX2BYzu" />
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="sqlserver" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1565076410798" />
+    <property name="database.console.LAST_STATE" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\FPT Polytechnic\IV\PRO104-DA1\QuanLyTaiSan\src" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="DAO.DAOImpl" />
+      <recent name="DAO.DAO" />
+      <recent name="Contant" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\FPT Polytechnic\IV\PRO104-DA1\QuanLyTaiSan\src\main\java\SQL" />
+      <recent name="D:\FPT Polytechnic\IV\PRO104-DA1\QuanLyTaiSan\src\main\java\Utils" />
+      <recent name="D:\FPT Polytechnic\IV\PRO104-DA1\QuanLyTaiSan\src\main\java\Frame\Login" />
+      <recent name="D:\FPT Polytechnic\IV\PRO104-DA1\QuanLyTaiSan\src\main\java" />
+      <recent name="D:\FPT Polytechnic\IV\PRO104-DA1\QuanLyTaiSan\src\main\java\DAO\Abstract" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.JDialog">
+    <configuration name="JDialog" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Frame.Main.JDialog" />
+      <module name="QuanLyTaiSan" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Frame.Panel.Manager.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainFrame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Frame.Main.MainFrame" />
+      <module name="QuanLyTaiSan" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Frame.Panel.Manager.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="QuanLyNhanVien" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Frame.Panel.Manager.QuanLyNhanVien" />
+      <module name="QuanLyTaiSan" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Frame.Panel.Manager.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Test" />
+      <module name="QuanLyTaiSan" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Test.Test" />
+      <module name="QuanLyTaiSan" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.JDialog" />
+        <item itemvalue="Application.Test" />
+        <item itemvalue="Application.Test (1)" />
+        <item itemvalue="Application.MainFrame" />
+        <item itemvalue="Application.QuanLyNhanVien" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1b4c9377-866e-40f6-b070-4700ef7fbe21" name="Default Changelist" comment="" />
+      <created>1563451094937</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1563451094937</updated>
+      <workItem from="1563451097469" duration="2412000" />
+      <workItem from="1563467092461" duration="747000" />
+      <workItem from="1563522969302" duration="2358000" />
+      <workItem from="1563527224290" duration="5586000" />
+      <workItem from="1563588616837" duration="26397000" />
+      <workItem from="1563617701263" duration="399000" />
+      <workItem from="1563621730643" duration="5988000" />
+      <workItem from="1563637422555" duration="7527000" />
+      <workItem from="1563678032169" duration="20884000" />
+      <workItem from="1563755470240" duration="1082000" />
+      <workItem from="1563766523479" duration="606000" />
+      <workItem from="1563779725938" duration="2806000" />
+      <workItem from="1563793785503" duration="701000" />
+      <workItem from="1563794724709" duration="5741000" />
+      <workItem from="1563850096012" duration="1489000" />
+      <workItem from="1563851652558" duration="21673000" />
+      <workItem from="1563876690549" duration="3236000" />
+      <workItem from="1563880480234" duration="6134000" />
+      <workItem from="1563893785735" duration="368000" />
+      <workItem from="1563936373197" duration="819000" />
+      <workItem from="1564045551676" duration="7323000" />
+      <workItem from="1564125688070" duration="1122000" />
+      <workItem from="1564278336098" duration="39000" />
+      <workItem from="1564464807274" duration="5497000" />
+      <workItem from="1564486380761" duration="4656000" />
+      <workItem from="1564556041640" duration="6903000" />
+      <workItem from="1564622830640" duration="25866000" />
+      <workItem from="1564658675609" duration="4393000" />
+      <workItem from="1564713600903" duration="91000" />
+      <workItem from="1564759228351" duration="744000" />
+      <workItem from="1564805758786" duration="2912000" />
+      <workItem from="1564816361728" duration="621000" />
+      <workItem from="1564817488902" duration="3282000" />
+      <workItem from="1564886522661" duration="896000" />
+      <workItem from="1564931271370" duration="5709000" />
+      <workItem from="1564969613339" duration="15412000" />
+      <workItem from="1564989212115" duration="69000" />
+      <workItem from="1565017954803" duration="3771000" />
+      <workItem from="1565056445390" duration="15943000" />
+      <workItem from="1568169901479" duration="1997000" />
+      <workItem from="1568173332963" duration="518000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+</project>

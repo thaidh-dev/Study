@@ -1,0 +1,19 @@
+<div>
+    <table border="1">
+        <tr>
+            <th>STT</th>
+            <th>Tên phòng</th>
+            <th>Tổng thành tích</th>
+            <th>Tổng kỉ luật</th>
+            <th>Điểm thưởng</th>
+        </tr>
+
+        <tr ng-repeat="ttp in lstThanhTichPhong">
+            <td>{{$index+1}}</td>
+            <td>{{ttp.tenPhong}}</td>
+            <td>{{ttp.tongThanhTich}}</td>
+            <td>{{ttp.tongKyLuat}}</td>
+            <td>{{ttp.diemThuong}}</td>
+        </tr>
+    </table>
+</div>

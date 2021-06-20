@@ -1,0 +1,75 @@
+/* CSS Document 
+<input type = "text" name = ... id = .../>
+type có thể = "email"
+			= "password"
+			= "radio" ô tròn
+			= "checkbox"
+<select> <option> op1 </option>
+			<option> op1 </option>
+			...
+</select>
+
+<div id="form">
+	<form>
+		<h2> demo thanh phan form </h2>
+		<p> text box </p>
+		<input type="text" name="" id="" required="" (bắt buộc nhập liệu) placeholder="gõ tên">
+		<p> search </p>
+		<input type="search" name="" id="">
+		<p> search </p>
+		<input type="mail" name="" id="">
+		<p> search </p>
+		<input type="password" name="" id="">
+		<p> search </p>
+		<input type="date" name="" id="">
+		<p> search </p>
+		<input type="color" name="" id="">
+		<p> search </p>
+		<input type="number" min="0" max="" step="2" (mỗi lần tăng 2 đơn vị) name="" id="">
+		<p> search </p>
+		<input type="radio" name="gt">Nam
+		<input type="text" name="gt">Nữ
+
+		<input type="checkbox" name="" id="">Mì
+		<input type="checkbox" name="" id="">Bún
+		<input type="checkbox" name="" id="">Xôi
+		
+		<select>
+			<option value="">Hà Nội 1</option>
+			<option value="">Hà Nội 2</option>
+			<option value="">Hà Nội 3</option>
+			<option value="">Hà Nội 4</option>
+		</select>
+
+		<textarea cols="50" row="5">
+		</textarea>
+
+		<input type="submit" value="Gửi">
+		<input type="reset" value="Xóa">
+		<input type="button" value="Nút">
+
+input{
+	width: 300px;
+	height: 30px;
+	background: 
+	..
+} trang trí cho from
+
+input[type="submit"]{
+width: 60px;
+height: 35px;
+}
+
+#ten{
+	width: 300px;
+	height: 30px;
+	background: 
+	..
+}
+*/
+
+input{
+	width: 300px;
+	height: 20px;
+	margin: px;
+}

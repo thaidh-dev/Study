@@ -1,0 +1,37 @@
+/* CSS Document */
+*{margin: 0;padding: 0;box-sizing: border-box;}
+
+body{
+	font-variant: small-caps;
+	text-align: center;
+	font-size: 20px;
+	letter-spacing: 1px;
+	word-spacing: 2px;
+	line-height: 25px
+}
+
+.tieude{
+	text-shadow: 0px 0px 5px red;
+	color: white;
+}
+
+.doan1{
+	font-style: italic;
+	color: red;
+}
+
+.doan2{
+	font-style: italic;
+	color: blue;
+}
+
+.doan3{
+	font-style: italic;
+	color: green;
+}
+
+.sao{
+	color: brown;
+}
+
+

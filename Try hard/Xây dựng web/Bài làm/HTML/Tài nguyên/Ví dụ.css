@@ -1,0 +1,75 @@
+/* CSS Document */
+/*
+margim là khoảng cách 2 hộp tính từ đường viền
+*{margin: 0;padding: 0;box-sizing: border-box;} dòng này là bắt buộc
+lề; khoảng đệm; tự động co đúng hộp ban đầu dù bạn có làm cái đéo j đi nữa nó vẫn không đổi, nó lại đéo khử đc margin mà chỉ khử border và padding
+
+box-shadow: đổ bóng
+có các tham số: trái phải, trên dưới, độ lan tỏa, rộng, màu
+box-shadow: 20px 20px 10px @F00
+thông số đặt âm tự động ngược lại
+
+.box1:hover: di chuột vào thì hiện đổ bóng
+
+text-align: center (căn giữa ảnh, chữ với khung)
+
+ 
+
+#menu ul li{
+	list-stype: none;
+	float: left;
+	line-height: 40px;
+	padding: 0 20px;
+}
+
+#menu ul li a{
+	color: #FFF;
+	text-decoration: none;
+}
+
+#menu ul li a: hover{
+	color: #000;
+}
+
+
+*/
+
+
+.box1{
+	width: 400px;
+	height: 250px;
+	backgroudnd: pink;
+	border-top: 10px #000 solid;
+	border-radius: 20px;
+	padding-top: 10px;
+}
+
+/*solid là border-stype: solid*/
+
+/*tạo hình tròn
+.box1{
+	width: 250px;
+	height: 250px;
+	backgroudnd: #q08dd;
+	border-top: 10px #000 solid;
+	border-radius: 50%;
+}
+*/
+
+/* chỉ tròn 1 góc
+.box2{
+	width: 400px;
+	height: 250px;
+	backgroudnd: #757c06;
+	border: 5pz solid #000
+	border-top-left-radius: 50%;
+}
+
+*/
+
+.box2{
+	width: 400px;
+	height: 250px;
+	backgroudnd: #757c06;
+}
+

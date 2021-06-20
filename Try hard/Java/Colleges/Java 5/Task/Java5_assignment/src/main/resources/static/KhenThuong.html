@@ -1,0 +1,45 @@
+<div>
+    <h1>Tên nhân viên: {{ghiNhan.nhanVienDTO.tenNhanVien}}</h1>
+    <div>
+        <form name="frm">
+            <input type="radio" name="lgn"
+                   ng-model="ghiNhan.loaiGhiNhan" ng-value="true" ng-init="ghiNhan.loaiGhiNhan = true"> Thành tích
+            <input type="radio" name="lgn"
+                   ng-model="ghiNhan.loaiGhiNhan" ng-value="false"> Kỉ luật <br>
+
+            <input type="text" placeholder="Lý do" name="txtLyDo"
+                   required
+                   ng-model="ghiNhan.lyDo"> <br>
+        </form>
+
+        <button ng-hide="index" ng-click="themBtn()">Thêm</button>
+        <button ng-show="index" ng-disabled="frm.txtLyDo.$invalid"
+                ng-click="luuBtn(ghiNhan)"
+        >Lưu
+        </button>
+        <button ng-show="index" ng-click="huyBtn()">Hủy</button>
+        <button ng-click="moiBtn()">Mới</button>
+
+        <br>
+
+        <table border="1">
+            <tr>
+                <th>STT</th>
+                <th>Loại ghi nhận</th>
+                <th>Lý do</th>
+                <th>Ngày ghi nhận</th>
+            </tr>
+
+            <tr ng-repeat="gn in lstGhiNhan">
+                <td>{{$index+1}}</td>
+                <td>{{gn.loaiGhiNhan ? 'Thành tích' : 'Kỉ luật'}}</td>
+                <td>{{gn.lyDo}}</td>
+                <td>{{gn.ngayGhiNhan | date : 'dd-MM-yyyy'}}</td>
+                <td>
+                    <a href="" ng-hide="index" ng-click="suaBtn(gn)">Sửa</a> |
+                    <a href="" ng-hide="index" ng-click="xoaBtn(gn)">Xóa</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

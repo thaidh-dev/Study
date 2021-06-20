@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+	<script src="Bài 3.js"></script>
+	<link rel="stylesheet" href="Bài 3.css">
+</head>
+
+<body>
+	<div>
+		<p>Số ngẫu nhiên</p>
+		<form action="">
+			<div class="form">
+				<label for="">Từ số:</label>
+				<input type="text" name="tu">	
+			</div>
+			<div class="form">
+				<label for="">Đến số:</label>
+				<input type="text" name="den">
+			</div>
+			<div class="form">
+				<label for="">Random:</label>
+				<input type="text" name="random" readonly>
+			</div>
+			<input type="button" value="SINH SỐ" class="button" onClick="random.value = Math.round(Math.random()*(Number(den.value)-Number(tu.value))+Number(tu.value))">
+		</form>
+		
+	</div>
+</body>
+</html>

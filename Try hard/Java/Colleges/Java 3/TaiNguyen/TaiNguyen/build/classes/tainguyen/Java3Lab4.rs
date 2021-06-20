@@ -1,0 +1,10 @@
+lab.pkg4.GUI
+lab.pkg4.UndecoratedFrame$1
+lab.pkg4.BackgroundComponentDragger
+lab.pkg4.MouseListenerExample1
+lab.pkg4.UndecoratedFrame$3
+lab.pkg4.UndecoratedFrame$2
+lab.pkg4.UndecoratedFrame
+lab.pkg4.ComponentBorderDragger
+lab.pkg4.FrameComponent
+lab.pkg4.GUI$1

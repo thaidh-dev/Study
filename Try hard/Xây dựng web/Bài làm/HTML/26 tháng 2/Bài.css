@@ -1,0 +1,161 @@
+/* CSS Document */
+*{margin: 0; padding: 0; box-sizing: border-box}
+
+body {
+	margin: auto;
+	width: 1000px;
+	background: black;
+}
+
+#header {
+	text-align: center;
+	width: 980px;
+	height: 102px;
+	background: white;
+}
+
+#header img {
+	margin-top: 10px;
+}
+
+#menu {
+	background: #91b205;
+	width: 980px;
+	height: 34px;
+}
+
+#menu ul {
+	margin-left: 40px;
+}
+
+#menu ul li {
+	float: left;
+	list-style: none;
+	margin-right: 50px;
+	font-size: 12px;
+	font-family: tahoma;
+	line-height: 34px;
+	color: white;
+}
+
+#menu form {
+	float: right;
+	line-height: 34px;
+	margin-right: 10px;
+}
+
+#menu form .text {
+	width: 204px;
+	height: 22px;
+}
+
+#menu form .button {
+	width: 95px;
+	height: 22px;
+	background: black;
+	color:white;
+	border: none;
+}
+
+#than #left {
+	width: 632px;
+	height: 696px;
+	margin: 10px 10px 10px 0px;
+	float: left;
+}
+
+#than .anh img{
+	margin: 0px 20px 0px 10px;
+	float: left
+}
+
+#than #left .ten {
+	font-size: 16px;
+	font-family: tahoma;
+	color: #657c05;
+	font-weight: bold;
+	margin: 15px 0px 15px 0px;
+}
+
+#than #left p {
+	font-size: 12px;
+	font-family: tahoma;
+}
+
+#than #left .anh {
+	width: 632px;
+	height: 220px;
+}
+
+#than #left .ul {
+	margin-top: 20px;
+	margin-left: 10px
+}
+
+#than #left .ul ul li {
+	list-style-position: inside;
+	list-style-image: url("nước.png");
+	margin-bottom: 5px;
+}
+
+#than #right {
+	width: 333px;
+	height: 696px;
+	float: left;
+	margin-top: 10px;
+	background: #91b205
+}
+
+#than #right .tren {
+	width: 310px;
+	height: 189px;
+	margin: 10px;
+	border: 1px solid darkgray;
+}
+
+#than #right .tren img {
+	float: left;
+	margin: 20px 20px 0px 10px
+}
+
+#than #right .tren p.tenphai {
+	font-size: 15px;
+	font-family: tahoma;
+	font-weight: bold;
+	color: white;
+	margin: 20px 10px 10px 0px;
+}
+
+#than #right .tren p {
+	color: white;
+	font-family: tahoma;
+	font-size: 14px;
+}
+
+#than {
+	width: 980px;
+	height: 720px;
+	background: white;
+}
+
+#footer {
+	background: #91b205;
+	line-height: 50px;
+	height: 50px;
+	width: 980px;
+	text-align: center;
+	color: white;
+}
+
+#menu ul li:hover {
+	background: white;
+	color: black;
+}
+
+#than #left .ten:hover {
+	color: black;
+}
+
+#than #right .tren .tenphai:hover {
+	color: black;
+}

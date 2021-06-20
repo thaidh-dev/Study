@@ -1,0 +1,34 @@
+/* CSS Document */
+
+*{margin: 0;padding: 0;box-sizing: border-box;}
+
+#khung{
+	margin: auto;
+	border: 1px solid gray;
+	border-radius: 5px;
+	width: 300px;
+}
+
+#khung ul li{
+	list-style: url("Cường bé.jpg");
+	font-size: 20px;
+	list-style-position: inside;
+	padding-left: 10px;
+	border-bottom: 1px dotted red;
+}
+
+#khung ul li a{
+	text-decoration: none;
+	color: red;
+	font-variant: small-caps;
+}
+
+#khung ul li:hover{
+	background: red;
+	list-style: url("sơn bé.jpg");
+	list-style-position: inside;
+}
+
+#khung ul li a:hover{
+	color: white;
+}

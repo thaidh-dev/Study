@@ -1,0 +1,85 @@
+/* CSS Document */
+*{margin: 0;padding: 0;box-sizing: border-box;}
+
+body{
+	width: 1000px;
+	margin: auto;
+	font-family: tahoma;
+}
+
+#header{
+	width: 1000px;
+	height: 150px;
+	background: black;
+	text-align: center;
+	padding-top: 13px
+}
+
+#top{
+	width: 1000px;
+	height: 40px;
+	background:#661FD8;
+}
+
+#top ul li{
+	list-style: none;
+	float: left;
+	color: white;
+	line-height: 40px;
+	padding: 0px 40px;
+}
+
+#top p{
+	text-align: center;
+	line-height: 40px;
+	color: white;
+}
+
+
+#body{
+	width: 1000px;
+	height: 500px;
+}
+#left{
+	width: 200px;
+	height: 500px;
+	background: black;
+	float: left
+}
+
+#right{
+	width: 790px;
+	height: 490px;
+	float: left;
+	border: 2px solid black;
+	margin: 5px 0px 0px 10px;
+	background: #F1F1F1
+}
+
+.ten{
+	color:#2BE96A;
+	padding: 20px 30px 0px;
+}
+
+.anh{
+	width: 200px;
+	height: 150px;
+}
+.khung{
+	width: 200px;
+	height: 150px;
+	margin: 10px 30px 60px;
+	float: left;
+}
+
+.ten2{
+	color:#2BE96A;
+	text-align: center;
+	padding: 5px 0px 0px 0px
+}
+
+.gia{
+	font-weight: bold;
+	text-align: center;
+	padding: 5px 0px 0px 0px
+}

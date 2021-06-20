@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+	<link rel="stylesheet" href="Bài 4.css">
+	<script src="Bài 4.js"></script>
+</head>
+
+<body>
+	<div>
+		<form action="">
+		<div id="header">
+			<p>Phương trình bậc 2</p>
+		</div>
+		
+		<div id="mid">
+			<div id="left">
+					<div id="trong">
+						<label for="">a = </label>
+						<input type="text" name="a">
+					</div>
+					<div id="trong">
+						<label for="">b = </label>
+						<input type="text" name="b">
+					</div>
+					<div id="trong">
+						<label for="">c = </label>
+						<input type="text" name="c">
+					</div>
+			</div>
+			<div id="right">
+				<p>Kết quả</p>
+					<input type="text" name="ketqua">
+			</div>
+		</div>
+		
+		<div id="footer">
+				<input type="button" value="Kết quả" onClick="ketqua.value = tinh(a.value, b.value, c.value)">
+		</div>
+			</form>
+	</div>
+</body>
+</html>

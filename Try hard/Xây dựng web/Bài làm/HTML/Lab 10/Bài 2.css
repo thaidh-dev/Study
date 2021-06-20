@@ -1,0 +1,88 @@
+/* CSS Document */
+*{margin: 0; padding: 0; box-sizing: border-box}
+
+body {
+	margin: auto;
+	width: 700px;
+}
+
+form {
+	padding: 10px 0px 0px 10px
+}
+
+p {
+	font-variant: small-caps;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+#ten input {
+	width: 510px;
+	border-radius: 5px;
+}
+
+#ngaysinh input {
+	width: 510px;
+	border-radius: 5px;
+}
+
+legend {
+	margin-left: 20px;	
+}
+
+label {
+	font-size: 20px;
+	font-variant: small-caps;
+	font-weight: bold;
+}
+
+#gioitinh fieldset{
+	margin: 10px 0px 10px 0px;
+	width: 510px;
+	height: 50px;
+}
+
+#gioitinh fieldset input {
+	margin-left: 10px;
+}
+
+#diem {
+	margin: 10px 0px 10px 0px;
+}
+
+#diem input {
+	width: 510px;
+	background: yellow;
+	border-radius: 5px;
+}
+
+#nghe input {
+	border-radius: 5px;
+}
+
+#sothich {
+	width: 510px;
+	margin: 10px 0px 10px 0px;
+	height: 50px;
+}
+
+#sothich input {
+	margin-left: 10px;
+}
+
+textarea {
+	border-radius: 5px;
+}
+
+hr {
+	margin: 10px 0px 10px 0px;
+}
+
+#button input {
+	width: 100px;
+	height: 30px;
+	font-size: 15px;
+	border-radius: 20px;
+	box-shadow: inset 0px 0px 20px 1px blue;
+	margin-right: 10px;
+}

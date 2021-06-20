@@ -1,0 +1,44 @@
+*{margin: 0; padding: 0; box-sizing: border-box}
+
+#than {
+	width: 500px;
+	margin: auto;
+	text-align: center;
+}
+
+#than .nhap {
+	height: 30px;
+	margin-top: 30px
+}
+
+#than .nhap input {
+	width: 300px;
+	height: 30px;
+	float: right;
+}
+
+#than #cap {
+	float: right;
+}
+
+#than #cap input {
+	width: 100px;
+	height: 30px;
+}
+
+#than #btn {
+	float: right;
+	margin-top: 30px;
+}
+
+#than #btn input {
+	width: 70px;
+	height: 30px;
+}
+
+#than span {
+	float: left;
+	margin-left: 200px;
+	font-family: tahoma;
+	font-size: 15px;
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.22/angular-ui-router.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="js/State.js"></script>
+    <script src="js/TrangChu.js"></script>
+    <script src="js/QuanLyPhongBan.js"></script>
+    <script src="js/QuanLyNhanVien.js"></script>
+    <script src="js/QuanLyGhiNhan.js"></script>
+    <script src="js/ThongKe.js"></script>
+    <link rel="stylesheet" href="css/TrangChu.css">
+    <title>Trang chủ</title>
+</head>
+<body>
+    <div ng-app="TrangChuApp">
+        <h1>Phần mềm</h1>
+
+        <div class="body">
+            <div class="left">
+                <div>
+                    <p ui-sref="QLPB" ui-sref-active="active" ng-click="hienThiDanhSachPhongBan()">Quản lý phòng ban</p>
+                </div>
+
+                <div>
+                    <p ui-sref="QLNV" ui-sref-active="active" ng-click="hienThiDanhSachNhanVien()">Quản lý nhân viên</p>
+                </div>
+
+                <div>
+                    <p ui-sref="TK" class="thongKeCha">Thống kê</p>
+                    <ul class="thongKeCon">
+                        <li>
+                            <a href="" ui-sref="TKCN" ng-click="hienThiThanhTichCaNhan()">Thống kê thành tích cá nhân</a>
+                        </li>
+                        <li>
+                            <a href="" ui-sref="TKP" ng-click="hienThiThanhTichPhong()">Thống kê thành tích của phòng</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="right">
+                <div ng-controller="QuanLyPhongBanController">
+                    <div ui-view="QLPB"></div>
+                </div>
+
+                <div ng-controller="QuanLyNhanVienController">
+                    <div ui-view="QLNV"></div>
+                </div>
+
+                <div ng-controller="QuanLyGhiNhanController">
+                    <div ui-view="QLGN"></div>
+                </div>
+
+                <div ng-controller="ThongKeCaNhanController">
+                    <div ui-view="TKCN"></div>
+                </div>
+
+                <div ng-controller="ThongKePhongController">
+                    <div ui-view="TKP"></div>
+                </div>
+            </div>
+        </div>
+
+        <br><hr>
+
+        <div ng-controller="ThanhTichCaoNhatController">
+            <h2>Nhân viên có thành tích cao nhất</h2>
+            <table border="1">
+                <tr>
+                    <th>Tên nhân viên</th>
+                    <th>Tên phòng</th>
+                    <th>Điểm thưởng</th>
+                </tr>
+
+                <tr ng-repeat="t in lstThanhTichCaoNhat">
+                    <td>{{t.tenNhanVien}}</td>
+                    <td>{{t.tenPhong}}</td>
+                    <td>{{t.diemThuong}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

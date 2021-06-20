@@ -1,0 +1,9 @@
+lab.pkg4.NewJFrame$6
+lab.pkg4.NewJFrame$7
+lab.pkg4.NewJFrame$8
+lab.pkg4.NewJFrame$2
+lab.pkg4.NewJFrame$3
+lab.pkg4.NewJFrame$4
+lab.pkg4.NewJFrame$5
+lab.pkg4.NewJFrame
+lab.pkg4.NewJFrame$1

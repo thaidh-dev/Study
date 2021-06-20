@@ -1,0 +1,29 @@
+<div>
+    <input type="text" placeholder="Tên phòng"
+           ng-change="txtTenPhongEvent()"
+           required maxlength="50"
+           ng-model="phongBan.tenPhong">
+    <button ng-show="index" ng-click="them()">Thêm</button>
+    <button ng-hide="index" ng-click="luu(phongBan)">Lưu</button>
+    <button ng-hide="index"  ng-click="huy()">Hủy</button>
+    <button ng-click="moi()">Mới</button>
+
+    <br>
+    <span class="error" ng-show="trungTenPhong">Phòng '{{phongBan.tenPhong}}' đã tồn tại</span>
+    <span class="error" ng-show="trongTenPhong">Vui lòng không để trống ô tên phòng</span>
+
+    <table border="1">
+        <tr>
+            <th>STT</th>
+            <th>Tên phòng ban</th>
+        </tr>
+        <tr ng-repeat="pb in lstPhongBan">
+            <td>{{$index+1}}</td>
+            <td>{{pb.tenPhong}}</td>
+            <td>
+                <a href="" ng-show="index" ng-click="sua(pb)">Sửa</a> |
+                <a href="" ng-show="index" ng-click="xoa(pb.idPhongBan)">Xóa</a>
+            </td>
+        </tr>
+    </table>
+</div>

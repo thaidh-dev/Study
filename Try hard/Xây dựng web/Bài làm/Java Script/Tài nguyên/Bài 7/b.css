@@ -1,0 +1,25 @@
+* {margin: 0; padding: 0; box-sizing: border-box}
+
+div {
+	width: 1000px;
+	margin: auto;
+	text-align: center
+}
+#than {
+	margin-top: 10px;
+	font-family: tahoma;
+	font-size: 20px
+}
+
+#than p {
+	width: 1000px;
+	height: 30px;
+	background: green;
+	color: white;
+	border-bottom: 1px solid white;
+}
+
+button {
+	width: 50px;
+	height: 30px;
+}

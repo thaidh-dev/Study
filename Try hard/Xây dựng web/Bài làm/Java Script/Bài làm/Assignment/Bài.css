@@ -1,0 +1,245 @@
+*{margin: 0; padding: 0; box-sizing: border-box}
+
+#header {
+	width: 100%;
+	height: 80px;
+	background: #17181c;
+}
+
+#trongheader {
+	width: 1000px;
+	margin: auto;
+}
+
+#trongheader ul li {
+	float: left;
+	line-height: 80px;
+	list-style: none;
+	margin-right: 20px;
+}
+
+#trongheader ul li a {
+	font-family: tahoma;
+	color: white;
+	text-decoration: none;	
+}
+
+#trongheader ul li a:hover {
+	text-decoration: underline;
+}
+
+#trongheader ul li img {
+	margin-top: 18px;
+}
+#trongheader ul li select {
+	width: 150px;
+	height: 40px;
+	padding-left: 15px;
+	font-size: 15px;
+	border-radius: 5px;
+	background: #17181c;
+	color: white;
+	font-family: tahoma;
+	border: 1px solid white;
+}
+
+#header #trongheader form {
+	float: right;
+	line-height: 80px;
+	margin-right: 10px
+}
+
+#header #trongheader form input {
+	width: 100px;
+	height: 30px;
+	border-radius: 5px;
+	border: 1px solid #0283c9;
+	background: #17181c;
+	color: #0283c9;
+	font-weight: bold;
+}
+
+#header #trongheader form input:hover {
+	background: white;
+	color: black;
+}
+
+#than {
+	width: 100%;
+	height: 650px;
+}
+
+#trongthan {
+	position: relative;
+	width: 1000px;
+	height: 650px;
+	margin: auto;
+}
+
+#trongthan #left {
+	width: 400px;
+	height: 500px;
+	position: absolute;
+	left: 0px;
+	float: left;
+	top: 0px;
+	padding: 50px 0px 0px 10px
+}
+
+#trongthan #left p {
+	font-family: tahoma;
+	color: black;
+	margin-bottom: 10px;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+#trongthan #left form input.text {
+	width: 350px;
+	height: 50px;
+	padding-left: 10px;
+	border-radius: 5px;
+	border: 1px solid black;
+}
+
+#trongthan #left form {
+	position: relative;
+}
+
+#trongthan #left form input.button {
+	position: absolute;
+	right: 40px;
+	width: 70px;
+	height: 50px;
+	border-bottom-right-radius: 5px;
+	border-top-right-radius: 5px;
+	background: #0283c9;
+	border: 1px solid black;
+	border-left: none;
+}
+
+#trongthan #left form img.img {
+	position: absolute;
+	right: 55px;
+	top: 5px;
+}
+
+#trongthan #left #input {
+	width: 400px;
+	height: 150px;
+	margin: 20px 0px 10px 0px;
+}
+
+#trongthan #left #input input {
+	height: 35px;
+	padding: 0px 9px 0px 9px;
+	border-radius: 5px;
+	border: 1px solid black;
+	background: none;
+	float: left;
+	margin: 0px 10px 10px 0px;
+	font-weight: bold;
+}
+
+#trongthan #left #input input:hover {
+	background: white;
+}
+
+#trongthan #left #app img {
+	width: 165px;
+	height: 50px;
+	border-radius: 5px;
+	margin-right: 10px;
+	margin-top: 20px
+}
+
+#trongthan #right {
+	position: absolute;
+	right: 0px;
+	float: right;
+	top: 0px;
+	margin-top: 50px;
+	width: 570px;
+	height: 550px;
+	border: 1px solid black;
+	border-radius: 5px;
+	padding: 20px 0px 0px 20px;
+	
+}
+
+#trongthan #right #monan {
+	width: 150px;
+	height: 225px;
+	border: 1px solid darkgray;
+	float: left;
+	border-radius: 10px;
+	background: white;
+	margin: 0px 30px 20px 2px
+}
+
+#trongthan #right #monan p {
+	font-family: tahoma;
+	margin-left: 5px;
+}
+
+#trongthan #right #monan p a {
+	font-size: 20px;
+	text-decoration: none;
+	color: black;
+}
+
+#trongthan #right #monan p a:hover {
+	text-decoration: underline;
+}
+
+#trongthan #right #monan img {
+	width: 150px;
+	height: 100px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	margin-bottom: 5px
+}
+
+#trongthan #right #monan input {
+	width: 100px;
+	height: 20px;
+	margin-top: 5px;
+	text-align: center;
+}
+
+#trenfooter {
+	width: 1000px;
+	margin: auto;
+	height: 260px;
+	text-align: center;
+	padding-top: 10px;
+	border: 1px solid darkgray;
+}
+
+#trenfooter p {
+	font-family: tahoma;
+	margin-bottom: 15px;
+}
+
+#footer {
+	width: 1000px;
+	height: 100px;
+	margin: auto;
+	margin-top: 20px
+}
+
+#footer img.do {
+	float: right;
+	margin-top: 30px
+}
+
+#footer img.den {
+	margin-top: 40px;
+	margin-left: 170px
+}
+
+#trongthan #slideshow {
+	position: absolute;
+	bottom: 10px;
+	left: 460px
+}

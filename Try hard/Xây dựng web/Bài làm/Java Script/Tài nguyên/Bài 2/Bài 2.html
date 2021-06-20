@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+	<script>
+		var a = prompt("Nhập điểm", "")
+		
+		function xepLoai(a) {
+			if (a == null) {
+				alert("Không nhập thì thôi")
+			}
+			else {
+				if (a == "") {
+					alert("Bạn chưa nhập dữ liệu")
+				}
+				else {
+					if (isNaN(a)) {
+						alert("Hãy nhập số")	
+					}
+					else {
+						if (a > 9 && a <= 10) {
+							alert("Xuất sắc")
+						}
+						else if (a >= 8) {
+							alert("Giỏi")
+						}
+						else if (a >= 6.5) {
+							alert("Khá")
+						} 
+						else if (a >= 5) {
+							alert("Trung bình")
+						}
+						else if (a >= 0) {
+							alert("Yếu")
+						}
+						else {
+							alert("Điểm không hợp lệ")
+						}
+					}
+				}
+			}
+		}
+		
+		xepLoai(a);	
+	</script>
+</head>
+
+<body>
+	<div>
+		<button style="color: red; border-radius: 10px">đsdsdsđss</button>
+	</div>
+</body>
+</html>

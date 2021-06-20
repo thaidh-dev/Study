@@ -1,0 +1,78 @@
+/* CSS Document 
+trang chi tiết (ít nhất 1 trang), ấn vào sản phẩm ra trang này
+trang list all sản phẩm theo danh mục
+trang liên hệ
+*/
+
+
+/* table
+các thẻ: tabel, tr (dòng), td (cột)
+table không có margin mà chỉ có padding
+colspan để trộn cột
+rowspan để trộn dòng
+<div id="bang">
+	<h2>demobang</h2>
+	<table border="1" cellpadding="0" cellspacing="0" (bỏ khoảng cách giữa các ô)>
+		<tr id="dong1">
+			<td colspan="2">dòng 1, cột 1</td>
+			<td>dòng 1, cột 3</td>
+		</tr>
+		<tr>
+			<td style="width: 80px"(kích thước cột)>dòng 2, cột 1</td>
+			<td>dòng 2, cột 2</td>
+			<td>dòng 2, cột 3</td>
+		</tr>
+		<tr>
+			<td colspan="3">dòng 3, cột 1</td>
+		</tr>
+		<tr>
+			<td>dòng 4, cột 1</td>
+			<td>dòng 4, cột 2</td>
+			<td rowspan="2">dòng 4, cột 3</td>
+		</tr>
+		<tr>
+			<td>dòng 5, cột 1</td>
+			<td>dòng 5, cột 2</td>
+		</tr>
+		<tr>
+			<td>dòng 6, cột 1</td>
+			<td>dòng 6, cột 2</td>
+		</tr>
+		<tr>
+			<td>dòng 7, cột 1</td>
+			<td>dòng 7, cột 2</td>
+		</tr>
+		<tr>
+			<td>dòng 8, cột 1</td>
+			<td>dòng 8, cột 2</td>
+		</tr>
+	</table>
+</div.
+
+table{
+	border: 1px solid red;
+}
+table tr{
+	height: 40px;
+}
+table tr td{
+	border: 1px solid green;
+	text-align: center;
+}
+#dong1{
+	background: blue;
+	color: white;
+}
+
+:first-child áp dụng cho cái phần tử đầu tiên
+:last-child áp dụng cho phần tử cuối
+:nth-child vị trí phần tử
+
+table tr:first-child {
+	background: blue;
+	color: white;
+}
+
+odd: lẻ
+even:chẵn
+table tr:nth-child(2) {}

@@ -1,0 +1,182 @@
+/* CSS Document */
+*{margin: 0;padding: 0;box-sizing: border-box;}
+
+body{
+	width: 1000px;
+	margin: auto;
+	font-family: tahoma;
+}
+
+#menu {
+	background: black;
+	height: 50px;
+}
+
+#menu ul li {
+	float: left;
+	list-style: none;
+}
+
+#menu ul li a {
+	color: white;
+	text-decoration: none;
+	padding: 0px 10px;
+	line-height: 50px;
+	border-right: 1px solid white;
+}
+
+#menu ul li span {
+	color: white;
+	line-height: 50px;
+	border-right: 1px solid white;
+	padding: 0px 10px;
+}
+
+#menu ul li a.active {
+	display: block;
+	background: white;
+	color: black;
+}
+
+#menu ul li:hover {
+	background: #8BC14B;
+	border: none
+}
+
+#menu ul li a:hover {
+	font-weight: bold;
+}
+
+#menu ul li span:hover {
+	font-weight: bold;
+}
+
+#menu ul li {
+	position: relative;
+}
+
+#menu ul li ul.doan {
+	width: 300px;
+}
+
+#menu ul li ul.quanao {
+	width: 340px;
+}
+
+#menu ul li ul.cay {
+	width: 160px;	
+}
+
+#menu ul li ul {
+	position: absolute;
+	background: white;
+	display: none;
+}
+
+#menu ul li ul li a {
+	color: black;
+	border-right: 1px solid black;
+}
+
+#menu ul li:hover ul {
+	display: block;
+}
+
+#menu ul li ul li:hover {
+	background: white;
+}
+
+#banner{
+	background: red;
+	height: 300px;
+	width: 1000px;
+}
+
+#duoibanner{
+	background: black;
+	color: white;
+	width: 1000px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+}
+
+#than1{
+	background: #C92629;
+	min-height: 300px;
+}
+.anh{
+	padding: 20px;
+}
+#than1 a .anh:hover{
+	transform: scale(1.1);
+}
+.ten{
+	font-weight: bold;
+	padding: 20px 0px 0px 510px;
+	font-size: 30px;
+}
+.ten a{
+	text-decoration: none;
+	color: white;
+}
+.ten a:hover{
+	text-decoration: underline;
+}
+.loidan{
+	padding: 10px 0px 0px 510px;
+	font-size: 20px;
+	color: white;
+}
+.gia{
+	padding: 10px 0px 0px 510px;
+	font-size: 20px;
+	color: white;
+	text-decoration: underline;
+}
+
+#than2{
+	background:#C92629;
+	height: 290px;
+}
+.anh2{
+	width: 300px;
+	height: 170px;
+}
+#than2 a .anh2:hover{
+	transform: scale(1.1);
+}
+.ten2{
+	font-weight: bold;
+	font-size: 30px;
+	text-align: center;
+	padding: 5px 0px 5px 0px;
+}
+.ten2 a{
+	text-decoration: none;
+	color: white;
+}
+.ten2 a:hover{
+	text-decoration: underline;
+}
+.gia2{
+	text-decoration: underline;
+	color: white;
+	text-align: center;
+}
+#lmr {
+	width: 300px;
+	height: 250px;
+	margin: 20px 0px 0px 25px;
+	float: left;
+}
+
+#footer{
+	width: 1000px;
+	height: 20px;
+	float: left;
+	background: black;
+}
+
+/* word:
+Bìa, Giới thiệu về sản phẩm bán(logo), site map(sơ đồ website)

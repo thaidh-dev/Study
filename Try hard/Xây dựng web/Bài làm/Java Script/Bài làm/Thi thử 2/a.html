@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+	<link rel="stylesheet" href="a.css">
+	<script src="a.js"></script>
+</head>
+
+<body>
+	<div id="than">
+		<h1>Hóa đơn</h1>
+		<div class="info">
+			<label for="">Tên khách hàng</label>
+			<input type="text" class="txt" placeholder="Tên phải có 6 kí tự đổ lên">
+		</div>
+		<span></span>
+		<div class="info">
+			<label for="">Số điện thoại</label>
+			<input type="text" class="txt" placeholder="SĐT có 10 số và bắt đầu bằng 0">
+		</div>
+		<span></span>
+		<div id="bang">
+			<table cellpadding="0px" cellspacing="0px" border="1px">
+				<tr>
+					<th>Tên sản phẩm</th>
+					<th>Giá</th>
+					<th>Số lượng</th>
+					<th>Thành tiền</th>
+				</tr>
+				<tr>
+					<td>Táo</td>
+					<td class="gia">80</td>
+					<td><input type="number" onChange="tinhgia(this)" class="sl"></td>
+					<td class="tien"></td>					
+				</tr>
+				<tr>
+					<td>Nho</td>
+					<td class="gia">160</td>
+					<td><input type="number" onChange="tinhgia(this)" class="sl"></td>
+					<td class="tien"></td>
+				</tr>
+				<tr>
+					<td colspan="3">Tổng tiền</td>
+					<td class="tien"></td>
+				</tr>
+			</table>
+		</div>
+		<input type="button" value="Thanh toán" style="margin-top: 20px; width: 100px; height: 30px" onClick="kiemtra()">
+	</div>
+	
+	<div id="bai1">
+		<img src="images//gà.jpg" alt=""> <br>
+		<span id="anh"></span>
+		<input type="radio" name="gt" class="rad" onClick="slideshow()">
+		<input type="radio" name="gt" class="rad" onClick="slideshow()">
+		<input type="radio" name="gt" class="rad" onClick="slideshow()">
+	</div>
+	<br>
+	<br>
+	<br>
+	<br>
+</body>
+</html>

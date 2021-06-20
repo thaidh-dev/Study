@@ -1,0 +1,32 @@
+*{margin: 0; padding: 0; box-sizing: border-box}
+
+#than {
+	margin: auto;
+	width: 400px;
+	height: 300px;
+	border: 1px solid darkgray;
+	padding: 10px 0px 10px 40px
+}
+
+#than form label {
+	float: left;
+}
+
+#than form input {
+	float: right;
+}
+
+#than form select {
+	float: right;
+}
+
+#than form #trongthan {
+	width: 300px;
+	height: 50px;
+}
+
+#than form #in {
+	float: left;
+	margin-left: 130px;
+}
+

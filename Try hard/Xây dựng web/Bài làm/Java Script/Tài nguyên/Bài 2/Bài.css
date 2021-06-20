@@ -1,0 +1,52 @@
+/* CSS Document */
+
+/* var tenbien không xác định kiểu, nó sẽ không bắt phải khải báo biến cụ thể như java
+vd : var a;
+a = "mai";
+a = 15;
+a = true thoải mái, đặt kiểu lồn j cũng đc
+
+isNaN(value) kiểm tra xem value là số hay không, return true(không là số) or false(là số)
+
+\b cách \t tab
+
+.length trả về số kí tự của 1 chuỗi
+
+
+| or
+^ 2 cái khác nhau(T F) trả về T, 2 cái giống nhau(T T, F F) trả về F
+
+hàm có giá trị trả về
+function tenham (thamso 1, thamso 2, ...) {
+	lệnh trong hàm 
+	[return giá trị trả về]
+}
+
+hàm không có giá trị trả về đéo có return
+
+lời gọi hàm: không có return: tenham()
+có return: đặt trong 1 phương thức,... nào đó
+
+câu lệnh if
+cú pháp: if (biểu thức điều kiện) {
+
+}
+else {
+
+}
+
+nhiều if sẽ loạn nên dùng cấu trúc đa lựa chọn switch ... case
+cú pháp: switch (biểu thức) {
+	case giá trị 1:
+	// lệnh 1
+	break;
+	default: //lệnh n
+}
+
+
+
+
+
+
+
+

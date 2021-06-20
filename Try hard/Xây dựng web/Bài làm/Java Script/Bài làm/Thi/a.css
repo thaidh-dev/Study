@@ -1,0 +1,73 @@
+* {margin: 0; padding: 0; box-sizing: border-box}
+
+#bai2 {
+	width: 500px;
+	height: 300px;
+	margin: auto;
+}
+
+h1 {
+	text-align: center;
+}
+
+#bai2 .lain {
+	width: 500px;
+	height: 30px;
+}
+
+
+#bai2 .lain label {
+	float: left;
+	margin-left: 50px;
+}
+
+#bai2 .lain input {
+	float: right;
+	margin-left: 50px;
+}
+
+#capcha {
+	margin-left: 50px;
+}
+
+#capcha input {
+	width: 100px;
+	float: right;
+}
+
+#btn {
+	margin-left: 200px;
+	margin-top: 20px;
+	width: 100px;
+	height: 30px;
+}
+
+#bai2 span {
+	color: red;
+	margin-left: 50px;
+}
+
+#bai1 img {
+	width: 450px;
+	height: 400px;
+}
+
+#bai1 {
+	width: 500px;
+	height: 300px;
+	margin: auto;
+	text-align: center;
+	position: relative
+}
+
+#bai1 input {
+	width: 100px;
+	height: 30px;
+}
+
+#bai1 span {
+	position: absolute;
+	color: white;
+	font-family: tahoma;
+	top: 0px;
+}

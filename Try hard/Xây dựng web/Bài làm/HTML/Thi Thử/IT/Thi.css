@@ -1,0 +1,121 @@
+/* CSS Document */
+*{margin: 0; padding: 0; box-sizing: border-box}
+
+#header {
+	width: 100%;
+	height: 98px;
+	background: #302e2e;
+}
+
+#header .trongheader {
+	width: 980px;
+	height: 98px;
+	margin: auto;
+}
+
+#header .trongheader img {
+	float: left;
+	margin-top: 32px;
+}
+
+#header .trongheader ul {
+	float: right;
+	line-height: 98px;
+}
+
+#header .trongheader ul li {
+	font-family: tahoma;
+	list-style: none;
+	color:white;
+	font-size: 14px;
+	float: left;
+	margin-left: 30px
+}
+
+#bia {
+	width: 100%;
+	height: 268px;
+	background: #00040d;
+	text-align: center;
+	margin-top: 10px;
+}
+
+#than {
+	width: 100%;
+	background: #f4f5f6;
+}
+
+#than #trongthan {
+	width: 960px;
+	height: 338px;
+	margin: auto;
+}
+
+#than #trongthan #hoc {
+	width: 320px;
+	height: 165px;
+	padding-top: 24px;
+	float: left;
+}
+
+#than #trongthan #hoc .tenngonngu img {
+	float: left;
+	margin-right: 10px
+}
+
+#than #trongthan #hoc .tenngonngu {
+	height: 28px;
+}
+
+#than #sanpham .anh .phai {
+	float: right;
+	margin-left: 90px
+}
+
+#than #sanpham .anh .trai {
+	margin-left: 90px;
+}
+
+#footer {
+	width: 100%;
+	height: 120px;
+	background: #232323;
+}
+
+#footer #trongfooter {
+	width: 960px;
+	height: 120px;
+	margin: auto;
+}
+
+#footer #trongfooter div {
+	float: left;
+	margin-right: 24px
+}
+
+#footer #trongfooter div img {
+	margin-right: 40px;
+}
+
+#header .trongheader ul li:hover {
+	text-decoration: underline;
+}
+
+#than #trongthan #hoc .tenngonngu a {
+	text-decoration: none;
+}
+#than #trongthan #hoc .tenngonngu a:hover {
+	text-decoration: underline;
+}
+
+#than #trongthan #hoc a {
+	text-decoration: none
+}
+
+#than #trongthan #hoc a:hover {
+	text-decoration: underline
+}
+
+#footer #trongfooter div p:hover {
+	text-decoration: underline;
+}

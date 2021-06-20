@@ -1,0 +1,178 @@
+/* CSS Document */
+*{margin: 0; padding: 0; box-sizing: border-box}
+
+body {
+	margin: auto;
+	width: 1000px;
+	font-family: tahoma;
+}
+
+#menu {
+	background: #17181c;
+	height: 50px;
+}
+
+#menu ul li {
+	float: left;
+	list-style: none;
+}
+
+#menu ul li a {
+	color: white;
+	text-decoration: none;
+	padding: 0px 10px;
+	line-height: 50px;
+	border-right: 1px solid white;
+}
+
+#menu ul li span {
+	color: white;
+	line-height: 50px;
+	border-right: 1px solid white;
+	padding: 0px 10px;
+}
+
+#menu ul li a.active {
+	display: block;
+	background: white;
+	color: black;
+}
+
+#menu ul li:hover {
+	background: #8BC14B;
+	border: none
+}
+
+#menu ul li a:hover {
+	font-weight: bold;
+}
+
+#menu ul li span:hover {
+	font-weight: bold;
+}
+
+#menu ul li {
+	position: relative;
+}
+
+#menu ul li ul.doan {
+	width: 300px;
+}
+
+#menu ul li ul.quanao {
+	width: 340px;
+}
+
+#menu ul li ul.cay {
+	width: 160px;	
+}
+
+#menu ul li ul {
+	position: absolute;
+	background: white;
+	display: none;
+}
+
+#menu ul li ul li a {
+	color: black;
+	border-right: 1px solid black;
+}
+
+#menu ul li:hover ul {
+	display: block;
+}
+
+#menu ul li ul li:hover {
+	background: white;
+}
+
+#left {
+	width: 400px;
+	height: 560px;
+	float: left;
+	background: #17181c;
+	border: 1px solid white;
+}
+
+#left p.ten {
+	color: white;
+	font-weight: bold;
+	font-size: 30px;
+	padding: 30px 0px 10px 20px;
+}
+
+#left p.note {
+	color: white;
+	font-size: 20px;
+	padding: 0px 10px 0px 20px
+}
+
+#left img {
+	margin: 0px 0px 0px 20px;
+}
+
+#right {
+	font-size: 20px;
+	background: #17181c;
+	margin: 10px;
+	color: white;
+	float: left;
+	width: 580px;
+	height: 550px;
+}
+
+#right p.ten {
+	font-size: 25px;
+	padding: 10px;
+}
+
+#right form {
+	padding: 20px 10px 10px 50px; 
+}
+
+#right form div {
+	margin: 0px 0px 20px 0px;
+}
+
+#right form input {
+	width: 300px;
+	height: 30px;
+	border-radius: 10px;
+	padding-left: 10px;
+	float: right;
+	margin-right: 70px;
+}
+
+#right form input.radio {
+	float: none;
+	margin: 0px 10px 0px 70px;
+	width: auto;
+	height: auto;
+}
+
+#right form .checkbox input{
+	float: left;
+	width: 30px;
+	height: 30px;
+	margin: 20px 10px 0px 30px;
+}
+
+#right form .checkbox label {
+	font-size: 15px;
+	float: left;
+	line-height: 30px;
+	margin: 20px 10px 0px 0px;
+}
+
+#right form .tao input {
+	height: 50px;
+	background: #ab8b02;
+	color: white;
+	font-size: 20px;
+	margin-top: 30px
+}
+
+#right form .tao p {
+	font-size: 15px;
+	float: left;
+}

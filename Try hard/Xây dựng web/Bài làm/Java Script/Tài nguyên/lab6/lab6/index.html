@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Giỏ Hàng</title>
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
+</head>
+
+<body>
+<div class="wrapper">
+    <main>
+        <section class="receipt">
+            <h2>Giỏ Hàng</h2>
+            <table>
+                <tr>
+                    <th>STT</th>
+                    <th>Tên sản phẩm</th>
+                    <th>Giá</th>
+                    <th>Số lượng</th>
+                    <th>Thành tiền</th>
+                    
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Bánh ngọt</td>
+                    <td class="unit-price">300000 vnd</td>
+                    <td><input class="quantity" min="0" type="number"></td>
+                    <td class="cost"></td>
+                    
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Kem chocolate</td>
+                    <td class="unit-price">50000 vnd</td>
+                    <td><input class="quantity" min="0" type="number"></td>
+                    <td class="cost"></td>
+                    
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Kem Vani</td>
+                    <td class="unit-price">45000 vnd</td>
+                    <td><input class="quantity" min="0" type="number"></td>
+                    <td class="cost"></td>
+			  
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Sữa chua</td>
+                    <td class="unit-price">35000 vnd</td>
+                    <td><input class="quantity" min="0" type="number"></td>
+                    <td class="cost"></td>
+                    
+                </tr>
+                <tr>
+                    <td colspan="4">Tổng tiền</td>
+                    <td id="total-cost"></td>
+                    
+                </tr>
+            </table>
+        </section>
+    </main>
+</div>
+</body>
+</html>

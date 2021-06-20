@@ -1,0 +1,129 @@
+/* CSS Document */
+*{margin: 0; padding: 0; box-sizing: border-box}
+
+#header {
+	margin: auto;
+	width: 980px;
+	height: 100px;
+	background: #272f54;
+	text-align: center;
+}
+
+#header img {
+	margin-top: 15px
+}
+
+#menu {
+	margin: auto;
+	width: 980px;
+	height: 37px;
+	background: #cb7802;
+}
+
+#menu ul {
+	float: left;
+}
+
+#menu ul li {
+	color:white;
+	float: left;
+	list-style: none;
+	font-family: tahoma;
+	font-size: 12px;
+	margin-left: 40px;
+	line-height: 37px;
+}
+
+#menu form {
+	float: right;
+	line-height: 37px;
+}
+
+#menu form .text {
+	width: 204px;
+	height: 22px;
+}
+
+#menu form .submit {
+	width: 95px;
+	height: 22px;
+	background: #272f54;
+	color: white;
+	border: 1px solid white;
+	font-family: tahoma;
+	font-size: 11px;
+	margin: 0px 5px 0px 0px
+}
+
+#bia {
+	margin: auto;
+	width: 980px;
+	height: 262px;
+	margin-top: 10px
+}
+
+#chu {
+	margin: auto;
+	width: 980px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	color: #272f54;
+	font-family: tahoma;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+#than {
+	width: 980px;
+	height: 365px;
+	margin: auto;
+}
+
+#than #thancon {
+	width: 308px;
+	height: 362px;
+	border: 1px solid darkgray;
+	padding: 15px 0px 0px 25px;
+	float: left;
+}
+
+#than #thancon p.ten a {
+	text-decoration: none;
+	font-family: tahoma;;
+	font-size: 16px;
+	font-weight: bold;
+	color: #b35326;
+}
+
+#than #thancon p.nd {
+	font-family: tahoma;
+	font-size: 13px;
+}
+
+#than #thancon p.ten {
+	margin: 10px 0px 10px 0px
+}
+
+#footer {
+	background: #272f54;
+	width: 980px;
+	height: 49px;
+	margin: auto;
+	margin-top: 10px;
+	text-align: center;
+}
+
+#footer p {
+	line-height: 49px;
+	color: white;
+	font-family: tahoma;
+	font-size: 12px;
+}
+
+#menu ul li:hover {
+	text-decoration: underline;
+}
+
+#than #thancon p.ten a:hover {
+	text-decoration: underline;
+}

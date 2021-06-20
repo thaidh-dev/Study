@@ -1,0 +1,13 @@
+* {margin: 0; padding: 0; box-sizing: border-box}
+
+#than {
+	width: 1000px;
+	text-align: center;
+	margin: auto;
+}
+
+#meo {
+	float: left;
+}
+
+

@@ -1,0 +1,52 @@
+* {margin: 0; padding: 0; box-sizing: border-box}
+
+#bai2 {
+	width: 500px;
+	height: 500px;
+	margin: auto;
+}
+
+h1 {
+	text-align: center;
+}
+
+#bai2 .lain {
+	width: 500px;
+	height: 30px;
+}
+
+#bai2 .lain label {
+	float: left;
+	margin-left: 50px;
+	line-height: 30px
+}
+
+#bai2 .lain input {
+	float: right;
+	margin-right: 50px;
+}
+
+#btn {
+	width: 100px;
+	height: 30px;
+	margin-left: 200px;
+}
+
+#bai2 span {
+	color: red;
+	margin-left: 50px
+}
+
+#bai1 {
+	text-align: center;
+}
+
+#bai1 img {
+	width: 450px;
+	height: 300px;
+}
+
+#bai1 input {
+	width: 70px;
+	height: 30px;
+}

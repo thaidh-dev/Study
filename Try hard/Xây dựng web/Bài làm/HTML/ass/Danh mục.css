@@ -1,0 +1,175 @@
+/* CSS Document */
+*{margin: 0; padding: 0; box-sizing: border-box}
+
+body {
+	margin: auto;
+	width: 1000px;
+	font-family: tahoma;
+}
+
+#menu {
+	background: #17181c;
+	height: 50px;
+}
+
+#menu ul li {
+	float: left;
+	list-style: none;
+}
+
+#menu ul li a {
+	color: white;
+	text-decoration: none;
+	padding: 0px 10px;
+	line-height: 50px;
+	border-right: 1px solid white;
+}
+
+#menu ul li span {
+	color: white;
+	line-height: 50px;
+	border-right: 1px solid white;
+	padding: 0px 10px;
+}
+
+#menu ul li a.active {
+	display: block;
+	background: white;
+	color: black;
+}
+
+#menu ul li:hover {
+	background: #8BC14B;
+	border: none
+}
+
+#menu ul li a:hover {
+	font-weight: bold;
+}
+
+#menu ul li span:hover {
+	font-weight: bold;
+}
+
+#menu ul li {
+	position: relative;
+}
+
+#menu ul li ul.doan {
+	width: 300px;
+}
+
+#menu ul li ul.quanao {
+	width: 340px;
+}
+
+#menu ul li ul.cay {
+	width: 160px;	
+}
+
+#menu ul li ul {
+	position: absolute;
+	background: white;
+	display: none;
+}
+
+#menu ul li ul li a {
+	color: black;
+	border-right: 1px solid black;
+}
+
+#menu ul li:hover ul {
+	display: block;
+}
+
+#menu ul li ul li:hover {
+	background: white;
+}
+
+#than {
+	background: #17181c;
+	color: white;
+	width: 1000px;
+	height: 850px;
+	margin-top: 10px;
+}
+
+#than div {
+	margin-top: 20px;
+	float: left;
+	width: 250px;
+	height: 320px;
+	padding: 10px;
+}
+
+#than div img.avatar {
+	width: 230px;
+	height: 200px;
+}
+
+#than div img.avatar:hover {
+	transform: scale(1.1);
+}
+
+#than div p.ten {
+	font-size: 20px;
+	margin: 10px 0px 10px 0px;
+	font-weight: bold;
+}
+
+#than div a {
+	text-decoration: none;
+	color: white;
+}
+
+#than div p.ten:hover {
+	text-decoration: underline;
+}
+
+#than div p.gia {
+	font-size: 17px;
+}
+
+#than div p.gia del {
+	font-size: 15px;
+}
+
+#than div p.gia span {
+	font-size: 15px;
+	color: red;
+}
+
+#than div.anhsao {
+	width: auto;
+	height: auto;
+	margin: 10px 0px 0px 0px;
+	padding: 0px;
+	font-size: 15px;
+}
+
+#than p.tieude {
+	font-size: 30px;
+	padding: 10px 0px 0px 10px;
+}
+
+#than .trangkhac {
+	width: 500px;
+	height: 100px;
+	float: right;
+}
+
+#than .trangkhac input {
+	width: 50px;
+	height: 50px;
+	border-radius: 50px;
+	font-size: 20px;
+	margin-left: 5px;
+}
+
+#than .trangkhac input:hover {
+	background: red;
+	color: white;
+	box-shadow: 0px 0px 10px red;
+	font-weight: bold
+}
+

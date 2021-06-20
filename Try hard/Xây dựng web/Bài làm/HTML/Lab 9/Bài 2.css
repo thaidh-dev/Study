@@ -1,0 +1,71 @@
+/* CSS Document */
+*{margin: 0; padding: 0; box-sizing: border-box}
+
+body {
+	height: 500px;
+	width: 500px;
+	margin: auto;
+	font-family: tahoma;
+	font-size: 20px;
+	font-variant: small-caps;
+	font-weight: bold;
+}
+
+.ten {
+	margin: 10px 0px 10px 10px;
+}
+
+.ten input {
+	width: 400px;
+}
+
+.gioitinh {
+	margin: 0px 0px 10px 10px;
+}
+
+.gioitinh input {
+	margin-left: 10px;
+}
+
+.hinhanh {
+	margin: 0px 0px 10px 10px;
+}
+
+.hinhanh label {
+	font-variant: normal;
+	font-weight: normal;
+	font-size: 15px;
+}
+
+.hinhanh input {
+	width: 100px;
+	height: 30px;
+	font-size: 16px
+}
+
+.quoctich {
+	margin: 0px 0px 10px 10px;
+}
+
+.quoctich select {
+	width: 400px;
+	height: 30px;
+	font-size: 20px
+}
+
+.sothich {
+	margin: 0px 0px 10px 10px;
+}
+
+.ghichu {
+	margin: 0px 0px 10px 10px;
+}
+
+.dangki {
+	margin-top: 10px;
+}
+.dangki input {
+	width: 90px;
+	height: 40px;
+	font-size: 20px;
+}

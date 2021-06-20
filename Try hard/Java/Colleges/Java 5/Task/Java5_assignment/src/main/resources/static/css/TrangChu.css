@@ -1,0 +1,40 @@
+input.ng-invalid {
+    border: 1px solid red;
+}
+
+.error {
+    color: red;
+}
+
+.thongKeCha {
+    position: relative;
+}
+
+.thongKeCha:hover {
+    cursor: pointer;
+}
+
+.thongKeCon {
+    position: absolute;
+    display: none;
+}
+
+.body {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.left {
+    width: 30%;
+    border: yellowgreen 1px solid;
+}
+
+.left p:hover {
+    cursor: pointer;
+}
+
+.right {
+    width: 70%;
+    border: greenyellow 1px solid;
+}

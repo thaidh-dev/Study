@@ -1,0 +1,40 @@
+*{margin: 0;padding: 0;box-sizing: border-box;}
+#wrapper{
+	width: 980px;
+	height: 900px;
+	background: #000;
+	margin: auto;
+}
+
+#header{
+	width: 980px;
+	height: 150px;
+	background: #A2573A;
+}
+#menu{
+	width: 980px;
+	height: 40px;
+	background: #A4A5A7;
+}
+#center{
+	width: 980px;
+	height: 660px;
+	background: #ABC16F;
+}
+#footer{
+	width: 980px;
+	height: 50px;
+	background:#E61DE7;
+}
+#left{
+	width: 300px;
+	height: 660px;
+	background: blue;
+	float: left;
+}
+#right{
+	width: 680px;
+	height: 660px;
+	background: yellow;
+	float: left;
+}

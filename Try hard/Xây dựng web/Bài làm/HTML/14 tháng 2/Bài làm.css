@@ -1,0 +1,111 @@
+/* CSS Document */
+*{margin: 0;padding: 0;box-sizing: border-box;}
+
+body{
+	width: 1000px;
+	margin: auto;
+}
+
+#menu{
+	width: 1000px;
+	height: 50px;
+	background: green;
+}
+#menu ul li{
+	float: left;
+	list-style: none;
+	line-height: 50px;
+}
+
+#menu ul li a{
+	padding-left: 40px;
+	text-decoration: none;
+	color: white;
+}
+
+form input#txtnutsearch{
+	width: 300px;
+	height: 30px;
+	margin-top: 9px;
+	margin-left: 50px;
+	float: left;
+}
+
+form #nutsearch{
+	margin-left: 30px;
+	background: black;
+	color: white;
+	font-size: 20px;
+	height: 40px;
+	width: 100px;
+	margin-top: 5px;
+	border-radius: 10px;
+}
+
+#left{
+	background: black;
+	width: 600px;
+	height: 1000px;
+	float: left
+}
+
+#left .trai{
+	width: 280px;
+	height: 300px;
+	background: black;
+	margin: 20px 10px 10px 10px;
+	border: 2px solid white;
+	float: left;
+}
+
+#left .trai img{
+	margin: 10px 10px 10px 10px;
+	float: left
+}
+
+#left .trai p{
+	padding-top: 8px;
+	color: white;
+}
+
+#left .trai p.bold{
+	font-weight: bold;
+	font-size: 20px
+}
+
+#left .trai ul li {
+	list-style: url("Cường bé.jpg");
+	float: none;
+	list-style-position: inside;
+	padding-left: 10px;
+	line-height: normal;
+	padding-top: 10px;
+}
+
+#left .trai ul li a{
+	font-size: 15px;
+	padding-left: 10px;
+}
+
+#right{
+	height: 1000px;
+	width: 400px;
+	background: white;
+	float: left;
+}
+
+#right form p.dauform{
+	font-weight: bold;
+	font-size: 20px;
+	text-align: center;
+	padding: 10px
+}
+
+#right form p.chungform{
+	padding: 10px 0px 2px 10px;
+}
+
+#right form #chunginput{
+	margin-left: 10px;
+}
+

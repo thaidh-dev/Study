@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Aug 31, 2019 9:42:20 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="model.SanPham" table="san_pham" schema="dbo" catalog="java4_assignment" optimistic-lock="version">
+        <id name="maSanPham" type="int">
+            <column name="ma_san_pham" />
+            <generator class="assigned" />
+        </id>
+        <property name="tenSanPham" type="serializable">
+            <column name="ten_san_pham" not-null="true" unique="true" />
+        </property>
+        <property name="gia" type="big_decimal">
+            <column name="gia" scale="4" not-null="true" />
+        </property>
+        <property name="hinh" type="serializable">
+            <column name="hinh" not-null="true" />
+        </property>
+        <property name="soLuong" type="int">
+            <column name="so_luong" not-null="true" />
+        </property>
+        <set name="phieuMuaChiTiets" table="phieu_mua_chi_tiet" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ma_san_pham" not-null="true" />
+            </key>
+            <one-to-many class="model.PhieuMuaChiTiet" />
+        </set>
+    </class>
+</hibernate-mapping>

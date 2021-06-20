@@ -1,0 +1,254 @@
+* {margin: 0; padding: 0; box-sizing: border-box}
+
+/* header */
+#header {
+    height: 60px;
+    width: 100%;
+    background: #252525;
+}
+
+#header ul.left {
+    margin-left: 90px;
+    position: relative;
+}
+
+#header ul.left li a:hover {
+    text-decoration: underline;
+    color: red;
+}
+
+#header ul.left li.an {
+    font-family: tahoma;
+    font-size: 20px;
+    border: none;
+    color: white;
+    float: left;
+    list-style: none;
+    padding-right: 10px;
+    line-height: 60px;
+}
+
+#header ul.left li.an img {
+    border-radius: 25px;
+    margin-top: 5px;
+    line-height: 0px;
+    width: 50px;
+    height: 50px;
+}
+
+#header ul.left li.an span {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border: 3px solid white;
+    border-width: 0px 2px 2px 0px;
+    transform: rotate(45deg);
+}
+
+#header ul.left .anhTenMuiTen:hover {
+    cursor: pointer;
+}
+
+#header ul.left #dangXuat {
+    position: absolute;
+    line-height: 0px;
+    left: 0px;
+    display: none;
+}
+
+#header ul.left #dangXuat input {
+    width: 200px;
+    height: 50px;
+    border: none;
+    font-family: tahoma;
+    font-size: 20px;
+    color: white;
+    background: #252525;
+}
+
+#header ul.left #dangXuat input:hover {
+    background: white;
+    border: 3px solid #252525;
+    border-top: none;
+    color: #bd9c50;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+/* body */
+#body {
+    width: 100%;
+    text-align: center;
+    margin-top: 60px;
+}
+
+#body .bodyLeft {
+    display: inline-block;
+    margin-right: 30px;
+    vertical-align:top;
+}
+
+#body .bodyLeft li {
+    width: 270px;
+    height: 60px;
+    border: 1px solid #ebebeb;
+    font-family: tahoma;
+    font-size: 20px;
+    line-height: 60px;
+    list-style: none;
+    text-align: left;
+    padding-left: 15px;
+}
+
+#body .bodyLeft li.danhMuc {
+    background: #363533;
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    padding-left: 0px;
+}
+
+#body .bodyLeft li a {
+    color: black;
+    text-decoration: none;
+}
+
+#body .bodyLeft li a:hover {
+    color: #bda87f;
+}
+
+#body .bodyLeft li.trang {
+    border: none;
+    text-align: center;
+    padding: 0px;
+}
+
+#body .bodyLeft li.trang input {
+    width: 30px;
+    height: 30px;
+    border-radius: 25px;
+    border: none;
+    background: #cccccc;
+}
+
+#body .bodyLeft li.trang input.trangDuocChon {
+    cursor: pointer;
+    background: #bda87f;
+    color: white;
+}
+
+#body .bodyLeft li.trang input:hover {
+    cursor: pointer;
+    background: #bda87f;
+    color: white;
+}
+
+#body .bodyRight {
+    display: inline-block;
+    vertical-align:top;
+}
+
+#body .bodyRight .top {
+    display: flex;
+    justify-content: space-between;
+    line-height: 60px;
+    font-family: tahoma;
+}
+
+#body .bodyRight .top .topLeft {
+    display: inline-block;
+}
+
+#body .bodyRight .top .topLeft input.tim {
+    font-size: 17px;
+    padding: 7px 10px;
+    border: 1px solid #d9d9d9;
+    background: white;
+}
+
+#body .bodyRight .top .topLeft input.tim:hover {
+    cursor: pointer;
+}
+
+#body .bodyRight .top .topRight {
+    display: inline-block;
+}
+
+#body .bodyRight .top .topRight a {
+    text-decoration: none;
+    font-size: 17px;
+    padding: 7px 10px;
+    border: 1px solid #d9d9d9;
+    background: white;
+    color: black;
+}
+
+#body .bodyRight .center .sanPham {
+    text-align: left;
+    margin-bottom: 100px;
+}
+
+#body .bodyRight .center .sanPham .sanPhamLeft {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 30px;
+}
+
+#body .bodyRight .center .sanPham .sanPhamRight {
+    display: inline-flex;
+    flex-direction: column;
+    vertical-align: top;
+    font-family: tahoma;
+    text-align: left;
+    justify-content: space-between;
+    height: 200px;
+}
+
+#body .bodyRight .center .sanPham .sanPhamRight p.tenSanPham {
+    font-size: 25px;
+    color: #bda87f;
+    font-weight: bold;
+}
+
+#body .bodyRight .center .sanPham .sanPhamRight p.gia {
+    color: red;
+    font-size: 15px;
+}
+
+#body .bodyRight .center .sanPham .sanPhamRight p.soLuongSanPham {
+    font-size: 15px;
+}
+
+#body .bodyRight .center .sanPham .sanPhamRight input {
+    width: 140px;
+    height: 50px;
+    font-size: 20px;
+}
+
+#body .bodyRight .center .sanPham .sanPhamRight input:hover {
+    cursor: pointer;
+}
+
+#body .bodyRight .center .sanPham .sanPhamRight input.sua {
+    color: white;
+    background: #bda87f;
+    border: none;
+}
+
+#body .bodyRight .center .sanPham .sanPhamRight input.xoa {
+    color: #bda87f;
+    border: 2px solid #bda87f;
+    background: white;
+}
+
+#body .bodyRight .center .sanPham .sanPhamRight input.xoa:hover {
+    color: white;
+    background: #bda87f;
+    border: none;
+}
+
+#body .bodyRight hr {
+    margin-bottom: 40px;
+}

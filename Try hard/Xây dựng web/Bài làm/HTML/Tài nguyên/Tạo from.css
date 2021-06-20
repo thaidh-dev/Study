@@ -1,0 +1,18 @@
+/* CSS Document */
+
+body{
+	font-family: tahoma;
+	font-size: 20px;
+}
+
+form div {
+	margin-bottom: 10px;
+	float;
+}
+
+label {
+	font-weight: bold;
+	float: left;
+}
+
+

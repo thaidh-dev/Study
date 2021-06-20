@@ -1,0 +1,60 @@
+/* CSS Document */
+*{margin: 0; padding: 0; box-sizing: border-box}
+
+body {
+	margin: auto;
+	width: 1000px;
+}
+
+#header {
+	width: 1000px;
+	height: 50px;
+	background: orange;
+}
+
+#header ul {
+	text-align: center;
+}
+
+#header ul li {
+	display: inline-block;
+	list-style: none;
+	padding-left: 30px;
+	position: relative;
+}
+
+#header ul li a {
+	line-height: 50px;
+	color: white;
+	font-size: 20px;
+	text-decoration: none;
+	font-variant: small-caps;
+}
+
+#header ul li ul.submenu {
+	position: absolute;
+}
+
+#header ul li ul.submenu li {
+	padding-left: 0px;
+}
+
+#header ul li ul.submenu li a{
+	display: block;
+	color: orange;
+	width: 250px;
+	border: 1px solid black;
+	border-radius: 5px;
+	text-align: left;
+	padding-left: 10px;
+}
+
+
+#header ul li:hover ul.submenu {
+	display: block;
+}
+
+#header ul li ul.submenu li a:hover {
+	background: orange;
+	color: white;
+}

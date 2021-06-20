@@ -1,0 +1,26 @@
+/* CSS Document */
+
+*{margin: 0;padding: 0;box-sizing: border-box;}
+
+#menu{
+	text-align: center;
+	font-size: 30px;
+	padding-top: 7px;
+	padding-bottom: 7px;
+	font-variant: small-caps;
+	color: blue;
+}
+
+#menu a{
+	text-decoration: none;
+}
+
+#menu a:hover{
+	color: red;
+	text-decoration: underline;
+}
+
+#menu a:active{
+	color: green;
+	text-decoration: none;
+}

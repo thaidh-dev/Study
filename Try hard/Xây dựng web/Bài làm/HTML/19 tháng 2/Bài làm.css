@@ -1,0 +1,164 @@
+*{margin: 0; padding: 0; box-sizing: border-box}
+
+#banner  {
+	position: relative
+}
+
+#banner .dangky {
+	width: 380px;
+	height: 58px;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	background: #386d08;
+	border-bottom-right-radius: 60px;
+}
+
+#banner .dangky ul li {
+	float: left;
+	list-style: none;
+}
+
+#banner .dangky ul li a{
+	color: white;
+	font-size: 20px;
+	padding: 0px 30px 0px 30px;
+	line-height: 58px;
+	text-decoration: none;
+	font-family: tahoma;
+}
+
+#menu {
+	background: #f16721;
+	width: 980px;
+	height: 40px;
+}
+
+#menu .menu ul li{
+	float: left;
+	list-style: none
+}
+
+#menu .menu ul li a {
+	color: white;
+	text-decoration: none;
+	font-size: 19px;
+	padding: 0px 15px 0px 15px;
+	line-height: 40px;
+	font-family: tahoma;
+}
+
+#menu form {
+	line-height: 40px;
+}
+
+#menu form .text {
+	color: darkgray;
+	font-size: 13px;
+	width: 252px;
+	height: 27px;
+	padding-left: 10px;
+	margin: 0px 3px 0px 15px;
+}
+
+#menu form .button {
+	width: 74px;
+	height: 26px;
+	color: white;
+	background: black;
+}
+
+#than .left {
+	width: 300px;
+	height: 962px;
+	border: 1px solid black;
+	float: left;
+	margin: 10px 10px 0px 0px;
+}
+
+#than .right {
+	width: 668px;
+	height: 962px;
+	border: 1px solid black;
+	float: left;
+	margin-top: 10px;
+}
+
+#than .left p {
+	font-family: tahoma;
+	font-size: 22px;
+	padding: 14px 0px 14px 28px;
+	color: #386d08;
+	font-variant: small-caps;
+}
+
+#than .left ul li {
+	padding: 20px 0px 0px 28px;
+	list-style-position: inside;
+	list-style-image: url("lá cam.png");
+}
+
+#than .left ul li a {
+	color: #f16721;
+	font-family: tahoma;
+	font-size: 15px;
+	text-decoration: none;
+}
+
+#than .left ul li.laxanh a {
+	color:#386d08;
+}
+
+#than .left ul li.laxanh {
+	list-style-image: url("lá xanh.png");
+}
+
+#than form {
+	width: 269px;
+	height: 227px;
+	background: #8fc400;
+	margin: 15px;
+}
+
+#than img {
+	margin: 15px;
+}
+
+#than .right p {
+	padding: 25px 0px 30px 20px;
+	font-family: tahoma;
+	font-size: 22px;
+	color: #386d08;
+	font-variant: small-caps;
+}
+
+#than .right img {
+	float: left;
+}
+
+#than .right p.tenqua {
+	padding: 10px 0px 0px 0px;
+	font-size: 18px;
+}
+
+#than .right p.infoqua {
+	padding-top: 25px;
+	font-size: 18px;
+	color: black;
+	font-variant: normal;
+}
+
+#than .right ul {
+	padding: 10px 0px 0px 10px;
+}
+#than .right ul li {
+	list-style-position: inside;
+	list-style-image: url(cobala.png);
+}
+
+#than .right ul li a {
+	text-decoration: none;
+	color: #a0a1a0;
+	font-size: 16px;
+}
+

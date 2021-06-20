@@ -1,0 +1,78 @@
+/* CSS Document */
+*{margin: 0;padding: 0;box-sizing: border-box;}
+
+/* position: fixed menu luôn luôn đứng ở 1 vị trí dù mày có lăn chuột đến đâu
+
+absolute con, relative cha
+
+.pc{
+	position: fixed;
+	left: 0;
+	bottom: 0;
+}
+
+.nhan{
+	w100
+	h50
+	background: red
+	color: white
+	line-height: 50
+	position: absolute
+}
+
+đặt relative cho cái chứa nó
+
+di chuột vào xuất hiện nút đặt hàng
+
+<button>đặt hàng</button>
+
+.sp button{
+	w100
+	height: 50px;
+	background: 
+	color:
+	line-height:
+	border: none
+	
+}
+đặt cả ảnh và nút vào 1 cái div
+display: ẩn đi, display: inline
+
+#menu ul li{
+	list-stype: none
+	float: left
+	line-height: 40px
+	padding: 0 20
+	position: relative
+}
+
+#menu ul li a{
+	color:
+	text-decoration; none
+}
+
+#menu ul li a:hover{
+	color:
+}
+
+#menu ul li ul{
+	position: absolute
+	display:none
+}
+
+#menu ul li: hover ul{
+	display: block
+}
+
+list-stype: url(.../images/);
+list-stype-position: inside;
+font-variant: small-caps (biến thành chữ in hoa nhỏ)
+border-bottom: 1px dotted; (viền nét đứt)
+
+box-shadow: 5px 5px 10px black (đổ màu cho ảnh)
+
+z-index: 10 đặt ở vị trí cao
+*/
+
+
+

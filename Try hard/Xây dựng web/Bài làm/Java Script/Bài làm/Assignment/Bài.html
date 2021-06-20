@@ -1,0 +1,205 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Đồ ăn nhanh toàn quốc</title>
+	<script src="Bài.js"></script>
+	<link rel="stylesheet" href="Bài.css">
+</head>
+
+<body>
+	<div>
+		<div id="header">
+				<div id="trongheader">
+					<ul>
+						<li><img src="Images/logo.png" alt=""></li>
+						<li><a href="" style="color: #ce2028">NOW</a></li>
+						<li><select name="" id="">
+								<option value="">Hà Nội</option>
+								<option value="">Hải Phòng</option>
+								<option value="">TP Hồ Chí Minh</option>
+								<option value="">Hải Dương</option>
+								<option value="">Nam Định</option>
+								<option value="">Nghệ An</option>
+								<option value="">Khánh Hòa</option>
+							</select></li>
+						<li><a href="">Đồ ăn</a></li>
+						<li><a href="">Trà sữa</a></li>
+						<li><a href="">Hoa quả</a></li>
+						<li><a href="">Bánh kẹo</a></li>
+						<li><a href="">Rượu bia</a></li>
+						<li><a href="">Pizza</a></li>
+						<li><a href="">Thuốc đau bụng</a></li>
+					</ul>
+					<form action="">
+						<a href="Đăng ký.html"><input type="button" value="Đăng nhập"></a>
+					</form>
+				</div>
+			</div>
+
+		<div id="than">
+				<img id="avatar" src="Images/b.jpg" alt="" style="width: 100%; height: 610px; position: absolute; left: 0px;">
+				<div id="trongthan">
+					<div id="left">
+							<p>Đặt đồ ăn, giao hàng từ 20'...</p>
+							<p style="font-size: 15px; font-weight: normal">Giao hàng xuyên màn đêm từ 7h đến 24h</p>
+							<form action="">
+								<input type="text" placeholder="Tìm địa điểm, món ăn, địa chỉ, ..." class="text">
+								<input type="button" class="button">
+								<img src="Images/kinh.png" alt="" class="img">
+							</form>
+							<div id="input">
+								<input type="button" value="All">
+								<input type="button" value="Cơm trưa">
+								<input type="button" value="Đồ ăn">
+								<input type="button" value="Thức uống">
+								<input type="button" value="Món chay">
+								<input type="button" value="Bánh kem">
+								<input type="button" value="Tráng miệng">
+								<input type="button" value="Vỉa hè">
+								<input type="button" value="Pizza">
+								<input type="button" value="Món gà">
+								<input type="button" value="Món lẩu">
+								<input type="button" value="Cơm hộp">
+								<input type="button" value="Phở">
+								<input type="button" value="Sushi">
+							</div>
+							<p>Sử dung App Now để có nhiều giảm giá và trải nhiệm tốt hơn</p>
+							<div id="app">
+								<img src="Images/táo.png" alt="">
+								<img src="Images/google.png" alt="">
+							</div>
+						</div>
+
+					<div id="right">
+							<p style="font-family: tahoma; font-size: 20px; font-weight: bold; margin-bottom: 10px">Ưu đãi</p>
+							<div id="monan">
+								<img src="Images/trà sữa.jpg" alt="" class="anhmonan">
+								<p><a href="">Trà sữa</a></p>
+								<p style="margin: 5px 0px 0px 5px">183 Việt Hưng</p>
+								<hr style="margin: 5px 0px 5px 0px">
+								<form action="" style="text-align: center">
+									<label for="" style="font-size: 18px; margin-right: 10px">Size</label>
+									<select name="loai" id="" onChange="gia.value = chon(loai.value)">
+										<option value="1">M</option>
+										<option value="2">L</option>
+										<option value="3">XL</option>
+										<option value="4">S</option>
+										<option value="5">XXL</option>
+									</select>
+									<input type="text" name="gia" readonly>
+								</form>
+							</div>
+							<div id="monan">
+								<img src="Images/chân gà.jpg" alt="" class="anhmonan">
+								<p><a href="">Chân gà rang</a></p>
+								<p style="margin: 5px 0px 0px 5px">120 Hoa Lâm</p>
+								<hr style="margin: 5px 0px 5px 0px">
+								<form action="" style="text-align: center">
+									<label for="" style="font-size: 18px; margin-right: 10px">Size</label>
+									<select name="loai" id="" onChange="gia.value = chon(loai.value)">
+										<option value="1">M</option>
+										<option value="5">L</option>
+										<option value="2">XL</option>
+										<option value="3">S</option>
+										<option value="4">XXL</option>
+									</select>
+									<input type="text" name="gia">
+								</form>
+							</div>
+							<div id="monan">
+								<img src="Images/gà.jpg" alt="" class="anhmonan">
+								<p><a href="">Đùi gà</a></p>
+								<p style="margin: 5px 0px 0px 5px">18 Ngọc Lâm</p>
+								<hr style="margin: 5px 0px 5px 0px">
+								<form action="" style="text-align: center">
+									<label for="" style="font-size: 18px; margin-right: 10px">Size</label>
+									<select name="loai" id="" onChange="gia.value = chon(loai.value)">
+										<option value="4">M</option>
+										<option value="5">L</option>
+										<option value="3">XL</option>
+										<option value="2">S</option>
+										<option value="1">XXL</option>
+									</select>
+									<input type="text" name="gia">
+								</form>
+							</div>
+							<div id="monan">
+								<img src="Images/khoai.jpg" alt="" class="anhmonan">
+								<p><a href="">Khoai tây chiên</a></p>
+								<p style="margin: 5px 0px 0px 5px">91 Hàm Nghi</p>
+								<hr style="margin: 5px 0px 5px 0px">
+								<form action="" style="text-align: center">
+									<label for="" style="font-size: 18px; margin-right: 10px">Size</label>
+									<select name="loai" id="" onChange="gia.value = chon(loai.value)">
+										<option value="1">M</option>
+										<option value="2">L</option>
+										<option value="3">XL</option>
+										<option value="4">S</option>
+										<option value="5">XXL</option>
+									</select>
+									<input type="text" name="gia">
+								</form>
+							</div>
+							<div id="monan">
+								<img src="Images/phở.jpg" alt="" class="anhmonan">
+								<p><a href="">Phở</a></p>
+								<p style="margin: 5px 0px 0px 5px">21 Trần Phú</p>
+								<hr style="margin: 5px 0px 5px 0px">
+								<form action="" style="text-align: center">
+									<label for="" style="font-size: 18px; margin-right: 10px">Size</label>
+									<select name="loai" id="" onChange="gia.value = chon(loai.value)">
+										<option value="2">M</option>
+										<option value="3">L</option>
+										<option value="5">XL</option>
+										<option value="4">S</option>
+										<option value="1">XXL</option>
+									</select>
+									<input type="text" name="gia">
+								</form>
+							</div>
+							<div id="monan">
+								<img src="Images/hamburger.jpg" alt="" class="anhmonan">
+								<p><a href="">Hamburger</a></p>
+								<p style="margin: 5px 0px 0px 5px">22 Điện Biên Phủ</p>
+								<hr style="margin: 5px 0px 5px 0px">
+								<form action="" style="text-align: center">
+									<label for="" style="font-size: 18px; margin-right: 10px">Size</label>
+									<select name="loai" id="" onChange="gia.value = chon(loai.value)">
+										<option value="3">M</option>
+										<option value="1">L</option>
+										<option value="5">XL</option>
+										<option value="4">S</option>
+										<option value="2">XXL</option>
+									</select>
+									<input type="text" name="gia">
+								</form>
+							</div>
+					</div>
+
+					<div id="slideshow">
+						<form action="">
+							<input type="radio" name="gt" onClick="chuyenanh()">
+							<input type="radio" name="gt" onClick="chuyenanh()">
+							<input type="radio" name="gt" onClick="chuyenanh()">
+						</form>
+					</div>
+
+				</div>
+			</div>
+
+		<div id="trenfooter">
+				<p style="font-weight: bold; font-size: 20px">Đơn hàng của bạn sẽ được bảo quản như thế nào?</p>
+				<p>Now sẽ bảo quản đơn của bạn bằng túi & thùng để chống nắng mưa, giữ nhiệt... trên đường đi một cách tốt nhất.</p>
+				<img src="Images/a.jpg" alt="">
+			</div>
+
+		<div id="footer">
+				<img src="Images/g.png" alt="" style="float: left; margin-top: 20px">
+				<img src="Images/ios.jpg" alt="" class="den">
+				<img src="Images/an.jpg" alt="" class="den">
+				<img src="Images/q.png" alt="" class="do">
+		</div>
+	</div>
+</body>
+</html>

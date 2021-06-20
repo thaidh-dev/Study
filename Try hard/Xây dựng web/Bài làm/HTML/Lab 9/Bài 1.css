@@ -1,0 +1,9 @@
+/* CSS Document */
+*{margin: 0; padding: 0; box-sizing: border-box}
+
+#lol {
+	width: 300px;
+	margin: auto;
+	height: 300px;
+}
+

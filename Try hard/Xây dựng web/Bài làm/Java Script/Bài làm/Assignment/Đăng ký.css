@@ -1,0 +1,122 @@
+* {margin: 0; padding: 0; box-sizing: border-box}
+
+#than {
+	width: 1020px;
+	height: 800px;
+	margin: auto;
+	margin-top: 20px;
+	background: #f8f8f8;
+}
+
+#trai {
+	width: 300px;
+	height: 660px;
+	float: left;
+	margin-right: 10px;
+	padding: 10px;
+	background: #ffffff;
+	font-family: tahoma;
+}
+
+#trai p {
+	margin-top: 10px
+}
+
+#trai img {
+	width: 290px;
+	margin-top: 30px
+}
+
+#phai {
+	width: 700px;
+	height: 650px;
+	float: left;
+	background: #ffffff;
+	padding: 10px;
+	margin-top: 10px;
+	margin-right: 10px;
+	border-radius: 10px;
+	font-family: tahoma;
+}
+
+hr {
+	margin-top: 10px;
+}
+
+#yeucau2 {
+	width: 1000px;
+	margin: auto;
+	margin-top: 20px;
+}
+
+table {
+	width: 500px;
+	height: 500px;
+	margin: auto;
+}
+
+td {
+	padding: 10px;
+	text-align: center;
+}
+
+#phai .nhap {
+	margin-top: 30px;
+	font-family: tahoma;
+	font-size: 20px;
+	height: 30px;
+	line-height: 30px;
+}
+
+#phai .nhap input.ip {
+	width: 350px;
+	height: 30px;
+	font-family: tahoma;
+	float: right;
+	padding-left: 10px;
+	margin-right: 30px
+}
+
+#phai .nhap label {
+	margin-left: 30px;
+}
+
+#phai .nhap select {
+	width: 70px;
+	height: 30px;
+}
+
+#phai #tao {
+	margin-top: 30px
+}
+
+#phai #tao .button {
+	width: 350px;
+	height: 40px;
+	color: white;
+	margin-left: 300px;
+	background: #fdd835;
+	border: none;
+	border-radius: 5px;
+}
+
+#phai #tao p {
+	width: 350px;
+	height: 50px;
+	margin-left: 300px;
+	margin-top: 10px;
+	font-family: tahoma;
+	font-size: 15px;
+}
+
+#phai #tao p b {
+	color: #358fd5;
+}
+
+#phai span {
+	float: left;
+	font-family: tahoma;
+	font-size: 15px;
+	color: red;
+	margin-left: 300px
+}

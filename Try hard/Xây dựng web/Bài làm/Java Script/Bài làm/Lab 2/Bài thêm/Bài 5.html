@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+	<script src="Bài 5.js"></script>
+	<link rel="stylesheet" href="Bài 5.css">
+</head>
+
+<body>
+	<div id="than">
+		<form action="">
+			<div id="trongthan">
+				<label for="">Khách hàng</label>
+				<input type="text" name="ten">
+			</div>
+			<div id="trongthan">
+				<label for="">Sản phẩm</label>
+				<select name="sp" id="" onChange="gia.value = chonsp(sp.value)">
+					<option value="tao">Táo</option>
+					<option value="cam">Cam</option>
+					<option value="nho">Nho</option>
+					<option value="mit">Mít</option>
+					<option value="le">Lê</option>
+				</select>
+			</div>
+			<div id="trongthan">
+				<label for="">Giá</label>
+				<input type="text" name="gia" readonly>
+			</div>
+			<div id="trongthan">
+				<label for="">Số lượng</label>
+				<input type="text" name="soluong" onChange="tien.value = thanhtien(gia.value, soluong.value)">
+			</div>
+			<div id="trongthan">
+				<label for="">Thành tiền</label>
+				<input type="text" name="tien" readonly>
+			</div>
+			<div id="in">
+				<input type="button" value="In hóa đơn" onClick="inhoadon(ten.value, sp.value, gia.value, soluong.value, tien.value)">
+			</div>
+		</form>
+	</div>
+</body>
+</html>

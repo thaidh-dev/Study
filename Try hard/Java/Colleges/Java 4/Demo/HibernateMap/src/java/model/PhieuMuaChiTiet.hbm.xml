@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Aug 31, 2019 9:42:20 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="model.PhieuMuaChiTiet" table="phieu_mua_chi_tiet" schema="dbo" catalog="java4_assignment" optimistic-lock="version">
+        <composite-id name="id" class="model.PhieuMuaChiTietId">
+            <key-property name="id" type="int">
+                <column name="id" />
+            </key-property>
+            <key-property name="maSanPham" type="int">
+                <column name="ma_san_pham" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="phieuMua" class="model.PhieuMua" update="false" insert="false" fetch="select">
+            <column name="id" not-null="true" />
+        </many-to-one>
+        <many-to-one name="sanPham" class="model.SanPham" update="false" insert="false" fetch="select">
+            <column name="ma_san_pham" not-null="true" />
+        </many-to-one>
+        <property name="soLuongDaMua" type="int">
+            <column name="so_luong_da_mua" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

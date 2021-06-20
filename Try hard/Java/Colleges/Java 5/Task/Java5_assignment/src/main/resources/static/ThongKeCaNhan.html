@@ -1,0 +1,19 @@
+<div>
+    <table border="1">
+        <tr>
+            <th>STT</th>
+            <th>Tên nhân viên</th>
+            <th>Tổng thành tích</th>
+            <th>Tổng kỉ luật</th>
+            <th>Điểm thưởng</th>
+        </tr>
+
+        <tr ng-repeat="ttcn in lstThanhTichCaNhan">
+            <td>{{$index+1}}</td>
+            <td>{{ttcn.tenNhanVien}}</td>
+            <td>{{ttcn.tongThanhTich}}</td>
+            <td>{{ttcn.tongKyLuat}}</td>
+            <td>{{ttcn.diemThuong}}</td>
+        </tr>
+    </table>
+</div>

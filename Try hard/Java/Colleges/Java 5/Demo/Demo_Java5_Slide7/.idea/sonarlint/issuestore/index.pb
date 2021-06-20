@@ -1,0 +1,21 @@
+
+7
+pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
+[
++src/main/webapp/i18n/messages_en.properties,9\4\941ed2b203a04b962d08ed325ec49370c937b26b
+^
+.src/main/webapp/WEB-INF/applicationContext.xml,0\9\098550351661f776bec95040b2d50042c4599987
+[
++src/main/webapp/i18n/messages_ja.properties,8\e\8e15bb647bf5d3a84dcd1a870c3d2448b05c0354
+[
++src/main/webapp/i18n/messages_fr.properties,3\8\383d21a6bdbac996785d6f8681329991c248afe4
+\
+,src/main/java/controller/HomeController.java,5\4\545e013a4d3637680bc23083ec631ffa9e721efb
+[
++src/main/webapp/i18n/messages_vi.properties,e\f\ef13aca4ad765b486cb01a0e57840fc4f3aad831
+O
+src/main/webapp/WEB-INF/web.xml,2\e\2e22b6edd746fa3dc40ad7276c87c8d87d72a392
+^
+.src/main/webapp/WEB-INF/dispatcher-servlet.xml,5\6\5610820762bc3ec47cc9dbd7324c057405172b6d
+Z
+*src/main/webapp/WEB-INF/views/jsp/home.jsp,1\c\1c626828401cb21da1e38f59e64e35697c348563

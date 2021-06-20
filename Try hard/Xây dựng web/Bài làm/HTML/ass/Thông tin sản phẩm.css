@@ -1,0 +1,231 @@
+/* CSS Document */
+*{margin: 0; padding: 0; box-sizing: border-box}
+
+body {
+	margin: auto;
+	width: 1000px;
+	font-family: tahoma;
+}
+
+#menu {
+	background: #17181c;
+	height: 50px;
+}
+
+#menu ul li {
+	float: left;
+	list-style: none;
+}
+
+#menu ul li a {
+	color: white;
+	text-decoration: none;
+	padding: 0px 10px;
+	line-height: 50px;
+	border-right: 1px solid white;
+}
+
+#menu ul li span {
+	color: white;
+	line-height: 50px;
+	border-right: 1px solid white;
+	padding: 0px 10px;
+}
+
+#menu ul li a.active {
+	display: block;
+	background: white;
+	color: black;
+}
+
+#menu ul li:hover {
+	background: #8BC14B;
+	border: none
+}
+
+#menu ul li a:hover {
+	font-weight: bold;
+}
+
+#menu ul li span:hover {
+	font-weight: bold;
+}
+
+#than .left {
+	width: 400px;
+	height: 1000px;
+	margin: 10px 10px 0px 0px;
+	float: left;
+}
+
+#than .right {
+	width: 590px;
+	height: 1000px;
+	margin: 10px 0px 0px 0px;
+	float: left;
+}
+
+#than .left {
+	text-align: center;
+	padding-top: 50px
+}
+
+#than .chudo {
+	color: red;
+}
+
+#than .chunho {
+	font-size: 20px;
+}
+
+#than .chuthuong {
+	font-size: 25px;
+}
+
+#than .ten {
+	font-size: 30px;
+	margin: 20px 20px 5px 20px;
+}
+
+#than .img {
+	margin: 0px 0px 5px 20px;
+}
+
+#than hr {
+	margin: 0px 20px 20px 20px;
+}
+
+#than p {
+	margin: 0px 20px 5px 20px;
+}
+
+#than .number {
+	height: 30px;
+	width: 100px;
+	margin: 5px 0px 5px 20px;
+	text-align: center;
+}
+
+#than .right .ba {
+	width: 590px;
+	height: 90px;
+}
+
+#than .soluong {
+	float: left;
+}
+
+#than .chonmua input {
+	width: 200px;
+	height: 70px;
+	font-size: 20px;
+	color: white;
+	background: #aa000a;
+	border-radius: 10px;
+	padding-left: 40px;
+	margin-left: 70px;
+}
+
+#than .chonmua {
+	position: relative;
+	float: left
+}
+
+#than .xe {
+	position: absolute;
+	left: 100px;
+	top: 23px
+}
+
+#than .xetai {
+	float: left;
+	margin: 5px 10px 0px 20px;
+}
+
+#than .nam {
+	position: relative;
+	height: 80px;
+}
+
+#than .nam ul li {
+	list-style-position: inside;
+	list-style-image: url("vê.png");
+	font-size: 20px;
+	margin: 10px 20px 0px 20px;
+	line-height: 80px;
+}
+
+#than .nam ul li span.phai {
+	float: right;
+	font-size: 17px;
+}
+
+#than .nam ul li span {
+	margin-left: 150px
+}
+
+#than .nam img {
+	position: absolute;
+	width: 100px;
+	height: 80px;
+	left: 60px;
+	top: 0px;
+	border-radius: 10%;
+	border: 1px solid black;
+}
+
+#than .tong {
+	float: right;
+	font-size: 20px;
+	margin: 20px 20px 0px 0px;
+}
+
+#than .left .duoi img {
+	width: 80px;
+	height: 80px;
+	margin: 10px 5px 0px 5px;
+	border-radius: 10%;
+	border: 1px solid black;
+}
+
+#than .left img {
+	border-radius: 10%;
+	border: 1px solid black;
+	width: 300px;
+	height: 300px;
+}
+
+#menu ul li {
+	position: relative;
+}
+
+#menu ul li ul.doan {
+	width: 300px;
+}
+
+#menu ul li ul.quanao {
+	width: 340px;
+}
+
+#menu ul li ul.cay {
+	width: 160px;	
+}
+
+#menu ul li ul {
+	position: absolute;
+	background: white;
+	display: none;
+}
+
+#menu ul li ul li a {
+	color: black;
+	border-right: 1px solid black;
+}
+
+#menu ul li:hover ul {
+	display: block;
+}
+
+#menu ul li ul li:hover {
+	background: white;
+}

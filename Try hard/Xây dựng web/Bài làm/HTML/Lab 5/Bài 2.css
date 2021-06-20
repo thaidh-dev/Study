@@ -1,0 +1,38 @@
+/* CSS Document */
+*{margin: 0;padding: 0;box-sizing: border-box;}
+
+#khungto{
+	margin: auto;
+}
+
+.menu{
+	text-align: center;
+	font-size: 20px;
+	border-radius: 10px gray;
+	width: 20%;
+	padding: 10px;
+	box-shadow: 0px 0px 5px gray;
+	border-radius: 10px;
+	margin: 5px;
+	float: left;
+}
+
+.menu img{
+	max-width: 95%;
+}
+
+.ten{
+	color: blue;
+	font-variant: small-caps
+}
+
+.giacu{
+	color: gray;
+}
+
+.giamoi{
+	color: red;
+	font-size: larger;
+}
+
+

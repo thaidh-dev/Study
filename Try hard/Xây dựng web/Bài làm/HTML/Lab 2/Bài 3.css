@@ -1,0 +1,51 @@
+/* CSS Document */
+*{margin: 0;padding: 0;box-sizing: border-box;}
+
+#nen{
+	width: 650px;
+	height: 600px;
+	background: #066179;
+	margin: auto
+}
+
+#top{
+	width: 650px;
+	height: 200px;
+}
+
+#mid{
+	width: 650px;
+	height: 100px;
+	background: white
+}
+
+#bot{
+	width: 650px;
+	height: 300px;
+	padding-top: 30px;
+	margin-left: 20px;
+}
+
+.fontmenu{
+	font-size: 20px;
+	color: #066179;
+	font-family: tahoma;
+	padding: 40px
+}
+
+.fonttieude{
+	font: bold;
+	font-size: 16px;
+	color: white;
+	font-family: tahoma;
+	margin-left: 220px 
+}
+
+.fontnd{
+	font-size: 14px;
+	font-family: tahoma;
+	color: white;
+	margin-left: 220px;
+	margin-right: 30px
+}
+

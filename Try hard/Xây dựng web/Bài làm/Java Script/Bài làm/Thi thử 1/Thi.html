@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+	<script src="Thi.js"></script>
+</head>
+
+<body>
+	<div id="bai1" style="text-align: center; width: 1000px; margin: auto">
+		<button onClick="pre()">Pre</button>
+		<img src="Images/chân gà.jpg" alt="" width="200px" height="200px">
+		<button onClick="next()">Next</button>
+	</div>
+	<form action="">
+		<div id="bai2">
+			<h1>Hóa đơn</h1>
+			<div>
+				<label for="">Tên khách hàng</label>
+				<input type="text">
+			</div>
+			<div>
+				<label for="">Số điện thoại</label>
+				<input type="text">
+			</div>
+			<div>
+				<label for="">Sản phẩm</label>
+				<select name="loai" id="" onChange="giatien.value = gia(loai.value)">
+					<option value="tao">Táo</option>
+					<option value="cam">Cam</option>
+					<option value="nho">Nho</option>
+				</select>
+			</div>
+			<div>
+				<label for="">Giá</label>
+				<input type="text" readonly name="giatien">
+			</div>
+			<div>
+				<label for="">Số lượng</label>
+				<input type="number" max="10" min="1" name="sl">
+			</div>
+			<div>
+				<input type="button" value="Thành tiền" onClick="tt(giatien.value, sl.value)">
+				<span></span>
+			</div>
+		</div>
+	</form>	
+</body>
+</html>

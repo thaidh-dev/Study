@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <h2>ĐẶT HÀNG</h2>
+    <form onsubmit="return kiem_tra()">
+        <p>
+            <label>Sản phẩm</label>
+            <input id="san_pham"/>
+        </p>
+        <p>
+            <label>Loại</label>
+            <select id="loai">
+                <option></option>
+                <option value="DT">Điện thoại</option>
+                <option value="MT">Máy tính</option>
+            </select>
+        </p>
+        <p>
+            <label>Đơn giá</label>
+            <input id="don_gia" />
+        </p>
+        <p>
+            <label>Nơi nhận hàng</label>
+            <input type="radio" name="dia_chi" onclick="hien_thi(false)" />Nội thành
+            <input type="radio" name="dia_chi" onclick="hien_thi(true)" />Ngoại thành
+        </p>
+        <p id="phi_vc" style="display:none">
+            <label>Phí vận chuyển</label>
+            <input value="100000" readonly />
+        </p>
+        <hr />
+        <button>Đặt mua</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,52 @@
+*{margin: 0;padding: 0;box-sizing: border-box;}
+
+#wrapper{
+	width: 980px;
+	height: 940px;
+	background: red;
+}
+
+#header{
+	width: 980px;
+	height: 150px;
+	background: blue;
+}
+
+#header2{
+	width: 980px;
+	height: 40px;
+	background: green
+}
+
+#menu{
+	width: 980px;
+	height: 700px;
+	background: pink
+}
+
+#footer{
+	width: 980px;
+	height: 50px;
+	background: black
+}
+
+#left{
+	width: 200px;
+	height: 700px;
+	background: yellow;
+	float: left;
+}
+
+#center{
+	width: 580px;
+	height: 700px;
+	background: orange;
+	float: left;
+}
+
+#right{
+	width: 200px;
+	height: 700px;
+	background-color: purple;
+	float: left;
+}

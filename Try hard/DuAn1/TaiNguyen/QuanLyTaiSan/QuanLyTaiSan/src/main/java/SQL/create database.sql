@@ -1,0 +1,195 @@
+
+CREATE DATABASE QuanLyTaiSan
+
+GO
+USE QuanLyTaiSan
+GO
+
+CREATE TABLE PHONGBAN (
+	MAPB VARCHAR(7) PRIMARY KEY,
+	TENPB NVARCHAR(50) NOT NULL UNIQUE
+)
+
+CREATE TABLE NHANVIEN(
+	MANV VARCHAR(7) PRIMARY KEY,
+	TENNV NVARCHAR(50) NOT NULL,
+	GIOITINH BIT NOT NULL DEFAULT(1),
+	NGAYSINH DATE NOT NULL,
+	DIACHI NTEXT NOT NULL,
+	TAIKHOAN VARCHAR(50) NOT NULL UNIQUE,
+	MATKHAU VARCHAR(20) NULL,
+	VAITRO BIT NOT NULL DEFAULT(0),
+	MAPB VARCHAR(7) FOREIGN KEY REFERENCES dbo.PHONGBAN(MAPB)
+)
+
+CREATE TABLE QUOCGIA(
+	MAQG VARCHAR(7) NOT NULL PRIMARY KEY,
+	TENQG NVARCHAR(30) NOT NULL UNIQUE
+)
+
+CREATE TABLE NHASANXUAT (
+	ID INT IDENTITY PRIMARY KEY,
+	TENNSX NVARCHAR(255) NOT NULL,
+	MAQG VARCHAR(7) NOT NULL FOREIGN KEY REFERENCES dbo.QUOCGIA(MAQG)
+)
+
+CREATE TABLE PHANLOAI (
+	ID INT IDENTITY PRIMARY KEY,
+	TENPL NVARCHAR(50) NOT NULL UNIQUE
+)
+
+CREATE TABLE TAISAN (
+	MATS VARCHAR(7) PRIMARY KEY,
+	TENTS NVARCHAR(50) NOT NULL,
+	MOTA NTEXT NULL,
+	NGUYENGIA BIGINT NOT NULL,
+	TILEKHAUHAO FLOAT NOT NULL,
+	THOIGIANKHAUHAO FLOAT NOT NULL ,
+	NAMBDSUDUNG INT NULL,
+	MANSX INT FOREIGN KEY REFERENCES dbo.NHASANXUAT(ID),
+	MAPL INT FOREIGN KEY REFERENCES dbo.PHANLOAI(ID)
+)
+
+CREATE TABLE PHIEUBANGIAO (
+	ID INT IDENTITY PRIMARY KEY,
+	NGAYBANGIAO DATE NOT NULL DEFAULT(GETDATE()),
+	NGUOISUDUNG NVARCHAR(100) NULL,
+	MAPB VARCHAR(7) FOREIGN KEY REFERENCES dbo.PHONGBAN(MAPB),
+	MATS VARCHAR(7) FOREIGN KEY REFERENCES dbo.TAISAN(MATS)
+)
+
+-- Phòng Ban
+INSERT [dbo].[PHONGBAN] ([MAPB], [TENPB]) VALUES ('PB00001', N'Phòng Kinh Doanh')
+INSERT [dbo].[PHONGBAN] ([MAPB], [TENPB]) VALUES ('PB00002', N'Phòng Kinh Doanh Đa Ngành')
+INSERT [dbo].[PHONGBAN] ([MAPB], [TENPB]) VALUES ('PB00003', N'Phòng Kinh Tế Kỹ Thuật')
+INSERT [dbo].[PHONGBAN] ([MAPB], [TENPB]) VALUES ('PB00004', N'Phòng Quản Trị')
+INSERT [dbo].[PHONGBAN] ([MAPB], [TENPB]) VALUES ('PB00005', N'Phòng Tài Chính Kế Toán')
+INSERT [dbo].[PHONGBAN] ([MAPB], [TENPB]) VALUES ('PB00006', N'Phòng Thị Trường')
+INSERT [dbo].[PHONGBAN] ([MAPB], [TENPB]) VALUES ('PB00007', N'Phòng Tổ Chức Hành Chính')
+
+INSERT [dbo].[NHANVIEN] ([MANV], [TENNV], [GIOITINH], [NGAYSINH], [DIACHI], [TAIKHOAN], [MATKHAU], [VAITRO], [MAPB]) VALUES ('NV00001', N'Vũ Đức Phước', 1, CAST(N'1996-04-14' AS Date), N'Hưng Yên', N'admin', N'admin', 1, 'PB00004')
+INSERT [dbo].[NHANVIEN] ([MANV], [TENNV], [GIOITINH], [NGAYSINH], [DIACHI], [TAIKHOAN], [MATKHAU], [VAITRO], [MAPB]) VALUES ('NV00002', N'Phạm Tiến Trung', 1, CAST(N'1996-06-23' AS Date), N'Hà Nội', N'trungptph@fpt.edu.vn', null , 0, 'PB00001')
+INSERT [dbo].[NHANVIEN] ([MANV], [TENNV], [GIOITINH], [NGAYSINH], [DIACHI], [TAIKHOAN], [MATKHAU], [VAITRO], [MAPB]) VALUES ('NV00003', N'Tô Tiến Thành', 1, CAST(N'1996-10-10' AS Date), N'Hà Nội', N'thanhttph07077@fpt.edu.vn', null, 0, 'PB00002')
+INSERT [dbo].[NHANVIEN] ([MANV], [TENNV], [GIOITINH], [NGAYSINH], [DIACHI], [TAIKHOAN], [MATKHAU], [VAITRO], [MAPB]) VALUES ('NV00004', N'Hồ Tuấn Anh', 1, CAST(N'1996-07-14' AS Date), N'Hà Nội', N'anhhtph07069@fpt.edu.vn', null, 0, 'PB00003')
+
+INSERT [dbo].[QUOCGIA] ([MAQG], [TENQG]) VALUES (N'AR', N'Argentina')
+INSERT [dbo].[QUOCGIA] ([MAQG], [TENQG]) VALUES (N'CB', N'Campuchia')
+INSERT [dbo].[QUOCGIA] ([MAQG], [TENQG]) VALUES (N'CA', N'Canada')
+INSERT [dbo].[QUOCGIA] ([MAQG], [TENQG]) VALUES (N'DA', N'Đan Mạch')
+INSERT [dbo].[QUOCGIA] ([MAQG], [TENQG]) VALUES (N'DE', N'Đức')
+INSERT [dbo].[QUOCGIA] ([MAQG], [TENQG]) VALUES (N'KS', N'Hàn Quốc')
+INSERT [dbo].[QUOCGIA] ([MAQG], [TENQG]) VALUES (N'LA', N'Lào')
+INSERT [dbo].[QUOCGIA] ([MAQG], [TENQG]) VALUES (N'US', N'Mỹ')
+INSERT [dbo].[QUOCGIA] ([MAQG], [TENQG]) VALUES (N'JA', N'Nhật Bản')
+INSERT [dbo].[QUOCGIA] ([MAQG], [TENQG]) VALUES (N'FR', N'Pháp')
+INSERT [dbo].[QUOCGIA] ([MAQG], [TENQG]) VALUES (N'TH', N'Thái Lan')
+INSERT [dbo].[QUOCGIA] ([MAQG], [TENQG]) VALUES (N'SZ', N'Thụy Sĩ')
+INSERT [dbo].[QUOCGIA] ([MAQG], [TENQG]) VALUES (N'CH', N'Trung Quốc')
+INSERT [dbo].[QUOCGIA] ([MAQG], [TENQG]) VALUES (N'AS', N'Úc')
+INSERT [dbo].[QUOCGIA] ([MAQG], [TENQG]) VALUES (N'VN', N'Việt Nam')
+
+INSERT [dbo].[NHASANXUAT] ([TENNSX], [MAQG]) VALUES (N'Tanzi', N'VN')
+INSERT [dbo].[NHASANXUAT] ([TENNSX], [MAQG]) VALUES (N'Biot', N'SZ')
+INSERT [dbo].[NHASANXUAT] ([TENNSX], [MAQG]) VALUES ( N'Lius', N'VN')
+INSERT [dbo].[NHASANXUAT] ([TENNSX], [MAQG]) VALUES (N'Hbs', N'VN')
+INSERT [dbo].[NHASANXUAT] ([TENNSX], [MAQG]) VALUES ( N'Toyota', N'JA')
+INSERT [dbo].[NHASANXUAT] ([TENNSX], [MAQG]) VALUES ( N'Mazda', N'JA')
+
+INSERT [dbo].[NHASANXUAT] ([TENNSX], [MAQG]) VALUES
+/*1*/	(N'Asanzo', N'AS'),
+/*2*/	(N'Mitsubishi','TH'),
+/*3*/	(N'Shenya','DA'),
+/*4*/	(N'Bosch','KS'),
+/*5*/	(N'Fuhrer','FR'),
+/*6*/	(N'Cocacola','SZ'),
+/*7*/	(N'Nivea','AS'),
+/*8*/   (N'Panasonic','VN'),
+/*9*/	(N'Boston','VN'),
+/*10*/	(N'Bose','VN'),
+/*11*/	(N'Pier Cardin','VN'),
+/*12*/	(N'Lavie','VN');
+
+
+INSERT [dbo].[PHANLOAI] ([TENPL]) VALUES (N'Công cụ dụng cụ')
+INSERT [dbo].[PHANLOAI] ([TENPL]) VALUES (N'Nhà cửa, Vật kiến trúc')
+INSERT [dbo].[PHANLOAI] ([TENPL]) VALUES (N'Phương tiện vận tải')
+
+INSERT [dbo].[TAISAN] (MATS, [TENTS], [MOTA], [NGUYENGIA], [TILEKHAUHAO], [THOIGIANKHAUHAO], [MANSX], [MAPL], [NAMBDSUDUNG]) VALUES ('TS00001', N'Máy Khoan', NULL, 1500000, 20, 5, 2, 1, 2018)
+INSERT [dbo].[TAISAN] (MATS, [TENTS], [MOTA], [NGUYENGIA], [TILEKHAUHAO], [THOIGIANKHAUHAO], [MANSX], [MAPL], [NAMBDSUDUNG]) VALUES ('TS00002', N'Mazda 3', NULL, 900000000, 10, 10, 8, 3, 2011)
+INSERT [dbo].[TAISAN] (MATS, [TENTS], [MOTA], [NGUYENGIA], [TILEKHAUHAO], [THOIGIANKHAUHAO], [MANSX], [MAPL], [NAMBDSUDUNG]) VALUES ('TS00003', N'Mazda 6', NULL, 1000000000, 10, 10, 8, 3, 2012)
+INSERT [dbo].[TAISAN] (MATS, [TENTS], [MOTA], [NGUYENGIA], [TILEKHAUHAO], [THOIGIANKHAUHAO], [MANSX], [MAPL], [NAMBDSUDUNG]) VALUES ('TS00004', N'Toyota Vios', NULL, 700000000, 10, 10, 7, 3, 2016)
+INSERT [dbo].[TAISAN] (MATS, [TENTS], [MOTA], [NGUYENGIA], [TILEKHAUHAO], [THOIGIANKHAUHAO], [MANSX], [MAPL], [NAMBDSUDUNG]) VALUES
+	('TS00005',N'Xe 4 chỗ',N'Xe Kia Morning cũ',50000000,10,10,1,2, 2017),  /*1*/
+	('TS00006',N'Xe 7 chỗ',N'Xe hãng Toyota',100000000,6.66,15,2,2, 2016),   /*2*/
+	('TS00007',N'Kem dưỡng da',N'Kem Nivea 2 in 1 mới',250000,50,2,7,3, 2017),/*3*/
+	('TS00008',N'Kìm cắt dây thép',N'',200000,20,5,4,3, 2018),              /*4*/
+	('TS00009',N'Bút thử điện',N'',30000,10,10,8,3, 2001),                  /*5*/
+	('TS00010',N'Cốc',N'Thủy tinh',50000,33.33,3,12,3, 2007),                  /*6*/
+	('TS00011',N'Xe tải mini',N'Xe Merc cũ',150000000,10,10,9,2, 2009),    /*7*/
+	('TS00012',N'Xe máy',N'',50000000,16.66,6,10,2, 2006),                  /*8*/
+	('TS00013',N'Thước dài',N'Thước sắt 30cm',21000,10,10,11,3, 2010),         /*9*/
+	('TS00014',N'Căn hộ chung cư',N'Chung cư FLC',1000000000,10,10,12,2, 2015),/*10*/
+	('TS00015',N'Nhà kho',N'',10000000,6.66,15,3,3, 2013);                     /*11*/
+
+insert into dbo.PHIEUBANGIAO
+(
+    NGAYBANGIAO,
+    NGUOISUDUNG,
+    MAPB,
+    MATS
+)
+ values
+	('2010-12-10','','PB00001','TS00001'),/*1*/
+	('2011-02-12','','PB00002','TS00014'),/*2*/
+	('2012-06-05','','PB00003','TS00012'),/*3*/
+	('2013-10-20','','PB00004','TS00006'),/*4*/
+	('2014-10-20','','PB00003','TS00008'),/*5*/
+	('2015-10-20','','PB00002','TS00011'),/*6*/
+	('2016-10-20','','PB00004','TS00004'),/*7*/
+	('2017-10-20','','PB00001','TS00005'),/*8*/
+	('2018-10-20','','PB00001','TS00009'),/*9*/
+	('2019-01-20','','PB00002','TS00013'),/*10*/
+	('2015-10-20','','PB00003','TS00002');/*11*/
+
+--PROC
+
+--proc #1
+if OBJECT_ID('sp_thongketaisan_1') is not null
+	drop proc sp_thongketaisan_1
+go
+create proc sp_thongketaisan_1
+as begin
+	SELECT DISTINCT pl.TENPL, COUNT(ts.MATS) as 'SL', SUM(CAST(NGUYENGIA AS BIGINT)) as 'Tong gia tri'
+	FROM dbo.TAISAN ts INNER JOIN dbo.PHANLOAI pl on ts.MAPL = pl.ID
+	GROUP BY pl.TENPL
+END
+
+exec sp_thongketaisan_1
+
+--proc #2
+if OBJECT_ID('sp_thongketaisan_2') is not null
+	drop proc sp_thongketaisan_2
+go
+create proc sp_thongketaisan_2
+as begin
+	SELECT TENPB tenpb, COUNT(TAISAN.MATS) soluong, SUM(CAST(NGUYENGIA AS BIGINT)) tongtaisan FROM dbo.PHONGBAN
+				LEFT JOIN PHIEUBANGIAO on PHONGBAN.MAPB = PHIEUBANGIAO.MAPB
+				LEFT JOIN TAISAN on PHIEUBANGIAO.MATS = TAISAN.MATS
+	GROUP BY TENPB
+end
+
+exec sp_thongketaisan_2
+
+--proc #3
+if OBJECT_ID('sp_hetkhauhao') is not null
+	drop proc sp_hetkhauhao
+go
+create proc sp_hetkhauhao
+as begin
+	select tents,tenpl,NGAYBANGIAO,thoigiankhauhao
+	from taisan ts join PHANLOAI pl on ts.mapl=pl.id
+				   join PHIEUBANGIAO bg on ts.MATS=bg.MATS
+	where (DATEDIFF(DAY,NGAYBANGIAO,GETDATE())/365)-thoigiankhauhao>=0
+end
+
+exec sp_hetkhauhao

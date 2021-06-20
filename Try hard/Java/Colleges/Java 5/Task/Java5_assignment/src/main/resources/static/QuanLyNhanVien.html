@@ -1,0 +1,78 @@
+<div>
+    <form name="formQLNV">
+        <input type="text" placeholder="Tên nhân viên" name="txtTenNhanVien"
+               required maxlength="50"
+               ng-model="nhanVien.tenNhanVien"> <br>
+
+        <input type="radio" name="gt"
+               ng-init="nhanVien.gioiTinh = true" ng-model="nhanVien.gioiTinh" ng-value="true"> Nam
+        <input type="radio" name="gt"
+               ng-model="nhanVien.gioiTinh" ng-value="false"> Nữ <br>
+
+        <input type="date"
+               required
+               ng-model="nhanVien.ngaySinh"> <br>
+
+        <input type="email" placeholder="Email"
+               required maxlength="50"
+               ng-model="nhanVien.email">
+        <span class="error" ng-show="trungEmail">Trùng email</span>
+        <br>
+
+        <input type="text" placeholder="Số điện thoại"
+               required ng-pattern="/^0[0-9]{9,10}$/" maxlength="11"
+               ng-model="nhanVien.sdt">
+        <span class="error" ng-show="trungSdt">Trùng số điện thoại</span>
+        <br>
+
+        <input type="text" placeholder="Lương"
+               required ng-pattern="/^[0-9]+$/"
+               ng-model="nhanVien.luong"> <br>
+
+        <input type="text" placeholder="Ghi chú"
+               ng-model="nhanVien.ghiChu"> <br>
+
+        <select ng-options="value.tenPhong for (key, value) in lstPhongBan"
+                ng-model="nhanVien.phongBan">
+        </select> <br>
+    </form>
+
+    <br>
+    <button ng-hide="index" ng-click="them()">Thêm</button>
+    <button ng-disabled="formQLNV.$invalid" ng-show="index" ng-click="luu(nhanVien)">Lưu</button>
+    <button ng-show="index" ng-click="huy()">Hủy</button>
+    <button ng-click="moi()">Mới</button>
+
+    <table border="1">
+        <tr>
+            <th>STT</th>
+            <th>Tên nhân viên</th>
+            <th>Giới tính</th>
+            <th>Ngày sinh</th>
+            <th>Email</th>
+            <th>SĐT</th>
+            <th>Lương</th>
+            <th>Ghi chú</th>
+            <th>Phòng ban</th>
+        </tr>
+
+        <tr ng-repeat="nv in lstNhanVien">
+            <td>{{$index+1}}</td>
+            <td>{{nv.tenNhanVien}}</td>
+            <td>{{nv.gioiTinh ? 'Nam' : 'Nữ'}}</td>
+            <td>{{nv.ngaySinh | date : 'dd-MM-yyyy'}}</td>
+            <td>{{nv.email}}</td>
+            <td>{{nv.sdt}}</td>
+            <td>{{nv.luong | currency : '' : 0}}</td>
+            <td>{{nv.ghiChu}}</td>
+            <td>{{nv.phongBan.tenPhong}}</td>
+            <td>
+                <a href="" ng-hide="index" ng-click="sua(nv)">Sửa</a> |
+                <a href="" ng-hide="index" ng-click="xoa(nv.idNhanVien)">Xóa</a>
+            </td>
+            <td ng-controller="QuanLyGhiNhanController">
+                <a href="" ui-sref="QLGN" ng-click="hienThiDanhSachGhiNhan(nv)">Khen thưởng</a>
+            </td>
+        </tr>
+    </table>
+</div>
