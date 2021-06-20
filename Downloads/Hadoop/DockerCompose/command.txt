@@ -1,0 +1,80 @@
+docker run --name nameNode -p 8088:8080 -dit --privileged centos:7 /sbin/init
+docker run --name nameNode -p 8088:8080 -it centos:7 bash
+docker exec -it nameNode bash
+
+click vào tên máy ảo trong VMware -> chọn Edit trên thanh công cụ -> Visual network editor -> chọn cạc mạng của máy mình ở mục bridged to
+
+nmtui
+dhclient -v
+
+
+yum -y install openssh-server openssh-clients
+systemctl start sshd
+passwd root
+
+
+systemctl disable firewalld
+service firewalld stop
+
+
+vi /etc/hosts
+192.168.0.181 worker1.hadoop.com
+192.168.0.182 worker2.hadoop.com
+192.168.0.183 worker3.hadoop.com
+192.168.0.184 worker4.hadoop.com
+192.168.0.185 worker5.hadoop.com
+192.168.0.186 worker6.hadoop.com
+
+192.168.0.171 master.hadoop.com
+192.168.0.172 worker2.hadoop.com
+192.168.0.173 worker3.hadoop.com
+
+
+docker exec -it centosNameNode bash
+
+yum install -y wget 
+wget -nv http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.7.4.0/ambari.repo -O /etc/yum.repos.d/ambari.repo
+yum install -y ambari-server
+ambari-server setup -s
+
+wget https://repo1.maven.org/maven2/mysql/mysql-connector-java/8.0.20/mysql-connector-java-8.0.20.jar
+ambari-server setup --jdbc-db=mysql --jdbc-driver=/root/mysql-connector-java-8.0.20.jar
+
+
+docker exec -it centosDataNode1 bash
+docker exec -it centosDataNode2 bash
+
+yum install -y wget 
+wget -nv http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.7.4.0/ambari.repo -O /etc/yum.repos.d/ambari.repo
+yum repolist
+yum install -y ambari-agent
+vi /etc/ambari-agent/conf/ambari-agent.ini
+    [server]
+    hostname=master.hadoop.com
+    url_port=8440
+    secured_url_port=8441
+
+
+vào master
+ssh-keygen
+cd /root/.ssh/
+cat id_rsa.pub >> authorized_keys
+đặt quyền admin
+chmod 700 ~/.ssh
+
+đưa public key sang cho các worker
+scp id_rsa.pub root@192.168.0.181:/root/.ssh/id_rsa.pub
+scp id_rsa.pub root@192.168.0.189:/root/.ssh/id_rsa.pub
+ssh vào các worker
+mkdir /root/.ssh
+cd /root/.ssh/
+cat id_rsa.pub >> authorized_keys
+
+reboot
+ambari-server restart
+ambari-agent restart
+
+sẽ có nhiều lỗi loằng ngoằng xảy ra, cứ restart ambari-server và ambari-agent hoặc reboot lại cái centos
+
+
+

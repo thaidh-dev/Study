@@ -1,0 +1,115 @@
+docker info
+
+docker
+
+docker container ls: kiểm tra các container
+
+docker-compose down: dừng container
+
+docker-compose up -d: lấy lại cái container đã đóng
+
+docker cp 9bd5e4b2fed1:/tmp/info.csv C:/Users/Admin/Desktop: lấy file từ docker về
+
+docker cp G:\NghiemTuc\Study\Downloads\Docker\myimage\test.html c6f99770e1c6:/var/www/html/: đưa file vào docker
+
+docker ps: kiểm tra các container đang chạy
+
+docker ps -a: liệt kê tất cả các container kể cả có chạy hay ko
+
+docker run -it ${image id}: khởi tạo container
+
+docker run -it --name "" -h tenHost ${image id}: khởi tạo container vs tên và host
+
+docker start ${container id} : chạy container
+
+docker attach ${container id}: vào cái container đấy
+
+nhấn ctrl + p + q: thoát khỏi cái container đấy nhưng không shutdown nó, container vẫn chạy
+
+docker stop ${id container}: dừng đéo cho container chạy nữa
+
+docker rm ${container id}: xóa container
+
+docker rm -f ${container id}: xóa container ngay cả khi nó đang chạy
+
+docker exec 26d2ffc33732 ls: đang đừng ngoài cái container mà vẫn muốn thực thi câu lệnh trong container đó. Ở đây là container ubuntu
+
+docker commit 26d2ffc33732 ubuntu-vim-chrome:version1: biến cái container đang sử dụng thành image vs tên(ubuntu-vim-chrome) và tag(version1)
+
+docker save --output xxxImage.tar 252a08ad6ed0: lưu image 252a08ad6ed0 thành file xxxImage.tar
+
+docker image rm ${image id}: xóa image nếu image đang không khởi tạo container nào
+
+docker image rm ${image id} -f: bắt buộc phải xóa image nhưng mà lại vẫn dữ cái container(đéo hiểu kiểu j)
+
+docker load -i xxxImage.tar: load cái file xxxImage.tar thành 1 image vs tên và tag = none
+
+docker tag ${image id} tenimage:tentag: đổi tên và tag image
+
+docker run -it -v G:\alo:/home/olo ${image id}: tạo thư mục alo trong ổ G, đặt đấy là file sharing nối vs home/olo của image được chỉ định
+
+docker run -it --name c2 --volumes-from bb1f767f7b7e 72300a873c2c: tạo container c2(image ubuntu(id: 72300a873c2c)) nối vs file sharing của container c1(bb1f767f7b7e): chia sẻ file dữa 2 container vs nhau
+
+
+
+docker volume ls: kiểm tra các ổ đĩa được tạo ra từ container
+
+docker volume create d1: create volume d1
+
+docker volume inspect d1: check info volume d1
+
+docker volume rm d1: xóa volume d1
+
+docker run -it --name c1 --mount source=d1,target=/home/disk1 72300a873c2c: tạo container c1(image: ubuntu(id: 72300a873c2c)) vs thư mục home/disk1 và nối vs volume d1 
+
+docker volume create --opt device=G:\lmao\ --opt type=none --opt o=bind d3: tạo volume d3 sử dụng thư mục G:\alo\
+
+docker run -it -v d3:/home/disk ubuntu: nối container vs volume được tạo bởi câu lệnh bên trên (nối đc đéo đâu)
+
+
+
+docker diff ${container id}: liệt kê các tập tin và thư mục đã thay đổi kể từ khi container được tạo ra
+
+docker logs ${container id}: lịch sử các câu lệnh đã thực thi trong container
+
+docker logs --tail 5 f6a43f39eaa9: cắt ngắn lại còn có 5 dòng
+
+docker stats: giám sát hoạt động của các container đang chạy
+
+--rm: tạo container chạy xong tự động xóa luôn
+
+
+
+G:\NghiemTuc\Study\Downloads\Docker\myimage>docker build -t imagecreatebydockerfile:v1 -f DockerFile .
+vào thư mục chứa DockerFile, build image từ cái file đấy. Dấu '.' ở cuối lệnh là ký hiệu bạn đang ở thư mục hiện tại
+
+
+
+docker-compose up -d: thực thi file docker-compose.yml
+
+docker-compose down: đóng container và xóa bỏ container được khởi tạo từ docker-compose up -d
+
+docker run -p 6789:80 ${image id}: đây là câu lệnh dùng để test cái Dockerfile
+
+docker-compose exec ${tên service} bash
+
+docker-compose ps
+
+docker-compose ps --service: show service
+
+
+các container mặc định sẽ kết nối vào bridge nếu bạn không chỉ định
+
+docker network ls
+
+docker network inspect ${tenNetwork}: kiểm tra info của cái network đấy
+
+
+
+docker exec mariadb_database_1 mysqldump -u root --password=dht24111997 assignmentCSDL1 > thaidh2.sql: backup mariadb có tên assignmentCSDL1 ra file thaidh2.sql ở vị trí mà mình đang đứng trên window
+
+docker exec -i mariadb_database_1 mysql -u root --password=dht24111997 < C:\Users\Admin\Desktop\assignmentCSDL1.sql assignmentCSDL1: restore database từ file assignmentCSDL1
+
+
+
+

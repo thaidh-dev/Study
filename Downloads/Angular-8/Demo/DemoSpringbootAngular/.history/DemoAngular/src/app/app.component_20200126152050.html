@@ -1,0 +1,36 @@
+<form>
+  <div class="form-group form-inline">
+    Tìm kiếm: <input class="form-control ml-2" type="text" name="searchTerm" />
+  </div>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col" sortable="maNV">Mã nhân viên</th>
+        <th scope="col" sortable="taiKhoan">Tài khoản</th>
+        <th scope="col" sortable="matKhau">Mật khẩu</th>
+        <th scope="col" sortable="hoTen">Họ tên</th>
+        <th scope="col" sortable="vaiTro">Vai trò</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let nv of lstNhanVien">
+        <th scope="row">{{ nv.maNV }}</th>
+        <td>
+          <ngb-highlight [result]="nv.taiKhoan" [term]=""></ngb-highlight>
+        </td>
+        <td>
+          <ngb-highlight [result]="nv.matKhau" [term]=""></ngb-highlight>
+        </td>
+        <td>
+          <ngb-highlight [result]="nv.hoTen" [term]=""></ngb-highlight>
+        </td>
+        <td>
+          <ngb-highlight [result]="nv.vaiTro ? 'Trưởng phòng' : 'Nhân viên'" [term]=""></ngb-highlight>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+</form>

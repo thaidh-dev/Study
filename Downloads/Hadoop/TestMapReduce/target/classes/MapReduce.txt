@@ -1,0 +1,47 @@
+hadoop verion: Hadoop 3.1.1.3.1.0.0-78
+hadoop 3.1.3: https://hadoop.apache.org/docs/r3.1.3/hadoop-mapreduce-client/hadoop-mapreduce-client-core/MapReduceTutorial.html
+
+yum -y update
+yum install java-1.8.0-openjdk
+yum install java-devel
+
+ssh hdfs@192.168.0.181
+update-alternatives --config java
+    You can set JAVA_HOME in .bash_profile, .bashrc file or for all Global users in /etc/profile or as bash function inside /etc/profile.d/ directory.
+export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.252.b09-2.el7_8.x86_64/jre/bin/java
+    or
+export JAVA_HOME=$(dirname $(dirname $(readlink $(readlink $(which javac)))))
+export PATH=$PATH:$JAVA_HOME/bin
+export CLASSPATH=.:$JAVA_HOME/jre/lib:$JAVA_HOME/lib:$JAVA_HOME/lib/tools.jar
+export HADOOP_CLASSPATH=${JAVA_HOME}/lib/tools.jar
+    load lại file
+source .bash_profile
+    lệnh kiểm tra
+echo $JAVA_HOME
+echo $PATH
+echo $CLASSPATH
+echo $HADOOP_CLASSPATH
+
+/bin/hadoop com.sun.tools.javac.Main WordCount.java
+jar cf wc.jar WordCount*.class
+
+
+    tạo trước cây thư mục
+        /user/joe/wordcount/input - input directory in HDFS
+        /user/joe/wordcount/output - output directory in HDFS
+    tạo trước ouput thì sẽ có exception file already exists
+hdfs dfs -cat /user/hdfs/wordcount/input/file01
+hdfs dfs -appendToFile - /user/hdfs/wordcount/input/file01
+Hello World Bye World
+    bấm ctrl + D để lưu và thoát file
+hdfs dfs -appendToFile - /user/hdfs/wordcount/input/file02
+Hello Hadoop Goodbye Hadoop
+
+/bin/hadoop jar wc.jar WordCount /user/hdfs/wordcount/input /user/hdfs/wordcount/output
+/bin/hadoop fs -cat /user/hdfs/wordcount/output/part-r-00000
+hdfs dfs -cat /user/hdfs/wordcount/output/part-r-00000
+
+
+
+
+

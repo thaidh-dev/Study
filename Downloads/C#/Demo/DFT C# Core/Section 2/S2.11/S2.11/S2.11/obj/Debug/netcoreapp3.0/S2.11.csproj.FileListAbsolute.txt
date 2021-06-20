@@ -1,0 +1,11 @@
+F:\Visual Studio\C#\DFT C# Core\Section 2\S2.11\S2.11\S2.11\bin\Debug\netcoreapp3.0\S2.11.exe
+F:\Visual Studio\C#\DFT C# Core\Section 2\S2.11\S2.11\S2.11\bin\Debug\netcoreapp3.0\S2.11.deps.json
+F:\Visual Studio\C#\DFT C# Core\Section 2\S2.11\S2.11\S2.11\bin\Debug\netcoreapp3.0\S2.11.runtimeconfig.json
+F:\Visual Studio\C#\DFT C# Core\Section 2\S2.11\S2.11\S2.11\bin\Debug\netcoreapp3.0\S2.11.runtimeconfig.dev.json
+F:\Visual Studio\C#\DFT C# Core\Section 2\S2.11\S2.11\S2.11\bin\Debug\netcoreapp3.0\S2.11.dll
+F:\Visual Studio\C#\DFT C# Core\Section 2\S2.11\S2.11\S2.11\bin\Debug\netcoreapp3.0\S2.11.pdb
+F:\Visual Studio\C#\DFT C# Core\Section 2\S2.11\S2.11\S2.11\obj\Debug\netcoreapp3.0\S2.11.csprojAssemblyReference.cache
+F:\Visual Studio\C#\DFT C# Core\Section 2\S2.11\S2.11\S2.11\obj\Debug\netcoreapp3.0\S2.11.AssemblyInfoInputs.cache
+F:\Visual Studio\C#\DFT C# Core\Section 2\S2.11\S2.11\S2.11\obj\Debug\netcoreapp3.0\S2.11.AssemblyInfo.cs
+F:\Visual Studio\C#\DFT C# Core\Section 2\S2.11\S2.11\S2.11\obj\Debug\netcoreapp3.0\S2.11.dll
+F:\Visual Studio\C#\DFT C# Core\Section 2\S2.11\S2.11\S2.11\obj\Debug\netcoreapp3.0\S2.11.pdb

@@ -1,0 +1,15 @@
+.errors_message {
+    color: red;
+    font-style: italic;
+}
+
+.phanTrang li {
+    list-style: none;
+    float: left;
+    margin: 0px 5px 0px 5px;
+}
+
+.phanTrangActive a {
+    font-weight: bold;
+    color: yellow;
+}

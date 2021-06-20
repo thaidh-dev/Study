@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="dft.domain.repository.DmThonXomRepository">
+
+    <resultMap id="dmThonXom" type="DmThonXom">
+        <id property="id" column="thon_id"/>
+        <result property="ma" column="thon_ma"/>
+        <result property="ten" column="thon_ten"/>
+        <result property="moTa" column="thon_moTaThon"/>
+        <result property="maTinh" column="thon_maTinh"/>
+        <result property="maHuyen" column="thon_maHuyen"/>
+        <result property="maXa" column="thon_maXa"/>
+        <result property="trangThai" column="thon_trangThai"/>
+    </resultMap>
+
+    <sql id="dmThonXom_Select">
+            ID thon_id,
+            MA thon_ma,
+            TEN thon_ten,
+            MO_TA thon_moTaThon,
+            MA_TINH thon_maTinh,
+            MA_HUYEN thon_maHuyen,
+            MA_XA thon_maXa,
+            TRANG_THAI thon_trangThai
+     </sql>
+
+    <select id="findAll" resultMap="dmThonXom">
+        <![CDATA[
+            SELECT ]]>
+                <include refid="dmThonXom_Select"></include>
+        <![CDATA[
+            FROM DM_THON_XOM
+            WHERE rownum <10
+            ]]>
+    </select>
+
+    <select id="findThonXomByMaXaPhuong" parameterType="int" resultMap="dmThonXom">
+        <![CDATA[
+            SELECT ]]>
+        <include refid="dmThonXom_Select"></include>
+        <![CDATA[
+            FROM
+                  DM_THON_XOM
+            WHERE
+                  MA_XA = #{idXaPhuong}
+            ]]>
+    </select>
+
+    <select id="findById" parameterType="DmThonXom" resultMap="dmThonXom">
+        <![CDATA[
+            SELECT
+                ID thon_id,
+                TEN thon_ten,
+                MO_TA thon_moTaThon,
+                MA_TINH thon_maTinh,
+                MA_HUYEN thon_maHuyen,
+                MA_XA thon_maXA,
+                TRANG_THAI thon_trangThai
+            FROM DM_THON_XOM
+            WHERE ID= #{dmThonXomId}
+        ]]>
+    </select>
+
+    <insert id="create" parameterType="DmThonXom">
+        <![CDATA[
+        INSERT INTO DM_QUAN_HUYEN
+        (
+        ]]>
+        <include refid="dmThonXom_Select"/>
+        <![CDATA[
+        )
+        VALUES
+        (
+            HIBERNATE_SEQUENCE.nextval,
+            #{ma},
+            #{ten},
+            #{moTa},
+            #{maTinh},
+            #{maHuyen},
+            #{maXa},
+            #{trangThai}
+        )
+    ]]>
+    </insert>
+
+    <update id="update" parameterType="DmThonXom" >
+        <![CDATA[
+            UPDATE DM_THON_XOM
+            SET
+                TEN = #{ten},
+                MO_TA = #{moTa},
+                MA_TINH = #{maTinh},
+                MA_HUYEN = #{maHuyen},
+                MA_XA = #{maXa},
+                TRANG_THAI = #{trangThai}
+            WHERE
+                ID = #{id}
+        ]]>
+    </update>
+    
+    <delete id="deleteById" parameterType="DmThonXom">
+        <![CDATA[
+            DELETE FROM DM_THON_XOM
+            WHERE
+                ID = #{dmThonXomId}
+        ]]>
+    </delete>
+
+    <select id="findPageByCriteria"  resultMap="dmThonXom">
+        <![CDATA[
+            SELECT ]]>
+                <include refid="dmThonXom_Select"></include>
+        <![CDATA[
+            FROM
+                DM_THON_XOM
+            WHERE
+                MA LIKE '%' || #{criteria.ten} || '%' OR
+                TEN LIKE '%' || #{criteria.ten} || '%'
+            ORDER BY ID
+                OFFSET  #{pageable.offset}
+            ROWS FETCH NEXT
+                 #{pageable.pageSize}
+            ROWS ONLY
+         ]]>
+    </select>
+
+    <select id="countByCriteria"  resultType="long">
+        <![CDATA[
+        SELECT
+            COUNT(*)
+        FROM
+            DM_THON_XOM
+        WHERE
+            MA LIKE '%' || #{criteria.ten} || '%' OR
+            TEN LIKE '%' || #{criteria.ten} || '%'
+    ]]>
+    </select>
+
+</mapper>

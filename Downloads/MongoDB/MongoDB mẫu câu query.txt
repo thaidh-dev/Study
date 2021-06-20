@@ -1,0 +1,85 @@
+show dbs: kiểm tra xem có bao nhiêu database mongo
+
+use tenDB: switch vào cái db đấy thì mới query đc
+
+db.stats(): lấy thông tin của db
+
+
+db.tenBang.find().pretty(): select * from tenBang
+
+db.products.find({price: {$gt: 10}}): select * from tenBang where price > 10
+
+db.products.findOne({price: {$gt: 10}}): select top 1 from tenBang where price > 10
+
+db.products.find().toArray(): select * from tenBang và hiển thị theo dạng mảng
+
+db.products.find().forEach((x) => {printjson(x)}): select * from tenBang và hiển thị theo dạng json
+
+db.products.findOne(): lấy bản ghi đầu tiên
+
+db.products.find({}, {name: 1}): select _id, name from products
+
+db.products.find({}, {name: 1, _id: 0}): select name from products
+
+typeof db.thai.findOne({_id: ObjectId("5e5a356189ae5ffd8ac71825")}).tuổi: lấy kiểu giữ liệu của cột 'tuổi' của bản ghi vs '_id' xác định trong bảng 'thai'
+
+
+db.tenBang.insertOne({})
+
+db.tenBang.insertOne({_id: ""}): tự tạo id theo ý muốn
+
+db.tenBang.insertMany([{}, {}])
+
+
+db.tenBang.updateOne({price: 1229.99}, {$set: {marker: "delete"}}): tìm bản ghi đầu tiên có price 1229.99 và thêm cột marker: delete vào bản ghi đó
+
+db.tenBang.updateMany({}, {$set: {marker: "delete"}}): thêm cột marker: delete vào toàn bộ bản ghi
+
+db.products.updateOne({_id: "txl-lhr-1"}, {$set: {delayed: false}}): không có $set thì nó xóa hết các trường chỉ dữ lại trường delayed được chỉ định
+
+db.products.updateOne({_id: ObjectId("5e5a15856e1f420591cc03c3")}, {delayed: false}): sai cú pháp
+
+db.products.updateMany({_id: ObjectId("5e5a15856e1f420591cc03c3")}, {delayed: false}): sai cú pháp
+
+db.products.updateOne(
+{_id: "txl-lhr-1"}, {$set: {hobbies: ["sport", "cookings"]}}
+): dữ liệu có thể là array
+
+
+db.tenBang.deleteOne({})
+
+db.tenBang.deleteMany({marker: "delete"}): delete from tenBang where marker = 'delete'
+
+db.tenBang.deleteMany({}): xóa tất
+
+db.products.replaceOne({_id: "txl-lhr-1"}, {name: "Bút chì", marker: "toDelete"}): xóa tất các cột và thay bằng 2 cột chỉ định
+
+insertMany có thêm ordered: false thì sẽ bỏ qua bản ghi bị sai(như trùng id) mà insert tiếp, còn true thì insert đến khi nào gặp sai thì dừng. Mặc định là true
+
+
+$in: =, $nin: !=
+
+db.movies.find({"rating.average": {$lt: 5}}).count(): select count(average) from movies where average < 5
+
+db.users.find({job: {$exists: true}})
+
+db.users.find({age: {$type: "number"}})
+
+
+db.collection.drop(): xóa collection
+
+
+// tạo ra các file bson và file nhị phân chứa dữ liệu của database được chọn và lưu vào c:/users/admin/dump/
+mongodump --host Cluster0-shard-0/cluster0-shard-00-00-p8yjh.mongodb.net:27017,cluster0-shard-00-01-p8yjh.mongodb.net:27017,cluster0-shard-00-02-p8yjh.mongodb.net:27017 --ssl --username thaidh --password dht24111997 --authenticationDatabase admin --db shop
+
+// creates a new database or adds data to an existing database. By default, mongorestore reads the database dump in the c:/users/admin/dump/; to restore from a different directory, pass in the path to the directory as a final argument. 
+mongorestore --host Cluster0-shard-0/cluster0-shard-00-00-p8yjh.mongodb.net:27017,cluster0-shard-00-01-p8yjh.mongodb.net:27017,cluster0-shard-00-02-p8yjh.mongodb.net:27017 --ssl --username thaidh --password dht24111997 --authenticationDatabase admin
+
+// dữ liệu import có array thì phải thêm --jsonArray vào
+mongoimport --host Cluster0-shard-0/cluster0-shard-00-00-p8yjh.mongodb.net:27017,cluster0-shard-00-01-p8yjh.mongodb.net:27017,cluster0-shard-00-02-p8yjh.mongodb.net:27017 --ssl --username thaidh --password dht24111997 --authenticationDatabase admin --db analytics --collection friends --type json --file G:\NghiemTuc\Study\Downloads\MongoDB\friends.json --jsonArray
+
+// import file excel với dòng đầu tiên của file chính là tên cột trong database
+mongoimport --host Cluster0-shard-0/cluster0-shard-00-00-p8yjh.mongodb.net:27017,cluster0-shard-00-01-p8yjh.mongodb.net:27017,cluster0-shard-00-02-p8yjh.mongodb.net:27017 --ssl --username thaidh --password dht24111997 --authenticationDatabase admin --db node-angular --collection excel --type csv --headerline --file C:\Users\Admin\Desktop\Book1.csv
+
+// import file excel với tên field và kiểu dữ liệu được chỉ định ở 1 file khác
+mongoimport --host Cluster0-shard-0/cluster0-shard-00-00-p8yjh.mongodb.net:27017,cluster0-shard-00-01-p8yjh.mongodb.net:27017,cluster0-shard-00-02-p8yjh.mongodb.net:27017 --ssl --username thaidh --password dht24111997 --authenticationDatabase admin --db node-angular --collection excel --type csv --file C:\Users\Admin\Desktop\DuLieu.csv --fieldFile=C:\Users\Admin\Desktop\FieldName.csv --columnsHaveTypes

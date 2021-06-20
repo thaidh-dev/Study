@@ -1,0 +1,23 @@
+xem trang thái của git: git status
+
+commit code: git commit -m "hoàn thiện chức năng"
+
+push từ branch master: git push -u origin master
+
+pull: git pull 
+
+tạo branch: git branch thai
+
+chuyển sang branch khác: git checkout thai
+
+git stash: loại bỏ toàn bộ các thay đổi
+
+git stash push đường dẫn: loại bỏ toàn bộ các thay đổi của file đc chọn 
+
+chưa commit hết thì không pull đc, nó sẽ bắt phải commit
+
+git log --oneline: lịch sử commit 1 cách đơn giản hóa
+
+git revert <commit_hash_code>: tạo ra 1 commit là Revert "abc", code của m lúc này sẽ quay về đúng cái commit m revert
+
+git reflog: xem lại toàn bộ lịch sử commit

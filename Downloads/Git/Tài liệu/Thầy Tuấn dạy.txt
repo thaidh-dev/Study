@@ -1,0 +1,5 @@
+commit rồi push
+checkout sang dev
+pull dev về
+checkout sang thaidh
+git merge dev
