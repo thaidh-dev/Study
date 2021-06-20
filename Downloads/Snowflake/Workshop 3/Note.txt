@@ -1,0 +1,47 @@
+environment/instance: thaidh
+
+temperature generating simulator:
+TempSim 
+device id: 211
+
+cumulocity url:
+thaidh.us.cumulocity.com
+
+service account to connect cumulocity to webmethods
+webmethods.service.acct
+
+google project
+name: My Project 96012
+id: lucky-wall-312601
+Project number: 707667960145
+
+google oAUTH service account/creds:
+webmethods_access_to_gcp
+
+Your Client ID
+707667960145-p6i8jg59sdv6k4hcj7fqmighi3et8839.apps.googleusercontent.com
+Your Client Secret
+QJROFU_y2CuA2NAXGXu3F8lr
+
+refresh url:
+https://www.googleapis.com/oauth2/v4/token
+grant type:
+refresh_token
+
+
+google pubsub topic
+iot_data
+
+
+workshop 3
+topic 4:tạo cái bucket để chứa file ở gcs
+topic 5:
+	tạo cái gcs KEY ID và cái gcs Secret Key để tạo account gcs
+	tạo ra kết nối giữa device id 211 vs account gcs
+topic 7: create dataflow subscription để lấy data cảm biến export ra .avro file là lưu trong bucket
+topic 10: quay phone clockwise 
+-> các cảm biến khi xoay sẽ được lưu vào trong bucket của gcs dưới dạng các file .avro -> resume task snowflake đọc các file trong bucket và lấy dữ liệu lưu vào trong DB
+
+
+
+

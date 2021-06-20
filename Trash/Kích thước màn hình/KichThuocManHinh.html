@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <p id="KichThuocManHinh"></p>
+    </div>
+</body>
+
+<script>
+    let widthPx = window.screen.width
+    let heightPx = window.screen.height
+    let diagonalPx = Math.sqrt(Math.pow(widthPx, 2) + Math.pow(heightPx, 2))
+    let diagonalCm = diagonalPx * 0.026458333
+    let diagonalInch = diagonalCm * 0.39370
+
+    document.getElementById('KichThuocManHinh').innerHTML = 'Kích thước màn hình = ' + diagonalInch + ' inch'
+</script>
+
+</html>
