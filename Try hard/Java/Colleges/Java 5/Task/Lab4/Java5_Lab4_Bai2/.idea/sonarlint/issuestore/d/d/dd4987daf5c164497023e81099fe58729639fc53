@@ -1,11 +1,0 @@
-
-T
-squid:S106?"9Replace this use of System.out or System.err by a logger.(¨¶ÑÍþÿÿÿÿ
-bsquid:UselessImportCheck"9Remove this unused import 'org.hibernate.SessionFactory'.(ñ¦«¬þÿÿÿÿ
-usquid:S1488E"YImmediately return this expression instead of assigning it to the temporary variable "t".(˜¤Ãòüÿÿÿÿ
-T
-squid:S1060"9Replace this use of System.out or System.err by a logger.(¨¶ÑÍþÿÿÿÿ
-T
-squid:S106"9Replace this use of System.out or System.err by a logger.(¨¶ÑÍþÿÿÿÿ
-Zsquid:UselessImportCheck	"1Remove this unused import 'java.io.Serializable'.(èãîÂÿÿÿÿÿ
-|squid:UselessImportCheck"SRemove this unused import 'org.springframework.beans.factory.annotation.Autowired'.(¡ž¸Îùÿÿÿÿ

@@ -1,2 +1,0 @@
-phathienvidai.NewClass
-Example2
