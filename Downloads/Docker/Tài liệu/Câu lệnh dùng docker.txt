@@ -113,3 +113,9 @@ docker exec -i mariadb_database_1 mysql -u root --password=dht24111997 < C:\User
 
 
 
+docker exec -it container_name /bin/bash
+docker exec -it container_name bash
+docker exec -it container_name sh
+
+
+
