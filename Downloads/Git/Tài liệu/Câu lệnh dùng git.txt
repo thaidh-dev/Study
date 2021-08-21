@@ -21,3 +21,5 @@ git log --oneline: lịch sử commit 1 cách đơn giản hóa
 git revert <commit_hash_code>: tạo ra 1 commit là Revert "abc", code của m lúc này sẽ quay về đúng cái commit m revert
 
 git reflog: xem lại toàn bộ lịch sử commit
+
+find . -name .git -type d -prune: tìm tất cả các folder .git trong directory hiện tại (câu này phải mở git bash mới chạy đc vì nó là lệnh của linux)
