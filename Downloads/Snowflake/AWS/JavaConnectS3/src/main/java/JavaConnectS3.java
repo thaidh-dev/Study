@@ -4,10 +4,15 @@ import com.amazonaws.auth.BasicAWSCredentials;
 import com.amazonaws.regions.Regions;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3ClientBuilder;
-import com.amazonaws.services.s3.model.Bucket;
-import com.amazonaws.services.s3.model.ObjectListing;
-import com.amazonaws.services.s3.model.S3ObjectSummary;
+import com.amazonaws.services.s3.model.*;
+import com.amazonaws.services.s3.transfer.MultipleFileDownload;
+import com.amazonaws.services.s3.transfer.TransferManager;
+import com.amazonaws.services.s3.transfer.TransferManagerBuilder;
+import com.amazonaws.services.s3.transfer.TransferProgress;
+import me.tongfei.progressbar.ProgressBar;
+import me.tongfei.progressbar.ProgressBarStyle;
 
+import java.io.File;
 import java.util.List;
 
 public class JavaConnectS3 {
@@ -23,16 +28,32 @@ public class JavaConnectS3 {
                 .withRegion(Regions.AP_SOUTHEAST_1)
                 .build();
 
-        List<Bucket> buckets = s3client.listBuckets();
-        for (Bucket bucket : buckets) {
-            System.out.println(bucket.getName());
-        }
+//        List<Bucket> buckets = s3client.listBuckets();
+//        for (Bucket bucket : buckets) {
+//            System.out.println(bucket.getName());
+//        }
+//
+//        ObjectListing objectListing = s3client.listObjects("thaidh-bucket");
+//        for (S3ObjectSummary os : objectListing.getObjectSummaries()) {
+//            System.out.println(os.getKey());
+//        }
 
-        ObjectListing objectListing = s3client.listObjects("thaidh-bucket");
-        for (S3ObjectSummary os : objectListing.getObjectSummaries()) {
-            System.out.println(os.getKey());
-        }
+//        TransferManager transferManager = TransferManagerBuilder.standard().withS3Client(s3client).build();
+//        File file = new File("C:\\Users\\Admin\\Desktop\\Newfolder");
+//        MultipleFileDownload multipleFileDownload = transferManager.downloadDirectory("thaidh-bucket", "", file);
+//        try (ProgressBar pb = new ProgressBar("Download", 100)) {
+//            do {
+//                TransferProgress progress = multipleFileDownload.getProgress();
+//                long pct = (long) (progress.getPercentTransferred());
+//                pb.stepTo(pct);
+//            } while (!multipleFileDownload.isDone());
+//        }
 
-//        s3client.deleteObject("thaidh-bucket","iot_data/abc.json");
+
+        s3client.deleteObject("thaidh-bucket","iot_data/example.json");
+//        ObjectListing objectListing = s3client.listObjects("thaidh-film");
+//        for (S3ObjectSummary os : objectListing.getObjectSummaries()) {
+//            s3client.deleteObject("thaidh-film", os.getKey());
+//        }
     }
 }
