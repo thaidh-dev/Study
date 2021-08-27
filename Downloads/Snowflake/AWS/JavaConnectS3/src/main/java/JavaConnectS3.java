@@ -38,19 +38,22 @@ public class JavaConnectS3 {
 //            System.out.println(os.getKey());
 //        }
 
-//        TransferManager transferManager = TransferManagerBuilder.standard().withS3Client(s3client).build();
-//        File file = new File("C:\\Users\\Admin\\Desktop\\Newfolder");
-//        MultipleFileDownload multipleFileDownload = transferManager.downloadDirectory("thaidh-bucket", "", file);
-//        try (ProgressBar pb = new ProgressBar("Download", 100)) {
-//            do {
-//                TransferProgress progress = multipleFileDownload.getProgress();
-//                long pct = (long) (progress.getPercentTransferred());
-//                pb.stepTo(pct);
-//            } while (!multipleFileDownload.isDone());
-//        }
+        TransferManager transferManager = TransferManagerBuilder.standard().withS3Client(s3client).build();
+        File file = new File("C:\\Users\\Admin\\Desktop\\Newfolder");
+        MultipleFileDownload multipleFileDownload = transferManager.downloadDirectory("thaidh-film", "", file);
+        try (ProgressBar pb = new ProgressBar("Download", 100)) {
+            do {
+                pb.stepTo((long) multipleFileDownload.getProgress().getPercentTransferred());
+            } while (!multipleFileDownload.isDone());
+
+            multipleFileDownload.waitForCompletion();
+            transferManager.shutdownNow();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
 
-        s3client.deleteObject("thaidh-bucket","iot_data/example.json");
+//        s3client.deleteObject("thaidh-bucket","iot_data/example.json");
 //        ObjectListing objectListing = s3client.listObjects("thaidh-film");
 //        for (S3ObjectSummary os : objectListing.getObjectSummaries()) {
 //            s3client.deleteObject("thaidh-film", os.getKey());
