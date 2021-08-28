@@ -38,25 +38,27 @@ public class JavaConnectS3 {
 //            System.out.println(os.getKey());
 //        }
 
-        TransferManager transferManager = TransferManagerBuilder.standard().withS3Client(s3client).build();
-        File file = new File("C:\\Users\\Admin\\Desktop\\Newfolder");
-        MultipleFileDownload multipleFileDownload = transferManager.downloadDirectory("thaidh-film", "", file);
-        try (ProgressBar pb = new ProgressBar("Download", 100)) {
-            do {
-                pb.stepTo((long) multipleFileDownload.getProgress().getPercentTransferred());
-            } while (!multipleFileDownload.isDone());
-
-            multipleFileDownload.waitForCompletion();
-            transferManager.shutdownNow();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        // download all file trong bucket
+//        TransferManager transferManager = TransferManagerBuilder.standard().withS3Client(s3client).build();
+//        File file = new File("C:\\Users\\Admin\\Desktop\\Newfolder");
+//        MultipleFileDownload multipleFileDownload = transferManager.downloadDirectory("thaidh-film", "", file);
+//        try (ProgressBar pb = new ProgressBar("Download", 100)) {
+//            do {
+//                pb.stepTo((long) multipleFileDownload.getProgress().getPercentTransferred());
+//            } while (!multipleFileDownload.isDone());
+//
+//            multipleFileDownload.waitForCompletion();
+//            transferManager.shutdownNow();
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
 
 
 //        s3client.deleteObject("thaidh-bucket","iot_data/example.json");
-//        ObjectListing objectListing = s3client.listObjects("thaidh-film");
+//        ObjectListing objectListing = s3client.listObjects("thaidh-study");
 //        for (S3ObjectSummary os : objectListing.getObjectSummaries()) {
-//            s3client.deleteObject("thaidh-film", os.getKey());
+//            s3client.deleteObject("thaidh-study", os.getKey());
 //        }
+//        s3client.deleteBucket("thaidh-study");
     }
 }
