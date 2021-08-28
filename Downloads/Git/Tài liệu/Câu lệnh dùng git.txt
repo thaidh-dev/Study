@@ -31,7 +31,7 @@ xong xóa file đấy đi commit lại rồi push -> nó vẫn cố thực hiệ
 Can't push to GitHub because of large file which I already deleted
 git filter-branch --index-filter "git rm -r --cached --ignore-unmatch <pathFile>" -f HEAD
 pathFile phải để trong dấu ''
-nếu pathFile có dấu ' thì thay ' -> `
+nếu mà cái pathFile của b có cả space ' ' và cả dấu ' thì xem vd
 Xem VD:
-git filter-branch --index-filter "git rm -r --cached --ignore-unmatch 'Cambridge Grammar for IELTS Student`s Book with Answers and Audio CD\video.rar'" -f HEAD
+git filter-branch --index-filter "git rm -r --cached --ignore-unmatch Cambridge\ Grammar\ for\ IELTS\ Student\'s\ Book\ with\ Answers\ and\ Audio\ CD.rar" -f -- --all
 
