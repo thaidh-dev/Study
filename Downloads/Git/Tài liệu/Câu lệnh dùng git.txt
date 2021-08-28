@@ -23,3 +23,15 @@ git revert <commit_hash_code>: tạo ra 1 commit là Revert "abc", code của m 
 git reflog: xem lại toàn bộ lịch sử commit
 
 find . -name .git -type d -prune: tìm tất cả các folder .git trong directory hiện tại (câu này phải mở git bash mới chạy đc vì nó là lệnh của linux)
+
+
+
+commit 1 file quá to xong ko push đc
+xong xóa file đấy đi commit lại rồi push -> nó vẫn cố thực hiện 2 commit 
+Can't push to GitHub because of large file which I already deleted
+git filter-branch --index-filter "git rm -r --cached --ignore-unmatch <pathFile>" -f HEAD
+pathFile phải để trong dấu ''
+nếu pathFile có dấu ' thì thay ' -> `
+Xem VD:
+git filter-branch --index-filter "git rm -r --cached --ignore-unmatch 'Cambridge Grammar for IELTS Student`s Book with Answers and Audio CD\video.rar'" -f HEAD
+
