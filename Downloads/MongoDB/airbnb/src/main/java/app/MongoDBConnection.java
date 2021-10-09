@@ -330,7 +330,7 @@ public class MongoDBConnection {
 //            { _id: "10009999" },
 //            { $set: {
 //                "reviews.$[el].comments": "dumb hotel",
-//                        "reviews.$[el].date": new Date()
+//                "reviews.$[el].date": new Date()
 //            }},
 //            { arrayFilters: [
 //                {"el._id": "7777777"}
@@ -360,11 +360,11 @@ public class MongoDBConnection {
     public boolean login(String userID, String userName) {
 //        db.listingsAndReviews.find(
 //        {
-//         "reviews.reviewer_id": "reviewerID",
-//         "reviews.reviewer_name": "reviewerName"
+//            "reviews.reviewer_id": "reviewerID",
+//            "reviews.reviewer_name": "reviewerName"
 //        },
 //        {
-//         "reviews": {$elemMatch: {reviewer_id: "reviewerID", reviewer_name: "reviewerName"}},
+//            "reviews": {$elemMatch: {reviewer_id: "reviewerID", reviewer_name: "reviewerName"}},
 //        })
         Document user = allListings
                 .find(and(
