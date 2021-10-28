@@ -1,0 +1,17 @@
+x-superset-volumes: &superset-volumes
+  - ./docker:/app/docker
+  - ./nodeServer:/app/nodeServer
+
+version: "3.7"
+services:
+  nodeServer:
+    image: imagecreatebydockerfile:v1
+    container_name: nodeServer
+    command: ["/app/docker/docker-nodeServer.sh"]
+    volumes: *superset-volumes
+    ports:
+      - 8888:8888
+
+volumes:
+  nodeServer:
+    external: false

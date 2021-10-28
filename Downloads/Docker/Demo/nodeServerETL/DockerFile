@@ -1,0 +1,5 @@
+# tạo 1 container từ image node:lastest
+FROM node:latest
+
+COPY nodeServer /app/nodeServer
+COPY docker /app/docker

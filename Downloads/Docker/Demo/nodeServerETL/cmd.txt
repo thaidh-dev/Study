@@ -1,0 +1,7 @@
++ thực hiện build DockerFile thành 1 image
++ chạy file docker-compsoe để build node server container từ image vừa tạo
++ container sẽ đọc file docker/docker-nodeServer.sh để thực hiện lệnh npm install và start node server
+
+
+// build DockerFile thành 1 image
+docker build -t imagecreatebydockerfile:v1 -f DockerFile .
