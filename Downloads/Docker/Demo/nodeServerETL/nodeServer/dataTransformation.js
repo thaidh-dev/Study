@@ -74,12 +74,13 @@ module.exports = {
                     if (aggregateField === undefined) {
                         // tính count
                         // VD: resultObject.countAll = group.count()
+						// 	group[aggregateType]() => group.count()
                         resultObject[func.outputField] = group[aggregateType]();
                     } else {
                         // tính max hoặc min, average, sum
                         // VD: resultObject.sumField = group.sum('$.fieldToSum')
-						// resultObject[func.outputField] => resultObject['sumField'] => resultObject.sumField
-						// group[aggregateType](`$.${aggregateField}`) => group.sum('$.fieldToSum')
+						// 	resultObject[func.outputField] => resultObject['sumField'] => resultObject.sumField
+						// 	group[aggregateType](`$.${aggregateField}`) => group.sum('$.fieldToSum')
                         resultObject[func.outputField] = group[aggregateType](`$.${aggregateField}`);
                     }
                 }
