@@ -12,9 +12,9 @@ services:
     ports:
       - 8888:8888
       - 9229:9229 # default port để debug
-      # cấu hình build docker file = file docker compose
-      # thực hiện build Dockerfile(tên file Dockerfile phải là 'Dockerfile' chứ ko phải là 'DockerFile') thành 1 image  
-      build: .
+    # cấu hình build docker file = file docker compose
+    # thực hiện build Dockerfile(tên file Dockerfile phải là 'Dockerfile' chứ ko phải là 'DockerFile') thành 1 image  
+    build: .
 
 volumes:
   nodeServer:
