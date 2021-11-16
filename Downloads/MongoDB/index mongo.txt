@@ -1,3 +1,0 @@
-index trong mongo giống như kiểu 1 quyển từ điển có mục lục đánh dấu chữ cái
-nếu không có mục lục thì khi tra cứu sẽ phải tra từng trang từng từ trong từ điển
-nếu có đánh index thì từng từ trong từ điển sẽ đc đánh dấu mục lục và sắp sếp theo index, giúp query nhanh hơn

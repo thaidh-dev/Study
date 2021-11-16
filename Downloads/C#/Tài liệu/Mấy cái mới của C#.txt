@@ -1,6 +1,0 @@
-Delegate: nó biến 1 cái method thành 1 đối tượng
-
-& : lấy địa chỉ.
-* : lấy nội dung của địa chỉ.
-
-signed là kiểu dữ liệu có dấu và unsigned là kiểu dữ liệu không dấu

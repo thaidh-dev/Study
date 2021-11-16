@@ -1,5 +1,0 @@
-ng new tenProject: tạo project
-ng g c servers: tạo ra 1 cái thư mục có tên 'servers' trong project
-ng g c servers --spec false: tạo ra 1 cái thư mục có tên 'servers' trong project
-ng serve: chạy server
-npm install --save bootstrap@3: cài bootstrap
