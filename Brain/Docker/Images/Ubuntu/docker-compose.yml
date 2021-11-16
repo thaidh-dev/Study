@@ -1,0 +1,9 @@
+version: "3.7"
+
+services:
+  ubuntu:
+    image: ubuntu_images
+    container_name: ubuntu_container
+    stdin_open: true
+    restart: unless-stopped
+    build: .
