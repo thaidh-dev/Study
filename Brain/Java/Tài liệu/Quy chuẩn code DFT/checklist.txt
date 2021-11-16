@@ -1,0 +1,40 @@
+﻿
+1. Comment chức năng các hàm hoặc đoạn xử lý
+	- đầu class:
+		vd:
+		/**
+ 		* Mô tả đối tượng 
+ 		*/
+		public void class Test {}
+	- đầu hàm:
+		vd:
+		    /**
+		     * <Chuc nang ham xu ly>
+		     * @param inflater <y nghia tham so>
+		     * @param container <y nghia tham so>
+		     * @param savedInstanceState <y nghia tham so>
+		     * @return <thong tin ket qua tra ve>
+		     */		    
+		    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+		                             Bundle savedInstanceState) {}
+	- comment biến:
+		/**
+ 		* Mô tả đối tượng 
+ 		*/
+		public void class Test {
+			//Mô tả thuộc tính 
+			private String param;
+		}
+	- các xử lý:
+		vd: //noi dung comment
+	- các đoạn xử lý chờ thay đổi hoặc chưa xử lý: 
+		vd: //Todo: <noi dung can xu ly>
+	
+2. Log:
+	info: bắt đầu, kết thúc hàm, các xử lý quan trọng
+	debug: Log nội dung dữ liệu đầu vào và đầu ra 
+	
+3. Unit test cho module pass
+4. Các query DB không được để trong vòng lặp (for, while )
+5. Các query DB luôn có giới hạn (vd: giới hạn theo ngày, giới hạn theo số lượng bản ghi ....)
+6. Review các API giao tiếp, query DB, unit test

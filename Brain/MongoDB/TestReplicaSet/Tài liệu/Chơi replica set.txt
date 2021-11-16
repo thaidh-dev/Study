@@ -1,0 +1,141 @@
+
+docker network create network_test_replica_set
+
+docker run -d -p 27017:27017 -v mongo27017:/data/db --name mongo0 --net network_test_replica_set mongo:3.2.0 mongod --replSet rs0
+
+docker run -d -p 27018:27017 -v mongo27018:/data/db --name mongo1 --net network_test_replica_set mongo:3.2.0 mongod --replSet rs0
+
+docker run -d -p 27019:27017 -v mongo27019:/data/db --name mongo2 --net network_test_replica_set mongo:3.2.0 mongod --replSet rs0
+
+
+
+
+docker run -d -p 27017:27017 -v mongo27017:/data/db --name mongo0 mongo:3.2.0 mongod --replSet rs0
+
+docker run -d -p 27018:27017 -v mongo27018:/data/db --name mongo1 mongo:3.2.0 mongod --replSet rs0
+
+docker run -d -p 27019:27017 -v mongo27019:/data/db --name mongo2 mongo:3.2.0 mongod --replSet rs0
+
+
+
+rs.initiate( {
+   _id: "rs0",
+   members: [
+      { _id: 0, host: "mongo0:27017" },
+      { _id: 1, host: "mongo1:27017", priority: 0, votes: 0 },
+      { _id: 2, host: "mongo2:27017" },
+   ]
+})
+
+docker cp mongod.conf.orig mongo0:/etc/
+
+docker cp mongod.conf.orig mongo1:/etc/
+
+docker cp mongod.conf.orig mongo2:/etc/
+
+docker exec -it mongo0 bash
+
+mongo --post 27018
+
+
+mongo --eval load("replicaSetInit.js")
+
+db.nhanVien.insertOne({name: "Thái", age: 23})
+db.nhanVien.find().readPref("secondary", [{usage: "readonly"}])
+
+
+
+
+
+
+
+
+
+rs.initiate( {_id : "rs0", members: [{ _id: 0, host: "mongo0:27017" }, { _id: 1, host: "mongo1:27017" }, { _id: 2, host: "mongo2:27017" }]})
+
+rs.slaveOk(): cho phép connection hiện tại thực hiện các hoạt động đọc trên các replica set secondary
+
+
+
+- Read Preference maxStalenessSeconds:
+
++ khi đọc từ các secondary, các replica set member có thể bị tụt hậu so với primary do tắc nghẹn mạng, ... Read Preference maxStalenessSeconds option sẽ giúp bạn chỉ định độ trễ tối đa của việc replication. Nếu ước tính cái secondary đó vượt quá maxStalenessSeconds, client sẽ không sử dụng nó để đọc nữa.
+
++ maxStalenessSeconds read preference option được dùng cho các ứng dụng đọc từ các secondary và muốn tránh việc đọc từ các secondary đã bị tụt lại quá xa trong việc replication vs primary. 
+Ví dụ: secondary phải dừng việc replication giữa nó vs primary vì lý do mất mạng. Trong trường hợp này, client nên dừng việc đọc từ secondary cho đến khi admin giải quyết việc mất kết nối và cái secondary đó replication kịp vs primary
+
++ cái này có ở mongo 3.4 trở lên
+
++ maxStalenessSeconds ko tương thích vs chế độ primary của read preference và chỉ áp dụng khi muốn đọc từ secondary
+
++ khi chọn 1 server cho việc đọc có sử dụng maxStalenessSeconds, client sẽ ước tính độ cũ của mỗi secondary bằng cách so sánh lần ghi cuối của secondary vs primary. client sẽ trực tiếp đọc từ secondary có độ lag <= maxStalenessSeconds
+
++ nếu không có primary, client sẽ sử dụng lần ghi gần đây nhất của secondary để so sánh
+
++ theo mặc định, không có maxStalenessSeconds và client sẽ không xem xét độ lag của secondary khi chọn secondary để đọc
+
++ nên chỉ định giá chị cho maxStalenessSeconds là 90s hoặc lâu hơn, < 90 sẽ gây ra lỗi. Client sẽ ước tính độ cũ của secondary bằng cách kiểm tra định kỳ lần ghi mới nhất. Do việc kiểm tra này là không thường xuyên nên 
+client không được set giá trị của maxStalenessSeconds < 90s
+
+
+- members[n].votes
++ số votes mà các member có là 1 or 0(kiểu như true, false; được vote hay không được vote; là voting member hay non-voting member), các arbiter luôn*2 là 1 vote
++ member với priority > 0 không thể có 0 votes
++ replica set có thể có tối đa 50 member nhưng chỉ có 7 member là được vote. nếu cần nhiều hơn 7 member được vote trong 1 replica set, set members[n].votes = 0 cho những member không được vote
++ thay đổi ở bản 3.2: non-voting member (member không được vote) sẽ có proprity = 0, votes = 0
++ member vs 0 votes sẽ không được xác nhận write concern vs tham số w = majority
+
+
+- members[n].priority
++ bắt đầu từ bản 3.6, arbiters có priority = 0. Nếu arbiter có priority = 1, mongo 3.6 sẽ config lại thành 0
++ priotiry là các giá trị từ 0 -> 1000 cho primary/secondary, 0 or 1 cho arbiters
++ mặc định: 1 cho primary/secondary, 0 cho arbiters
++ priority sẽ cho biết member đó có đủ điều kiện để trở thành primary không
++ value priority càng cao càng có đủ điều kiện, và ngược lại. member có priority = 0 không đủ điều kiện để trở thành primary
++ member vs priority > 0 không thể có 0 votes
++ thay đổi priority sẽ khiến cho replica set kích hoạt 1 or nhiều elections(bầu cử). nếu secondary có priority thấp được bầu trên 1 secondary có priority cao hơn, các member của replica set sẽ tiếp tục bầu cho đến khi member có priority cao nhất trở thành primary
++ member có priority = 0 có thể nhận xác nhận của write concern. vs write concern majority, member phải là member được vote(tức là member có votes > 0)
+
+
+- Replica Set Elections
+
++ replica set sử dụng election để set member trở thành 1 primary. replica set sẽ kích hoạt election khi xảy ra các sự kiện sau:
+add 1 nốt mới vào replica set
+khởi tạo replica set
+thực hiện bảo trì replica set sử dụng các method như re.stepDown() or rs.reconfig()
+secondary member mất kết nối tới primary lâu hơn thời gian timeout(settings.electionTimeoutMillis) đã config(mặc định 10s)
+
++ replica set không thể tiến hành write operations cho đến khi election thành công. replica set có thể tiếp tục thực hiện các read query nếu các query đó đc cấu hình chạy trên secondary
+
++ time trung bình để bầu ra 1 primary mới không quá 12s. nó bao gồm thời gian cần thiết để phát hiện ra primary bị mất kết nối và kích hoạt election. có thể chỉnh thời gian timeout này bằng settings.electionTimeoutMillis. các yếu tố như mạng lag có thể làm tăng time replica set hoàn thành election
+
+
+- Calculating Majority for Write Concern
+
++ write concern "majority" được tính toán bằng cách lấy giá trị nhỏ hơn của:
+đa số voting member (bao gồm cả arbiters)
+số lượng voting member chứa dữ liệu
+
++ lưu ý: trong trường hợp 2 giá trị dùng để tính toán majority = nhau(như replica set có 3 member đc deploy là Primary-Secondary-Arbiter), write concern "majority" có thể timeout hoặc không bao h xác nhận nếu 1 voting member có dữ liệu bị ngắt kết nối or hỏng. Nếu có thể, hãy sử dụng một voting member mang dữ liệu thay vì arbiter.
+
++ Ví dụ:
+A replica set with 3 voting members, Primary-Secondary-Secondary (P-S-S):
+The majority of all voting members is 2. (Nó lấy primary và 1 cái secondary)
+The number of all data-bearing voting members is 3.
+The calculated majority is 2, the minimum of 2 and 3. The write must propagate to the primary and one of the secondaries to acknowledge the write concern "majority" to the client.
+
+A replica set with 3 voting members, Primary-Secondary-Arbiter (P-S-A)
+The majority of all voting members is 2. (Nó lấy primary và 1 cái secondary, không lấy arbiter vì arbiter chỉ có tác dụng bầu ra primary node chứ không chứa dữ liệu)
+The number of all data-bearing voting members is 2.
+The calculated majority is 2, the minimum of 2 and 2. Since the write can only be applied to data-bearing members, the write must propagate to the primary and the secondary to acknowledge the write concern "majority" to the client.
+
+TIP
+Avoid using a "majority" write concern with a (P-S-A) or other topologies that require all data-bearing voting members to be available to acknowledge the writes. Customers who want the durability guarantees of using a "majority" write concern should instead deploy a topology that does not require all data bearing voting members to be available (e.g. P-S-S).
+
+
+- heartbeat: Replica set members send heartbeats (pings) to each other every two seconds. If a heartbeat does not return within 10 seconds, các member khác sẽ đánh dấu member đó là lỗi và không thể truy cập (the other members mark the delinquent member as inaccessible).
+
+
+
+
+

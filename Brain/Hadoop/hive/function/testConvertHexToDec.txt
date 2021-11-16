@@ -1,0 +1,39 @@
+select conv(substring('ECI:122973709', locate(':', 'ECI:122973709') + 1, length('ECI:122973709')), 10, 16);
+
+select substring(conv(substring('ECI:122973709', locate(':', 'ECI:122973709') + 1, length('ECI:122973709')), 10, 16), 1, 5);
+
+eNodeB ID
+select conv(
+    substring(
+        conv(
+            substring('ECI:122973709', locate(':', 'ECI:122973709') + 1, length('ECI:122973709')), 
+            10, 
+            16
+        ), 
+        1, 
+        5
+    ), 
+    16, 
+    10
+);
+
+
+
+cell ID
+select conv(
+    substring(
+        conv(substring('ECI:122973709', locate(':', 'ECI:122973709') + 1, length('ECI:122973709')), 10, 16), 
+        length(
+            conv(substring('ECI:122973709', locate(':', 'ECI:122973709') + 1, length('ECI:122973709')), 10, 16) 
+        ) - 1, 
+        length(
+            conv(substring('ECI:122973709', locate(':', 'ECI:122973709') + 1, length('ECI:122973709')), 10, 16) 
+        )
+    ),
+    16, 
+    10
+);
+
+  
+
+

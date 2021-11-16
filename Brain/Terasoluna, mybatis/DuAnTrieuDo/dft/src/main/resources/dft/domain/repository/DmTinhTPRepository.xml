@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC
+    "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="dft.domain.repository.DmTinhTPRepository">
+
+    <resultMap id="dmTinhTP" type="DmTinhTP">
+        <id property="id" column="T_id" />
+        <result property="ma" column="T_ma" />
+        <result property="ten" column="T_ten" />
+        <result property="cap" column="T_cap" />
+        <result property="trangThai" column="T_trangThai" />
+    </resultMap>
+
+    <sql id="dmTinhTP_Select">
+            ID T_id,MA T_ma,TEN T_ten,CAP T_cap, TRANG_THAI T_trangThai
+     </sql>
+
+    <select id="findOne" parameterType="integer" resultMap="dmTinhTP">
+    <![CDATA[
+        SELECT ]]>
+            <include refid="dmTinhTP_Select"/>
+    <![CDATA[
+        FROM
+           DM_TINH_TP
+        WHERE
+            id = #{id}
+    ]]>
+    </select>
+
+    <select id="findAll" resultMap="dmTinhTP">
+    <![CDATA[
+        SELECT ]]>
+        <include refid="dmTinhTP_Select" />
+        <![CDATA[
+        FROM
+            DM_TINH_TP
+    ]]>
+    </select>
+
+    <insert id="create" parameterType="dmTinhTP">
+    <![CDATA[
+        INSERT INTO DM_TINH_TP
+        (
+        ]]>
+           <include refid="dmTinhTP_Select"/>
+        <![CDATA[
+        ) 
+        VALUES
+        (
+            HIBERNATE_SEQUENCE.nextval,
+            #{dmTinhTPMa},
+            #{dmTinhTPTen},
+            #{dmTinhTPMota},
+            #{dmTinhTPTrangThai}
+        )
+    ]]>
+    </insert>
+
+    <update id="update" parameterType="dmTinhTP">
+    <![CDATA[
+        UPDATE
+            DM_TINH_TP
+        SET
+          MA =  #{dmTinhTPMa},
+          TEN =  #{dmTinhTPTen},
+          CAP  #{dmTinhTPCap},
+          TRANG_THAI  #{dmTinhTPTrangThai}
+        WHERE
+            ID = #{dmTinhTPId}
+    ]]>
+    </update>
+
+    <delete id="deleteById" parameterType="dmTinhTP">
+    <![CDATA[
+        DELETE FROM DM_TINH_TP
+        WHERE
+            ID = #{dmTinhTPId}
+    ]]>
+    </delete>
+
+    <!--<select id="countByFinished" parameterType="boolean" resultType="long">
+    <![CDATA[
+        SELECT
+            COUNT(*)
+        FROM
+            todo
+        WHERE
+            finished = #{finished}
+    ]]>
+    </select>
+
+    <select id="exists" parameterType="string" resultType="long">
+    <![CDATA[
+        SELECT
+            COUNT(*)
+        FROM
+            todo
+        WHERE
+            todo_id = #{todoId}
+    ]]>
+    </select>-->
+
+
+
+</mapper>

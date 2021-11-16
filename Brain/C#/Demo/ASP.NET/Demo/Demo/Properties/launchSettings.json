@@ -1,0 +1,32 @@
+﻿{
+  "$schema": "http://json.schemastore.org/launchsettings.json",
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://localhost:31773",
+      "sslPort": 44322
+    }
+  },
+  "profiles": {
+    "IIS Express": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "launchUrl": "weatherforecast",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+    "Demo": {
+      "commandName": "Project",
+      "launchBrowser": false,
+      "_comment": "đặt true thì phải khởi động lại brower thì nó mới chạy, còn đặt false thì no",
+      "launchUrl": "weatherforecast",
+      "applicationUrl": "http://localhost:5000",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "_comment": "Development thì nó sẽ ra cái giao diện hỗ trợ dev, còn production thì nó ra cái giao diện bẩn bẩn cho người dùng"
+      }
+    }
+  }
+}

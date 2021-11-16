@@ -1,0 +1,18 @@
+- mongod: 
+
++ cài mongo sử dụng docker thì cái container mongo đấy là mongod, còn không docker mà cài thẳng vào máy thì mongod sẽ chạy như 1 background service ngầm
+
++ muốn connect vào mongo thì gõ mongo, nếu mongod không chạy thì sẽ có lỗi do không connect vào mongod đc. ở window thì sẽ đc do mongod chạy như 1 background service ngầm rồi(đã check trong quá trình cài đặt). 
+
++ muốn shutdown cái service mongo đấy thì chạy cmd admin, gõ net stop mongodb
+
++ shutdown rồi thì có thể start server mongo bằng cách gõ mongod
+
++ mongo về cơ bản là 1 client cho phép bạn connect vào server mongo và thực hiện query trong database của bạn, lệnh "mongod" sẽ start mongo database server
+
++ ở window thì đường dẫn --dbpath nằm trong mục cài đặt mặc định của window nên khi start mongo server cần gõ lệnh:
+mongod --dbpath "C:\Program Files\MongoDB\Server\4.0\data\db"
+
++ còn ở linux thì như này: mongod --dbpath "/data/db", nếu có lỗi thì thêm cái sudo ở đầu để cung cấp quyền lưu trữ dữ liệu trong cái path đó. nó sẽ bắt nhập password, ở window thì password không bắt buộc và cũng không có yêu cầu luôn
+
++ sau khi mongo server chạy, mở 1 cái cmd mới, gõ mongo và kệ cho cái cmd cũ chạy, nó sẽ tự động connect vào cái server mongo đang chạy

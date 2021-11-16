@@ -1,0 +1,19 @@
+C# Pass 01 : https://www.youtube.com/watch?v=3hYpCLvvIn4&feature=youtu.be&fbclid=IwAR3SHbLll2XKhvrMiznpMzw1zratHVkay8n6OCf8dRsF8RCt7HRypU2rwLI (bassics)
+
+C# Pass 02 : https://www.youtube.com/watch?v=EGWc1aZHUxg&feature=youtu.be&fbclid=IwAR0f2Y0BWwDcu011p83YFdRiIifh2mrEdzN5GG9tx48-3IX8hn6-9uoeQNM (bassics)
+
+C# Pass 03 : https://www.youtube.com/watch?v=2zJxq3KjC4o&feature=youtu.be&fbclid=IwAR34Mpxg-4uFcoJqJPMfNorHRqgkrxvgRa37bg9xZiJwFLzfhNaeuSm89_Q (OOP)
+
+C# Pass 04 : https://www.youtube.com/watch?v=0e0ywK2MyDA&feature=youtu.be&fbclid=IwAR1bCO_y9rFz00AMjhtgTI62I6xv6P7tXkagX1BKChm4SohVnjd0cBOWqy0 (LinQ)
+
+C# Pass 05 : https://www.youtube.com/watch?v=JWCbXJncCAM&feature=youtu.be&fbclid=IwAR2bU1fQ5DKBih1LX42Lyzvxf6fwnqEh2CHDdldjZQrFmCDGtGtPjHDBKiA (XML, Json)
+
+C# Pass 06 : https://www.youtube.com/watch?v=QHcBj0VOO8c&feature=youtu.be&fbclid=IwAR3nCTpE5iddYwMfMIl5cPWITZ0vph1UyubyWnUMbF4yf-NVC_jJwYn5XoE (ASP.NET Webforms)
+
+C# Pass 07 : https://www.youtube.com/watch?v=Cx3p5S8vzk4&feature=youtu.be&fbclid=IwAR3EDTvGcg4UbcmWJBvlB7bUZXOHOJ3fojy5m4eykvgyCK-zn1eWBVsGV_I (ASP.NET CRUD Pass 01)
+
+C# Pass 08 : https://www.youtube.com/watch?v=iPf0Tpm_2zw&feature=youtu.be&fbclid=IwAR0f2Y0BWwDcu011p83YFdRiIifh2mrEdzN5GG9tx48-3IX8hn6-9uoeQNM (ASP.NET CRUD Pass 02)
+
+C# Pass 09 : https://www.youtube.com/watch?v=vKrsba8DIt4&feature=youtu.be&fbclid=IwAR3VBx47pu_no99hao9I_ZUDfMsuByhwBXTFC2igvDUrSehWNpwkh-uzGPY (ASP.NET Master Page, Chart)
+
+C# Pass 10 : https://www.youtube.com/watch?v=X-joSxihRic&feature=youtu.be&fbclid=IwAR2bU1fQ5DKBih1LX42Lyzvxf6fwnqEh2CHDdldjZQrFmCDGtGtPjHDBKiA (ASP.NET Ajax , Dynamic Data)

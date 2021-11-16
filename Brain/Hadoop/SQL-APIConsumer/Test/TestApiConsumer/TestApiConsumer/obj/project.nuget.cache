@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "76UOw2CUVGQm8MlPBYsH6PnAA0+7w3KNK4oFnGqu/5eyllTQdWiAXbHY0hw5FBkhZaB7/Swpw8tkGMX3/iAnOA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Admin\\Desktop\\abc\\TestApiConsumer\\TestApiConsumer\\TestApiConsumer.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Admin\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

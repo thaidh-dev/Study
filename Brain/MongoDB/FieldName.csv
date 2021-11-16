@@ -1,0 +1,5 @@
+﻿ho_ten.string()
+ngay_sinh.date(2006-01-2)
+gioi_tinh.string()
+anh.string()
+so_like.int64()

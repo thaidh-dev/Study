@@ -1,0 +1,18 @@
+show partitions part_dept1;
+
+drop partition
+alter table part_dept1 drop partition (deptname = 'HR');
+
+Add partition
+alter table part_dept1 add partition (deptname = 'Dev');
+
+load data local inpath'/home/jivesh/dev'into table part_dept1 partition( deptname ='Dev');
+
+tạo folder trực tiếp = hadoop fs -mkdir không được tính là partition, sử dụng lệnh bên dưới thì sẽ tự update thành partition
+msck repair table part_dept1;
+
+
+
+
+
+

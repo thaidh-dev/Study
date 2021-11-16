@@ -1,0 +1,28 @@
+- Client: It submits map-reduce jobs
+
+- Resource Manager: It is the master daemon of YARN and chịu trách nhiệm phân công tài nguyên và quản lý tất cả application(đơn yêu cầu). Bất cứ khi nào nhận được yêu cầu xử lý, nó chuyển hướng chúng cho các node manager tương ứng và phân bổ tài nghuyên phù hợp để hoàn thành các request. Nó có hai thành phần chính:
++ Scheduler: Nó thực hiện lập kế hoạch dựa trên ứng dụng được phân bổ và tài nguyên sẵn có. Nó chỉ thực hiện lập kế hoạch(scheduler) chứ không thực hiện các task khác như monitoring(Giám sát) or tracking(kiểm tra) và không đảm bảo sẽ khởi động lại nếu có task fail. The YARN scheduler hỗ trợ các plugin như Capacity Scheduler and Fair Scheduler để phân vùng tài nguyên trong cụm 
++ Application manager: nó chịu trách nhiệm chấp nhận các application và đàm phán container đầu tiên từ resource manager. It also restarts the Application Manager container if a task fails.
+
+- Node Manager: Nó chăm sóc từng nút riêng lẻ trên cụm Hadoop và quản lý ứng dụng và quy trình làm việc cũng như nút cụ thể đó. nó giám sát việc sử dụng tài nguyên, thực hiện quản lý log và kill các container dựa trên yêu cầu của resource manager. nó cũng chịu trách nhiêm create container và start chúng theo yêu cầu của application master 
+
+- Application Master: The application manager chịu trách nhiệm gọi tài nguyên từ resource manager, theo dõi trạng thái và theo dõi tiến trình của một application. The application master yêu cầu container từ node manager bằng cách gửi a Container Launch Context(CLC) bảo gồm tất cả mọi thứ application cần để chạy. Sau khi application được khởi động, nó sẽ gửi báo cáo sức khỏe(health report) cho resource manager.
+
+- Container: là các tài nguyên vật lý như ram, cpu cores và disk trong 1 node. The containers are invoked by Container Launch Context(CLC) which is a record that contains information such as environment variables, security tokens, dependencies etc.
+
+Application workflow in Hadoop YARN:
+1 - Client submits an application
+2-  The Resource Manager allocates(phân bổ) a container to start the Application Manager
+3 - The Application Manager registers itself (tự đăng ký với) with the Resource Manager
+4 - The Application Manager negotiates(đàm phán) containers from the Resource Manager
+5 - The Application Manager notifies(thông báo cho) the Node Manager to launch containers(để chạy các container)
+6 - Application code is executed in the container (code được thực thi trong container)
+7 - Client contacts(liên hệ) Resource Manager/Application Manager to monitor application’s status (để theo dõi trạng thái application)
+8 - Once the processing is complete (Khi quá trình xử lý hoàn tất), the Application Manager un-registers (hủy đăng ký với) with the Resource Manager
+
+
+
+
+
+
+

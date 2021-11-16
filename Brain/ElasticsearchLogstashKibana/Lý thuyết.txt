@@ -1,0 +1,54 @@
+- mỗi server chạy elasticsearch là 1 node
+- nhiều server chạy elasticsearch liên kết vs nhau gộp thành 1 cluster
+- index lưu xong elasticsearch được chia nhỏ tạo thành các shards, mỗi shards có thể nằm trên 1 server nào đó bằng cách phân index thành nhiều shards và lưu ở nhiều server khác nhau. khi tìm kiếm thông tin sẽ tìm kiếm song song trên nhiều server vì thế sẽ nhanh hơn
+
+- tham số ?v là để hiển thị tên các cột
+
+GET /_cat/health?v : kiểm tra trạng thái elasticsearch
+
+GET /_cat/indices?v : kiểm tra các index có trong elasticsearch
+
+PUT /product?pretty : tạo index product
+
+DELETE /ABC?pretty : xóa index abc
+
+PUT /student/_doc/3 
+{
+  "name": "Cường",
+  "age": "20",
+  "subjects": ["Toán", "Lý", "Hóa"]
+} : vừa là create vừa là update
+
+GET /student/_doc/1
+
+DELETE /student/_doc/1
+
+POST /_bulk
+{"index": {"_index": "student", "_id": 7}}
+{"ten": "Giang", "tuoi": 21}
+{"index": {"_index": "student", "_id": 8}}
+{"ten": "Hải", "tuoi": 21}
+{"index": {"_index": "student", "_id": 9}}
+{"ten": "Huyền", "tuoi": 21} : create hàng loạt
+
+curl -XPOST "http://localhost:9200/_bulk" -H "Content-Type: application/x-ndjson" --data-binary "@data.json" : insert hàng loạt và dữ liệu đc lấy từ 1 file 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
