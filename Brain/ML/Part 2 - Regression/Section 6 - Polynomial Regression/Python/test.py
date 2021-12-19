@@ -1,9 +1,6 @@
 # Polynomial Regression
 
 # Importing the libraries
-import numpy as np
-import matplotlib.pyplot as plt
-import pandas as pd
 from sklearn.preprocessing import PolynomialFeatures
 
 # tính theo library
@@ -18,6 +15,9 @@ poly_reg = PolynomialFeatures(degree)
 X_poly = poly_reg.fit_transform(X)
 
 # tính = cơm
+# formula: [1, a, b, c, aa, ab, ac, bb, bc, cc, ...]
+# tùy theo degree
+# VD: degree = 4 => [1, a, b, c, aa, ab, ac, bb, bc, cc, aaa, aab, aac, abb, abc, acc, bbb, bbc, bcc, ccc, aaaa, aaab, aaac, aabb, aabc, aacc, abbb, abbc, abcc, accc, bbbb, bbbc, bbcc, bccc, cccc]
 def calculate(arr, degreeMax):
     if degreeMax == -1: return
     degree = degreeMax
