@@ -12,11 +12,6 @@ AWS
 duonghongthai07@gmail.com
 &Dht24111997
 
-key id
-AKIAQ2YGQA6OPBMUKNCI
-secret key
-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
-
 
 
 
