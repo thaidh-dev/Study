@@ -1,0 +1,33 @@
+OpenVPN Site to Site
+
+        sudo apt-get install openvpn -y
+
+        sudo openvpn --genkey --secret /etc/openvpn/vpn.key
+
+        sudo nano /etc/openvpn/site.conf
+        _________________________________________________
+        remote 10.10.10.2
+        dev tun
+        ifconfig 1.1.1.1 1.1.1.2
+        secret /etc/openvpn/vpn.key
+        route 172.16.0.0 255.255.255.0
+        persist-key
+        persist-tun
+
+        - scp /etc/openvpn/* root@10.10.10.2:/etc/openvpn
+
+
+
+        sudo nano /etc/openvpn/site.conf
+        _________________________________________________
+        remote 10.10.10.1
+        dev tun
+        ifconfig 1.1.1.2 1.1.1.1
+        secret /etc/openvpn/vpn.key
+        route 192.168.0.0 255.255.255.0
+        persist-key
+        persist-tun
+
+	sudo sysctl net.ipv4.ip_forward=1        
+	sudo systemctl start openvpn@site
+
