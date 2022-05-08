@@ -35,3 +35,14 @@ nếu mà cái pathFile của b có cả space ' ' và cả dấu ' thì xem vd
 Xem VD:
 git filter-branch --index-filter "git rm -r --cached --ignore-unmatch Cambridge\ Grammar\ for\ IELTS\ Student\'s\ Book\ with\ Answers\ and\ Audio\ CD.rar" -f -- --all
 
+If anyone wants to ignore changes on git but keep them on local you can use:
+	git update-index --assume-unchanged <filepath>: 
+bỏ đi
+	git update-index --no-assume-unchanged <filepath>
+get-a-list-of-files-marked-assume-unchanged
+	git ls-files -v | grep "^[[:lower:]]"
+
+I have a bunch of commits in the repository. I want to see a list of files changed between two commits
+git diff --name-status 5102190 d312d94
+git log --name-status --oneline 5102190 d312d94
+

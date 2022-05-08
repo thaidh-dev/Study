@@ -1,0 +1,14 @@
+Mô tả ảnh 'the rendering behavior with respect to the context api.png'
+
+in this scenario let's say the initial render is completed so all the components have been rendered once now
+since the count value is a state variable in the parent component
+let's say we called the setcountsetter function to increment the count value 
+if the count value increments the component will be flagged for re-render
+we know that react starts from the root component and finds the components flagged for re-render
+react says that the parent component has been flagged
+when it's rendering the parent component react says that the parent component also renders a context provider
+it then checks to see if the context provider has been given a new value 
+since we increment the count value the context provider indeed has been given a new value (thực sự đã đc cấp 1 new value)
+react will make a note to re-render all the components that consume the context value
+in our example the component is child C 
+so react makes its way down the component tree and when it encounters (khi nó gặp) child C it is going to re-render that component 

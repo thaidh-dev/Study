@@ -1,0 +1,79 @@
+body, html {
+    background: #eee;
+    position: relative;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+#a, #b {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    transform-origin: 50%;
+    z-index: 99;
+}
+
+#a {
+    background: #777;
+    left: 50px;
+    top: 50px;
+    transform: rotateZ(10deg);
+}
+
+#b {
+    background: #bbb;
+    left: 170px;
+    top: 60px;
+
+}
+
+#a div, #b div {
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    visibility: hidden;
+}
+
+#a:hover div, #b:hover div {
+    visibility: visible;
+    outline: solid 1px blue;
+}
+
+.left-top {
+    left: 0;
+    top: 0;
+    background: yellow;
+}
+
+.right-top {
+    right: 0;
+    top: 0;
+    background: red;
+}
+
+.right-bottom {
+    right: 0;
+    bottom: 0;
+    background: blue;
+}
+
+.left-bottom {
+    left: 0;
+    bottom: 0;
+    background: lime;
+}
+
+input, button {
+    position: fixed;
+    top: 280px;
+    float: left;
+}
+
+#r {
+    left: 10px;
+}
+
+input {
+    left: 80px;
+}
