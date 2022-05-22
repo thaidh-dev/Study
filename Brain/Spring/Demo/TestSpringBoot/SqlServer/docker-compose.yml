@@ -1,0 +1,18 @@
+version: "3.3"
+
+services:
+  database:
+    image: mcr.microsoft.com/mssql/server@sha256:49a57dc220b1ea9d5bbdb95a98a27b3ed2c50e164c643eefab2e985e798f0b6b
+    container_name: sqlserver
+    restart: always
+    environment:
+      MSSQL_PID: Express
+      SA_PASSWORD: "&Dht24111997"
+      ACCEPT_EULA: Y
+    volumes:
+      - ./data:/var/opt/mssql/data
+      - ./log:/var/opt/mssql/log
+      - ./secrets:/var/opt/mssql/secrets
+    ports:
+      - 1433:1433
+
