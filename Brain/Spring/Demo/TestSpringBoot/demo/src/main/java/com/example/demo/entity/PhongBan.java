@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Getter
@@ -17,4 +18,7 @@ public class PhongBan {
 
     @Column(name = "ten_phong")
     private String tenPhong;
+
+    @OneToMany(mappedBy = "phongBan")
+    private List<NhanVien> nhanViens;
 }
