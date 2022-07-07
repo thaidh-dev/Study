@@ -46,3 +46,7 @@ I have a bunch of commits in the repository. I want to see a list of files chang
 git diff --name-status 5102190 d312d94
 git log --name-status --oneline 5102190 d312d94
 
+git fetch origin develop:develop (git fetch <remote> <src>:<dst>): pull Git branches without using checkouts
+
+
+

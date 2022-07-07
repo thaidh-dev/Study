@@ -4,6 +4,7 @@ import com.example.demo.entity.PhongBan;
 import com.example.demo.repository.PhongBanRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -14,5 +15,10 @@ public class PhongBanService {
 
     public List<PhongBan> getAllPhongBan() {
         return phongBanRepository.findAll();
+    }
+
+    @Transactional
+    public PhongBan insertPhongBan(PhongBan phongBan) {
+        return phongBanRepository.save(phongBan);
     }
 }

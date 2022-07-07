@@ -7,7 +7,18 @@ go
 use test_spring_boot
 go
 
+delete from ghi_nhan
+go
+delete from nhan_vien
+go
+delete from phong_ban
+go
+
 select * from phong_ban
+go
+select * from nhan_vien
+go
+select * from ghi_nhan
 go
 
 

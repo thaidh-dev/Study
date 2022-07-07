@@ -41,10 +41,10 @@ public class NhanVien {
     private String ghiChu;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_phong_ban", nullable = false)
+    @JoinColumn(name = "id_phong_ban", nullable = true)
 //    sử dụng 1 trong 2: @JsonIgnore or @JsonProperty
 //    @JsonIgnore is used at field level to mark a property or list of properties to be ignored.
-    @JsonIgnore
+//    @JsonIgnore
 //    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY) is for the REST APIs section below to ignore the property when serializing it to JSON string,
 //    due to library is a LAZY association which can throw LazyInitializationException if it is uninitialized in a non-transactional context
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)

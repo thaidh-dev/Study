@@ -19,6 +19,6 @@ public class PhongBan {
     @Column(name = "ten_phong")
     private String tenPhong;
 
-    @OneToMany(mappedBy = "phongBan")
+    @OneToMany(mappedBy = "phongBan", cascade = CascadeType.ALL)
     private List<NhanVien> nhanViens;
 }

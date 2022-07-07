@@ -14,3 +14,8 @@ find . -name "*.js": tìm toàn bộ file .json của thư mục mình đang d�
 grep "log" alo.js: tìm toàn bộ từ 'log' trong file alo.js
 rm -r tenFolder: xóa folder
 
+đổi file LF -> CRLF và ngược lại: mở git bash vì đây là lệnh linux
+CRLF -> LF
+	find . -type f -exec dos2unix {} \;
+LF -> CRLF
+find . -type f -exec unix2dos {} \;
