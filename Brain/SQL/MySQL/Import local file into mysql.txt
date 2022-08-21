@@ -1,0 +1,4 @@
+tạo db trước có các column trước
+C:\Program Files\MySQL\MySQL Server 8.0\bin
+ mysql --local-infile=1 -u root -p
+LOAD DATA LOCAL INFILE 'D:/airlinedelaycauses_DelayedFlights.csv' INTO TABLE world.DelayedFlights FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n' IGNORE 1 LINES;
