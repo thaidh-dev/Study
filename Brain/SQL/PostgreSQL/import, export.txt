@@ -1,0 +1,2 @@
+pg_dump -h 192.168.56.102 -U geminiot -p 5432 -d geminiotdata -W -f C:\Users\Admin\Desktop\img\geminiotdata.s ql
+psql -h localhost -p 5434 -U postgres -f C:\Users\Admin\Desktop\img\geminiotdata.sql geminiotdata
