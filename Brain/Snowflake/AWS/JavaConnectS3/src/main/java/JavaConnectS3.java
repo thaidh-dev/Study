@@ -18,14 +18,14 @@ import java.util.List;
 public class JavaConnectS3 {
     public static void main(String[] args) {
         AWSCredentials credentials = new BasicAWSCredentials(
-                "AKIAQ2YGQA6OPBMUKNCI",
-                "sbq2Gd+uRRWPFj9pe1jmZzJEhKpx63cqOKER0X4s"
+                "AKIAW57JWNSXIVLH5OIA",
+                "hhitEY+CixGZnmgVFKybsYdPNzhzkcvjPPQKiWui"
         );
 
         AmazonS3 s3client = AmazonS3ClientBuilder
                 .standard()
                 .withCredentials(new AWSStaticCredentialsProvider(credentials))
-                .withRegion(Regions.AP_SOUTHEAST_1)
+                .withRegion(Regions.AP_NORTHEAST_1)
                 .build();
 
 //        List<Bucket> buckets = s3client.listBuckets();
@@ -39,19 +39,19 @@ public class JavaConnectS3 {
 //        }
 
         // download all file trong bucket
-//        TransferManager transferManager = TransferManagerBuilder.standard().withS3Client(s3client).build();
-//        File file = new File("C:\\Users\\Admin\\Desktop\\Newfolder");
-//        MultipleFileDownload multipleFileDownload = transferManager.downloadDirectory("thaidh-film", "", file);
-//        try (ProgressBar pb = new ProgressBar("Download", 100)) {
-//            do {
-//                pb.stepTo((long) multipleFileDownload.getProgress().getPercentTransferred());
-//            } while (!multipleFileDownload.isDone());
-//
-//            multipleFileDownload.waitForCompletion();
-//            transferManager.shutdownNow();
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
+        TransferManager transferManager = TransferManagerBuilder.standard().withS3Client(s3client).build();
+        File file = new File("C:\\Users\\Admin\\Desktop\\Newfolder");
+        MultipleFileDownload multipleFileDownload = transferManager.downloadDirectory("geminiotvms", "ThaiDH", file);
+        try (ProgressBar pb = new ProgressBar("Download", 100)) {
+            do {
+                pb.stepTo((long) multipleFileDownload.getProgress().getPercentTransferred());
+            } while (!multipleFileDownload.isDone());
+
+            multipleFileDownload.waitForCompletion();
+            transferManager.shutdownNow();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
 
 //        s3client.deleteObject("thaidh-bucket","iot_data/example.json");
