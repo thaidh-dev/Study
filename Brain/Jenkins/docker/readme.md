@@ -1,0 +1,1 @@
+docker exec -it docker-jenkins-1 /bin/bash 
