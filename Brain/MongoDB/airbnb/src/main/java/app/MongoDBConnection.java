@@ -35,7 +35,7 @@ public class MongoDBConnection {
     // private static final String DATABASE_URL = "YOUR ATLAS SERVER CONNECTION
     // STRING HERE";
 
-    private static final String DATABASE_URL = "mongodb+srv://thaidh:&Dht24111997@cluster0.7hhz1.mongodb.net/test";
+    private static final String DATABASE_URL = "mongodb+srv://thaidh:&Dht24111997@cluster0.zkpsdvt.mongodb.net/";
 
     static MongoClient client;
     MongoDatabase database;
