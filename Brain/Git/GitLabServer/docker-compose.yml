@@ -1,0 +1,23 @@
+version: '3.6'
+services:
+  gitlab_server:
+    image: 'gitlab/gitlab-ee:latest'
+    hostname: 'duonghongthai.dts.com'
+    ports:
+      - '80:80'
+      - '443:443'
+      - '22:22'
+    environment:
+      - GITLAB_ROOT_PASSWORD=&Dht24111997
+    volumes:
+      - './volume/gitlab_server/config:/etc/gitlab'
+      - './volume/gitlab_server/logs:/var/log/gitlab'
+      - './volume/gitlab_server/data:/var/opt/gitlab'
+    shm_size: '256m'
+
+  gitlab_runner:
+    image: gitlab/gitlab-runner:latest
+    container_name: gitlab-runner
+    volumes:
+      - ./volume/gitlab_runner/config:/etc/gitlab-runner
+      - ./volume/gitlab_runner/docker.sock:/var/run/docker.sock
