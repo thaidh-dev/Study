@@ -192,3 +192,4 @@ venv.bak/
 .dmypy.json
 dmypy.json
 volume/
+jenkins_home/
