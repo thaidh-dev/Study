@@ -1,0 +1,12 @@
+﻿document.addEventListener('click', function(event) {
+    
+     if (event.target && event.target.matches('.image-zoom img, video')) {
+         
+        if (event.target.classList.contains('zoom')) {
+        event.target.classList.remove('zoom');
+        } 
+        else {
+        event.target.classList.add('zoom');
+        }
+     } 
+});

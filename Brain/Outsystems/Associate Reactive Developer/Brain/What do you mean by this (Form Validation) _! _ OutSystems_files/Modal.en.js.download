@@ -1,0 +1,21 @@
+﻿var Modal = function() {
+    
+    // Objects
+    var ModalTabIndexItems
+    
+    var start = function(widgetId) {
+
+        // apply tabindex = -1 by default to disable the navigation inside the modal when is hidden
+        ModalTabIndexItems = document.querySelectorAll("#" + widgetId + " [tabindex]");
+        ModalTabIndexItems = [].slice.call(ModalTabIndexItems);
+        ModalTabIndexItems.forEach(function(item) {
+            item.setAttribute('tabindex', '-1');
+        });      
+    };
+
+    return {
+        init: function(widgetId) {
+            start(widgetId);
+        }
+    };
+};

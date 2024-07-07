@@ -1,0 +1,35 @@
+﻿function searchOnEnter(hiddenLinkId, inputId) {
+    var key = window.event.keyCode;
+    
+    if (key === 13) { //ENTER key pressed?
+       document.getElementById(hiddenLinkId).click();
+       document.getElementById(inputId).blur();
+    }
+}
+
+function onPollOptionChosen(btnGiveFeedbackId) {
+    //Enable the "Give Feedback" button
+    document.getElementById(btnGiveFeedbackId).removeAttribute("disabled");
+    
+    //Style the option labels
+    var optionLabels = document.querySelectorAll(".thread-view-poll__option label");
+    var i;
+    for (i = 0; i < optionLabels.length; i++) {
+        optionLabels[i].classList.remove("text-neutral-5");
+    }
+}
+
+function adjustPageContentPosition(contentWrapperId, isPhone) {
+    var element = document.getElementById(contentWrapperId);
+    
+    if(element.classList.contains("padding-top-base")) {
+        element.classList.remove("padding-top-base");
+    }
+    
+    if(isPhone) {
+        element.classList.remove("margin-top-xxl");
+    }
+    else {
+        element.classList.remove("margin-top-xl");
+    }
+}

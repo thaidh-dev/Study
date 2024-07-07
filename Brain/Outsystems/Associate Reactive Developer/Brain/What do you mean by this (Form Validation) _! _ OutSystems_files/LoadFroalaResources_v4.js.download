@@ -1,0 +1,74 @@
+﻿function newFroalaEditor(options, inputId, key, useImagesWithBase64, tribute, callbackContentChanged) {
+    var internalOptions = {
+        linkAutoPrefix: 'https://',
+        paragraphFormat: {
+            N: 'Normal',
+            H1: 'Heading 1',
+            H2: 'Heading 2',
+            H3: 'Heading 3',
+            H4: 'Heading 4'
+        },
+        videoUpload: false,
+        key: key,
+        attribution: false,
+        pastePlain: true,
+        imageDefaultWidth: 0,
+        events: {
+            'initialized': function() {
+                if(tribute){
+                    let editor = this;
+                    tribute.attach(editor.el);
+                    editor.events.on('keydown', function(e) {
+                    if (e.which == FroalaEditor.KEYCODE.ENTER && tribute.isActive) {
+                        return false;
+                    }
+                    }, true);
+                }
+            },
+            'input': callbackContentChanged,
+            'keydown': callbackContentChanged,
+            'keypress': callbackContentChanged,
+            'keyup': callbackContentChanged,
+            'contentChanged': callbackContentChanged,
+            'image.beforeUpload': function(files) {
+                if(useImagesWithBase64) {
+                    uploadedImageToBase64(this, files);
+                    return false;
+                }
+            },
+            'focus': function () {
+                /* set the cursor to the end of the text inside the editor*/
+                let editor = this;
+                editor.selection.setAfter(editor.$el.get(0));
+                editor.selection.restore();
+            }
+        }
+    };
+
+    var mergedOptions = { ...internalOptions, ...options };
+
+    if(typeof window.froalaReact === 'undefined') window.froalaReact = {};
+    if(typeof window.froalaReact[inputId] !== 'undefined' && typeof window.froalaReact[inputId].editor !== 'undefined') {
+        window.froalaReact[inputId].editor.destroy();
+        window.froalaReact[inputId].editor = undefined;
+    } else {
+        window.froalaReact[inputId] = {
+            editor: undefined,
+            options: mergedOptions
+        };
+    }
+
+    window.froalaReact[inputId].editor = new FroalaEditor('#' + inputId, mergedOptions);
+}
+
+function uploadedImageToBase64(editor, files) {
+    if (files.length) {
+        var reader = new FileReader();
+        reader.onload = function(e) {
+            var result = e.target.result;
+            editor.image.insert(result, null, null, editor.image.get());
+        };
+        reader.readAsDataURL(files[0]);
+    }
+}
+

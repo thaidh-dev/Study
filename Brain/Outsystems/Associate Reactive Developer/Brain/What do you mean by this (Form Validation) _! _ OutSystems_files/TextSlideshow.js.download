@@ -1,0 +1,41 @@
+﻿function runTextSlidehow(widgetId, isLoop, time){
+
+    const texts = document.getElementById(widgetId).querySelectorAll('.text-slideshow__item');
+    const numberOfTexts = texts.length;
+    const loop = JSON.parse(isLoop.toLowerCase());
+    const timerTextIn = time;
+    const timerTextOut = timerTextIn - 200;
+    let index = 0;
+
+    function animateText() {
+        for (let i = 0; i < numberOfTexts; i++) {
+            texts[i].classList.remove('text-in', 'text-out');
+        }
+        // Add Animation In
+        texts[index].classList.add('text-in');
+
+        // Add Animation Out if it's not the last without loop
+        if (index === numberOfTexts - 1 && loop === false ){
+            return;
+        } else {
+            setTimeout(() => {
+                texts[index].classList.add('text-out');
+            }, timerTextOut);
+        }
+
+        setTimeout(() => {
+            if (index === numberOfTexts - 1 && loop) {
+                index = 0;
+                animateText();
+            } else if( index < numberOfTexts - 1 ) {      
+                index++;
+                animateText();
+            } else {
+                return;
+            }
+            
+        }, timerTextIn);
+    }
+
+    animateText()
+}

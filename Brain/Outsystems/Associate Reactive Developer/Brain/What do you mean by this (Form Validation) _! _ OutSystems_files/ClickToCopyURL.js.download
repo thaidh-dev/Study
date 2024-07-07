@@ -1,0 +1,24 @@
+﻿function copyURLToClipboard(e, URL, tooltipId) {
+    e.preventDefault();
+    
+    var dummy = document.createElement('input');
+    document.body.appendChild(dummy);
+    dummy.value = URL;
+    dummy.select();
+    document.execCommand('copy');
+    document.body.removeChild(dummy);
+}
+
+function setTooltipText(tooltipId, text) {    
+    var tooltip = document.getElementById(tooltipId);
+    tooltip.innerHTML = text;
+}
+
+function setTooltipIsCopiedCssClass(tooltipId, addClass) {
+    if(addClass) {
+        document.getElementById(tooltipId).classList.add('is-copied');
+    }
+    else {
+        document.getElementById(tooltipId).classList.remove('is-copied');
+    }
+}

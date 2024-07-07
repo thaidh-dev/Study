@@ -1,0 +1,308 @@
+﻿var newAccordion = function() { 
+    // Objects
+    var accordion;
+    var accordionItems;
+    var currAccordionItem;
+    var currAccordionItemContent;
+    var transitioningElement;
+    var activeIndex = false;
+    var multipleItems;
+
+    var start = function(widgetIdParam, multipleItemsParam) {
+        // Fills objects
+        accordion = document.getElementById(widgetIdParam);
+        multipleItems = multipleItemsParam;
+        checkAccordionElements = accordion.querySelectorAll('.accordion-item.is--open');
+        
+        if(accordion) {
+            if(multipleItems === "false"){
+                for(i = 0; i < checkAccordionElements.length; i++) {
+                    if(i !== 0) {
+                        accordion.querySelectorAll('.accordion-item')[i].classList.remove('is--open');
+                        accordion.querySelectorAll('.accordion-item')[i].classList.add('is--closed');
+                        accordion.querySelectorAll('.accordion-item-content')[i].classList.remove('is--expanded');
+                        accordion.querySelectorAll('.accordion-item-content')[i].classList.add('is--collapsed');
+                    }
+                }
+            }
+            
+            accordionItems = accordion.querySelectorAll('.accordion-item');
+            if(accordion.getAttribute('data-active-item') > -1) {
+                activeIndex = accordion.getAttribute('data-active-item');
+            }
+            
+            // Adds event listener for each accordion item
+            for(var i = 0; i < accordionItems.length; i++) {
+                prepareElements(accordionItems[i]);
+            }
+        }
+    };
+    
+    var addClass = function(element, elClass) {
+        if(element && !element.classList.contains(elClass)) {
+            element.classList.add(elClass);
+            return true;
+        }
+        
+        return false;
+    };    
+    
+    var removeClass = function(element, elClass) {
+        if(element && element.classList.contains(elClass)) {
+            element.classList.remove(elClass);
+            return true;
+        }
+        
+        return false;
+    };
+    
+    var isClosed = function(currentAccordionItem) {
+        if(currentAccordionItem.classList.contains('is--closed')) {
+            return true;
+        }
+        
+        return false;
+    };
+    
+    var isDisabled = function(currentAccordionItem) {
+        if(currentAccordionItem.classList.contains('is--disabled')) {
+            return true;
+        }
+        
+        return false;
+    };
+    
+    // Set visibility through ARIA states - Accessibility
+    var setAriaExpanded = function(currentAccordionItem, status, ariaHidden) {
+        currentAccordionItem.setAttribute('aria-expanded', status);
+        currentAccordionItem.querySelector('.accordion-item-header').setAttribute('aria-expanded', status);
+        currentAccordionItem.querySelector('.accordion-item-content').setAttribute('aria-hidden', ariaHidden);
+    };
+    
+    var prepareElements = function(accordionItem) {
+        if(accordionItem) {
+            
+            var accordionItemContent = accordionItem.querySelector('.accordion-item-content');
+            var accordionItemHeader = accordionItem.querySelector('.accordion-item-header');
+            
+            // Adds event listener
+            accordionItemHeader.addEventListener('click', onAccordionClick);
+            accordionItemHeader.addEventListener('keydown', onAccordionKeypress);
+            
+            // Checks if it is the active item
+            if(activeIndex && activeIndex < accordionItems.length && accordionItem === accordionItems[activeIndex]) {
+                removeClass(accordionItem, 'is--closed');
+                addClass(accordionItem, 'is--open');
+                removeClass(accordionItemContent, 'is--collapsed');
+                addClass(accordionItemContent, 'is--expanded');
+                setAriaExpanded(accordionItem, 'true', 'false');
+            }
+        }
+    };
+    
+    var getCurrentHeight = function(currentAccordionItem) {
+        var currentAccordionItemContent = currentAccordionItem.querySelector('.accordion-item-content');
+        
+        // Returns the accordion item content height
+        if(currentAccordionItemContent) {
+            return currentAccordionItemContent.getBoundingClientRect().height;
+        }
+        
+        return false;
+    };
+    
+    // Set keyboard interaction - Accessibility
+    var onAccordionKeypress = function(e) {
+        currAccordionItem = this;
+        
+        if(currAccordionItem) {
+            currAccordionItem = currAccordionItem.parentElement
+            
+            if(isDisabled(currAccordionItem)) {
+                if (e.keyCode == "32" || e.keyCode == "13")
+                    e.preventDefault();
+                return false;
+            } else {
+                
+                if(!isClosed(currAccordionItem))
+                {
+                    //If esc, Close AccordionItem
+                    if (e.keyCode == "27") {
+                        collapse(currAccordionItem);
+                        setAriaExpanded(currAccordionItem, 'false', 'true');
+                    }
+                }
+                //If enter or space use the onAccordionClick to validate
+                if (e.keyCode == "32" || e.keyCode == "13") {
+                    // Checks if the current accordion item is closed - collapsed
+                    if(isClosed(currAccordionItem)) {
+                        expand(currAccordionItem);
+                        setAriaExpanded(currAccordionItem, 'true', 'false');
+                    } else {
+                        collapse(currAccordionItem);
+                        setAriaExpanded(currAccordionItem, 'false', 'true');
+                    }
+                    e.preventDefault();
+                    e.stopPropagation();
+                }
+                
+                for(var i = 0; i < accordionItems.length; i++) {
+                    var accordionItem = accordionItems[i];
+                    if(multipleItems === "false" && accordionItem !== currAccordionItem && !isClosed(accordionItem)) {
+                        collapse(accordionItem);
+                    }
+                }
+            }
+        }
+    };
+    
+    var onAccordionClick = function() {
+        currAccordionItem = this;
+        
+        if(currAccordionItem) {
+            currAccordionItem = currAccordionItem.parentElement
+            
+            currAccordionItemContent = currAccordionItem.querySelector('.accordion-item-content');
+
+            // Checks if the current accordion item is closed - collapsed
+            if(isClosed(currAccordionItem)) {
+                expand(currAccordionItem);
+                setAriaExpanded(currAccordionItem, 'true', 'false');
+            } else {
+                collapse(currAccordionItem);
+                setAriaExpanded(currAccordionItem, 'false', 'true');
+            }
+            
+            for(var i = 0; i < accordionItems.length; i++) {
+                var accordionItem = accordionItems[i];
+                if(multipleItems === "false" && accordionItem !== currAccordionItem && !isClosed(accordionItem)) {
+                    collapse(accordionItem);
+                }
+            }
+        }
+    };
+    
+    var expand = function(currentAccordionItem) {
+        
+        var currentAccordionItemContent = currentAccordionItem.querySelector('.accordion-item-content');
+        var currentAccordionItemHeader = currentAccordionItem.querySelector('.accordion-item-header');
+        
+        // Gets initial height value
+        var collapsedHeight = currentAccordionItemContent.getBoundingClientRect().height;
+        
+        // Toggle is--closed/is--open class from current accordion item
+        removeClass(currentAccordionItem, 'is--closed');
+        addClass(currentAccordionItem, 'is--open');
+
+        // Prevents multiple clicks on Accordion when it's animating
+        currentAccordionItemHeader.style.pointerEvents = 'none';
+        
+        // Toggle is--collapsed/is--expanded class from current accordion item
+        removeClass(currentAccordionItemContent, 'is--collapsed');
+        addClass(currentAccordionItemContent, 'is--expanded');
+        
+        currentAccordionItemContent.removeAttribute('style');
+        
+        // Gets final height value
+        var expandedHeight = currentAccordionItemContent.getBoundingClientRect().height;
+        
+        // Removes is--expanded class from current accordion item content to animate
+        removeClass(currentAccordionItemContent, 'is--expanded');
+        
+        currentAccordionItemContent.style.height = collapsedHeight + 'px';
+        
+        // This setTimeout (0ms) will ensure that the DOM received the height 0 before actually starts the transition
+        var waitDomIterateTimeout = setTimeout(function() {
+            
+            // Adds is--animating class to current accordion item content to obtain the final height value
+            addClass(currentAccordionItemContent, 'is--animating');
+            
+            currentAccordionItemContent.style.height = expandedHeight + 'px';
+            
+            // Adds event listener to transition end
+            currentAccordionItemContent.addEventListener('transitionend', transitionEndHandler);
+            
+            // Adds is--expanded class to current accordion item content
+            addClass(currentAccordionItemContent, 'is--expanded');
+            
+            // Clear timeout
+            clearTimeout(waitDomIterateTimeout);
+        }, 0);
+    };
+    
+    var collapse = function(currentAccordionItem) {
+        
+        var currentAccordionItemContent = currentAccordionItem.querySelector('.accordion-item-content');
+        
+        currentAccordionItemContent.removeAttribute('style');
+        
+        // Gets initial height value
+        var expandedHeight = currentAccordionItemContent.getBoundingClientRect().height;
+        
+        // Toggle is--closed/is--open class from current accordion item
+        addClass(currentAccordionItem, 'is--closed');
+        removeClass(currentAccordionItem, 'is--open');
+        
+        // Removes expanded class and adds the collapsed class to obtain the collapsed height value
+        removeClass(currentAccordionItemContent, 'is--expanded');
+        addClass(currentAccordionItemContent, 'is--collapsed');
+        
+        var collapsedHeight = currentAccordionItemContent.getBoundingClientRect().height;
+        
+        currentAccordionItemContent.style.height = expandedHeight + 'px';
+        
+        // Removes collapsed class and adds the expanded class to animate
+        addClass(currentAccordionItemContent, 'is--expanded');
+        removeClass(currentAccordionItemContent, 'is--collapsed');
+        
+        // This setTimeout (0ms) will ensure that the DOM received the height 0 before actually starts the transition
+        var waitDomIterateTimeout = setTimeout(function() {
+            
+            // Adds is--animating class to current accordion item content to obtain the final height value
+            addClass(currentAccordionItemContent, 'is--animating');
+            
+            // Removes is--expanded class from current accordion item content
+            removeClass(currentAccordionItemContent, 'is--expanded');
+            
+            currentAccordionItemContent.style.height = collapsedHeight + 'px';
+            
+            // Adds event listener to transition end
+            currentAccordionItemContent.addEventListener('transitionend', transitionEndHandler);
+            
+            // Adds is--collapsed class to current accordion item content
+            addClass(currentAccordionItemContent, 'is--collapsed');
+            
+            // Clear timeout
+            clearTimeout(waitDomIterateTimeout);
+        }, 0);
+    };
+    
+    var transitionEndHandler = function() {
+        var currentElement = this;
+        var currentElementHeader = currentElement.parentElement.querySelector('.accordion-item-header')
+        
+        if(currentElement) {
+            // Removes is--animating class
+            removeClass(currentElement, 'is--animating');
+            
+            // Remove height and pointer events inline style
+            currentElement.style.height = '';
+            currentElementHeader.style.pointerEvents = '';
+            
+            // Verify if the currentElement has inline-styles and remove attribute if are empty
+            if(currentElement.style.cssText.length === 0) {
+                currentElement.removeAttribute('style');
+            }
+            
+            // Removes transitionend event listener
+            currentElement.removeEventListener('transitionend', transitionEndHandler, false);   
+        }
+    };
+    
+    return {
+        init: function(widgetIdParam, multipleItemsParam) {
+            start(widgetIdParam, multipleItemsParam);
+        }
+    }
+
+};
