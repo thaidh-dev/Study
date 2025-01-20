@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  windows:
+    image: mcr.microsoft.com/windows/server:ltsc2022
+    stdin_open: true
+    volumes:
+      - ./win_volume:C:\Users\Public\Desktop
+    ports:
+      - "80:80"
+      - "3389:3389"

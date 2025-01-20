@@ -1,0 +1,2 @@
+Windows containers do not have a GUI (graphical user interface). Microsoft has stated that they don't plan to add GUI support in the near future. 
+Windows containers were designed to not support GUI or RDP. These features are removed when the container images are built for publishing. 
