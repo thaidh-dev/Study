@@ -16,3 +16,7 @@ print(C.__base__)  # Output: <class '__main__.B'>
 print(C.__bases__)  # Output: (<class '__main__.B'>,)
 print(A.__base__)  # Output: <class 'object'>
 print(A.__bases__)  # Output: (<class 'object'>,)
+
+print('--------------------------------------------------')
+
+help(C) # help(C) will show the method resolution order (MRO) and other information about the class C.
