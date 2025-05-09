@@ -1,7 +1,10 @@
 class MyMetaClass(type):
     def __new__(cls, name, bases, attrs):
+        attrs['anhmth'] = 'anhmth'
         print(f"Creating class {name} with bases {bases} and attrs {attrs}")
-        return super().__new__(cls, name, bases, attrs)
+        obj = super().__new__(cls, name, bases, attrs)
+        obj.custom_attr = 'thaidh'
+        return obj
 
 
 class ParentClass:
@@ -18,17 +21,19 @@ class MyClass(ParentClass, metaclass=MyMetaClass):
         print(f"Value: {self.value}")
 
 
-my_instance = MyClass(10)
-my_instance.display()
+# my_instance = MyClass(10)
+# my_instance.display()
+# print(my_instance.__dict__)
+# print(MyClass.__dict__)
 
-DynamicClass = type(
-    'DynamicClass',
-    (ParentClass,),
-    {
-        'dynamic_variable': 'I am dynamic',
-        'dynamic_func': lambda self: 'I\'m lambda func'
-    }
-)  # Creating a class dynamically
-dynamic_instance = DynamicClass()
-print(dynamic_instance.dynamic_variable)
-print(dynamic_instance.dynamic_func())
+# DynamicClass = type(
+#     'DynamicClass',
+#     (ParentClass,),
+#     {
+#         'dynamic_variable': 'I am dynamic',
+#         'dynamic_func': lambda self: 'I\'m lambda func'
+#     }
+# )  # Creating a class dynamically
+# dynamic_instance = DynamicClass()
+# print(dynamic_instance.dynamic_variable)
+# print(dynamic_instance.dynamic_func())

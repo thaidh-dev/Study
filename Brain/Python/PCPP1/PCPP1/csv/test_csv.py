@@ -11,17 +11,17 @@ fieldnames = ['name', 'country', 'age']
 """
 
 with open('pcpp1.csv', 'w', newline='') as file:
-    # writer = csv.DictWriter(file, fieldnames=fieldnames)
-    # writer.writeheader()
-    # writer.writerow({'name': 'John', 'country': 'USA', 'age': 30})
-    # writer.writerow({'name': 'Alice', 'country': 'Canada', 'age': 25})
-    # writer.writerow({'name': 'Bob', 'country': 'UK', 'age': 35})
-
-    writer = csv.DictWriter(file, fieldnames=fieldnames, escapechar='\\', quoting=csv.QUOTE_NONE)
+    writer = csv.DictWriter(file, fieldnames=fieldnames)
     writer.writeheader()
     writer.writerow({'name': 'John', 'country': 'USA', 'age': 30})
-    writer.writerow({'name': 'Alice', 'country': 'Canada, Viet Nam, Japan', 'age': 25})
+    writer.writerow({'name': 'Alice', 'country': 'Canada', 'age': 25})
     writer.writerow({'name': 'Bob', 'country': 'UK', 'age': 35})
+
+    # writer = csv.DictWriter(file, fieldnames=fieldnames, escapechar='\\', quoting=csv.QUOTE_NONE)
+    # writer.writeheader()
+    # writer.writerow({'name': 'John', 'country': 'USA', 'age': 30})
+    # writer.writerow({'name': 'Alice', 'country': 'Canada, Viet Nam, Japan', 'age': 25})
+    # writer.writerow({'name': 'Bob', 'country': 'UK', 'age': 35})
 
 
 
