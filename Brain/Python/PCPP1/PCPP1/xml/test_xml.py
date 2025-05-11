@@ -24,8 +24,10 @@ root = tree.getroot()
 book_2_find = root.find('book')
 print(book_2_find.get('genre'))
 print(book_2_find[0].text)
-books_2_find = root.findall('book')
+# books_2_find = root.findall('book')
+books_2_find = root.findall('bookkk')
+print(books_2_find) # returns [] if no match is found
 
-print(root.tag)
-print(root.attrib)
+# print(root.tag)
+# print(root.attrib)
 

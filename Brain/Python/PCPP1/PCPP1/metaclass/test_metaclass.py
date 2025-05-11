@@ -8,7 +8,8 @@ class MyMetaClass(type):
 
 
 class ParentClass:
-    pass
+    def __init__(self):
+        self.parent_attr = 'Parent Attribute'
 
 
 class MyClass(ParentClass, metaclass=MyMetaClass):
@@ -16,15 +17,16 @@ class MyClass(ParentClass, metaclass=MyMetaClass):
 
     def __init__(self, value):
         self.value = value
+        super().__init__()
 
     def display(self):
         print(f"Value: {self.value}")
 
 
-# my_instance = MyClass(10)
-# my_instance.display()
-# print(my_instance.__dict__)
-# print(MyClass.__dict__)
+my_instance = MyClass(10)
+my_instance.display()
+print(my_instance.__dict__)
+print(MyClass.__dict__)
 
 # DynamicClass = type(
 #     'DynamicClass',

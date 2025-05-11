@@ -10,7 +10,8 @@ FORMAT = '%(asctime)s %(module)s %(name)s %(levelname)s %(message)s'
 # default filemode is 'a' (append) and default level is WARNING
 handler = logging.FileHandler('pcpp1.log', mode='w', encoding='utf-8')
 # handler.setLevel(logging.DEBUG)
-# handler.setFormatter(logging.Formatter(FORMAT))
+handler.setFormatter(logging.Formatter(FORMAT))
+# handler.addFilter(logging.Filter('other_logger'))
 handler.addFilter(logging.Filter('my_logger'))
 
 logger = logging.getLogger('my_logger')

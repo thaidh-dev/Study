@@ -1,5 +1,9 @@
 from json import JSONEncoder, JSONDecoder
 import json
+import os
+
+# Ensure the database file is created in the current folder
+os.chdir(os.path.dirname(__file__))
 
 
 class Animal:

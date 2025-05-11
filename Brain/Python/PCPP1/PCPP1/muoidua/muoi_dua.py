@@ -15,12 +15,21 @@ d = {
 # d_pickle = pickle.dumps(d)
 # d['skills'] = ['Python']
 
-# print(type(d_pickle))
+# print(type(d_pickle)) # <class 'bytes'>
 
 # d_deepcopy = pickle.loads(d_pickle)
 
 # print(d_deepcopy)
 # print(d)
+
+#################################################
+
+# a = 777
+# a_pickle = pickle.dumps(a)
+# a = 888
+# a_deepcopy = pickle.loads(a_pickle)
+# print(a_deepcopy) # 777
+# print(a) # 888
 
 #################################################
 
@@ -94,6 +103,15 @@ nested_class_instance.method() # Nested class method
 nested_cls_pickle = pickle.dumps(MyClass.NestedClass()) # this will work, u can pickle a nested class
 nested_cls_instance = pickle.loads(nested_cls_pickle)
 nested_cls_instance.method() # Nested class method
+
+method_nested_cls_pickle = pickle.dumps(MyClass.NestedClass.method) # this will work, u can pickle a nested class
+method_nested_cls_instance = pickle.loads(method_nested_cls_pickle)
+method_nested_cls_instance(MyClass.NestedClass()) # Nested class method
+
+method_nested_cls_pickle = pickle.dumps(MyClass.NestedClass().method) # this will work, u can pickle a nested class
+method_nested_cls_instance = pickle.loads(method_nested_cls_pickle)
+method_nested_cls_instance() # Nested class method
+
 
 def func_return_inner_cls(arg):
     class InnerClass:

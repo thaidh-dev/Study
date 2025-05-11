@@ -14,6 +14,7 @@ logger = logging.getLogger('my_logger')
 
 logger.critical('This is a critical message', extra={'user': 'admin'})
 logger.error('This is an error message', extra={'user': 'thaidh'})
+logging.log(logging.WARNING, "This is a warning message", extra={'user': 'anhmth'})
 logger.warning('This is a warning message', extra={'user': 'anhmth'})
 logger.info('This is an info message', extra={'user': 'admin'})
 logger.debug('This is a debug message', extra={'user': 'admin'})
