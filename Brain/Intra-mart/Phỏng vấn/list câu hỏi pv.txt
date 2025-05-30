@@ -1,0 +1,92 @@
+Giới thiệu về cv
+Làm được cái gì trong dự án đấy
+Bloom + logic
++ sử dụng cái gì để liên kết bloom vs logic
+ -> Tạo logic -> tạo routing cho logic -> tạo action trong bloom -> gắn routing của logic vào action bloom, truyền in-out param 
+Cách tạo 1 grid data thì làm thế nào 
+ -> sử dụng item rich table, graph hoặc customize danh sách từ các item trong bloom
+Nếu có 2 button search thì làm thế nào
+ -> Tạo logic và action xử lý riêng cho 2 button
+Tạo input check trên bloom -> dùng action trên bloom và sử dụng logic để check
+Bis
+Đã từng tạo flow bis chưa
+ -> tạo flow theo yêu cầu dự án
+Đã từng customize 1 flow chưa
+ -> Tạo flow theo yêu cầu dự án
+Có biết về param matter property không?
+	Trong IM workflow, matter property là một phần dữ liệu kinh doanh liên quan đến nội dung người 
+	dùng cụ thể trong một task. Nó có thể được sử dụng cho nhiều mục đích khác nhau, bao gồm hiển thị thông tin, rule definition
+	và thay thế chuỗi trong các mẫu. Theo nghĩa rộng hơn, tham số là các giá trị được truyền cho một hàm hoặc phương thức, 
+	trong khi thuộc tính là các đặc điểm của một đối tượng.
+	Giải thích:
+		Matter property trong IM:
+		intra-mart định nghĩa matter property là dữ liệu liên quan đến nội dung người dùng cụ thể trong một tác vụ. 
+		Dữ liệu này có thể được sử dụng để hiển thị thông tin trên màn hình, xác định quy tắc trong quy trình làm 
+		việc hoặc thay thế giá trị trong email hoặc mẫu IMBox.
+		Parameter:
+		Tham số là các giá trị được truyền vào một hàm hoặc phương thức để kiểm soát hành vi của nó hoặc để cung 
+		cấp dữ liệu đầu vào. Ví dụ, trong ngôn ngữ lập trình như C#, một hàm có thể sử dụng tham số chuỗi để biểu 
+		diễn một số văn bản.
+		Properties:
+		Thuộc tính là các đặc điểm hoặc thuộc tính của một đối tượng. Chúng biểu diễn trạng thái của một đối tượng 
+		và có thể được truy cập hoặc sửa đổi thông qua giao diện của đối tượng. Trong ngữ cảnh lập trình, một thuộc 
+		tính có thể là thuộc tính tên của một đối tượng Person.
+	Analogy:
+		Hãy nghĩ đến một tài liệu trong quy trình công việc (như hóa đơn hoặc đơn xin việc). Matter property sẽ giống 
+		như các trường cụ thể trong tài liệu đó, chẳng hạn như tên khách hàng, ngày lập hóa đơn hoặc tổng số tiền. 
+		Các tham số có thể là các giá trị bạn cung cấp khi tìm kiếm tài liệu đó (ví dụ: số hóa đơn, tên khách hàng). 
+		Các thuộc tính của tài liệu có thể là loại tệp, kích thước tệp hoặc ngày sửa đổi cuối cùng.
+		Về bản chất, trong ngữ cảnh của IM workflow:
+		Các matter property lưu trữ dữ liệu cụ thể cho nội dung đang được xử lý.
+		Các parameter là các giá trị được sử dụng để xác định hoặc kiểm soát hành vi của quy trình công việc hoặc quy trình.
+		Các properties là các đặc điểm của các đối tượng liên quan đến quy trình công việc.
+ -> Dùng để làm điều kiện rẽ nhánh
+Cách tạo matter property 
+ -> vào matter property definiton
+Cách chọn user hoặc company cho flow như thế nào
+ -> Chọn ở node của flow
+Nếu có 1 flow 2 nhánh thì làm sao để rẽ nhánh
+ -> dùng property và rule
+Bis là cái gì
+ -> kết hợp của workflow và forma
+
+forma 
+Đã từng customize db chưa
+-> dự án yêu cầu custom db chứ không sử dụng table setting của forma
+Dùng cái gì để lấy data hiển thị
+-> sử dụng datasource
+
+Accel Studio dùng để làm gì -> quản lý source của 1 dự án gồm bloom, wf, logic
+
+Môi trường
+Đã build môi trường chưa, bước nào quan trọng nhất
+ -> tạo file war bằng juggling -> setup resin -> đặt file war vào resin -> config database -> (config cassandra) -> vào local/system để setting tạo tài khoản, gen db, add license -> vào local /login
+
+Cách thức thực hiện khi màn hình có nút search ở Bloommarker
+-> đưa button, gán action gọi lên logicdesigner
+
+Khi có 2 nút search ở Bloommarker thì làm như thế nào
+-> tạo 2 nút, tạo 2 action gọi đến 2 logicdesigner, kết quả trả về đổ vào 2 table
+
+Muốn chia nhánh cho 2 kiểu user thuộc 2 công ty trên flow làm thế nào?
+-> tạo branch ở node và tạo điều kiện rẽ nhánh
+
+Có phải tạo môi trường không
+-> có, phải tạo môi trường trên local từng máy
+
+Có làm hết các công đoạn Bloommarker, Logicdesigner không?
+-> không, chia theo từng giai đoạn để làm các chức năng sau khi có thiết kế
+
+Validate input trên Bloommarker như thế nào?
+-> tạo action, dùng biểu thức chính quy để check và thông báo lỗi trên màn hình
+
+Ứng dụng workflow trong dự án?
+-> tạo phê duyệt đơn đăng ký thay đổi thời gian làm việc, cấp trên approve
+
+- Làm cách nào để connect DB tới postgres -> Thiết lập juggling file resin-web.xml
+- Phiên bản iAP mới nhất -> 8.0.35 - 2024 Srping ( Iris )
+- Auto build trong CV là gì -> sử dụng docker để auto build môi trường iAP trên linux.
+- Khi làm xong -> gửi tài liệu hướng dẫn cho KH và giữ lại tài liệu để training cho member mới.
+- Trong trường hợp logic phức tạp thì bạn sẽ xử lý thế nào , có phương nào để tách ra xử lý không ? -> Tạo các sub logic (call Flow) , sử dụng logic tổng để gọi các sub logic con
+- Viewcreator dùng để làm gì -> Hiển thị màn hình list và search.
+- Cách viết câu SQL như thế nào - > LogicDesigner -> User definition -> SQL
