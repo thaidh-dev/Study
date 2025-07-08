@@ -66,8 +66,8 @@ const execTestCase = async (event, evidencesFolder, testCase) => {
       await onClick(event);
       break;
     case "object":
-      if (event.hasOwnProperty("highlightElements")) {
-        for (const e of event.highlightElements) {
+      if (event.hasOwnProperty("highlightElementsAndTakeScreenshot")) {
+        for (const e of event.highlightElementsAndTakeScreenshot) {
           const elementToHighlight = await driver.findElement(By.xpath(e));
           await highlightElement(driver, elementToHighlight);
         }

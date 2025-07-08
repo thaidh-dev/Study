@@ -13,7 +13,7 @@
         "//*[@id=\"metrics-edit-popover\"]/div[2]/button[2]",
         "//*[@id=\"explore-container\"]/div[2]/div[1]/div/button[1]",
         {
-          "highlightElements": [
+          "highlightElementsAndTakeScreenshot": [
             "//*[@id=\"controlSections-panel-query\"]/div[2]/div[1]/div[2]/div",
             "//*[@id=\"chart-id-5295\"]"
           ]
@@ -21,7 +21,7 @@
       ],
       "2": [
         {
-          "highlightElements": [
+          "highlightElementsAndTakeScreenshot": [
             "//*[@id=\"controlSections-panel-query\"]/div[2]/div[1]/div[2]/div",
             "//*[@id=\"chart-id-5295\"]"
           ]
@@ -41,7 +41,7 @@
         "//*[@id=\"metrics-edit-popover\"]/div[2]/button[2]",
         "//*[@id=\"explore-container\"]/div[2]/div[1]/div/button[1]",
         {
-          "highlightElements": [
+          "highlightElementsAndTakeScreenshot": [
             "//*[@id=\"controlSections-panel-query\"]/div[2]/div[1]/div[2]/div",
             "//*[@id=\"chart-id-5295\"]"
           ]
@@ -60,7 +60,7 @@
         "//*[@id=\"explore-container\"]/div[2]/div[1]/div/button[1]",
         "//*[@id=\"explore-container\"]/div[3]/div/div[2]/div[1]/div/div[2]/span",
         {
-          "highlightElements": [
+          "highlightElementsAndTakeScreenshot": [
             "//*[@id=\"controlSections-panel-query\"]/div[2]/div[1]/div[2]/div"
           ]
         }
