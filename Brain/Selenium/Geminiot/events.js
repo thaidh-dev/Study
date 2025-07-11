@@ -31,11 +31,11 @@ export const takeScreenshot = async (screenshotType, folderPath, filename) => {
   await driver.sleep(1000);
 
   switch (screenshotType) {
-    case "desktop":
+    case "page":
       img = await driver.takeScreenshot();
       break;
 
-    case "page":
+    case "desktop":
       img = await screenshot();
       break;
 
