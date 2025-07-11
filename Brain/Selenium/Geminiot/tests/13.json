@@ -1,0 +1,315 @@
+{
+  "testCaseName": "棒グラフ Premium",
+  "evidencesFolder": "./evidences/13",
+  "commonActs": [
+    [
+      "//*[@id=\"__nuxt\"]/div/div/div/div/main/div/nav/div/div/div[6]/div[1]/div[1]/div/i",
+      "//*[@id=\"__nuxt\"]/div/div/div/div/main/div/nav/div/div/div[6]/div[2]/a[1]/div/div/span",
+      {
+        "sleep": 3000
+      },
+      {
+        "scrollTo": {
+          "element": "//*[@id=\"__nuxt\"]/div/div/div/div/main/div/div",
+          "position": "top"
+        }
+      },
+      "//*[@id=\"__nuxt\"]/div/div/div/div/main/div/div/div[2]/div/div/div/div[1]/div[2]/div/div[2]/div/form/div/div[1]/div[2]/div[2]/div/div[1]/button[1]",
+      "//*[@id=\"__nuxt\"]/div/div/div/div/main/div/div/div[2]/div/div/div/div[1]/div[2]/div/div[2]/div/form/div/div[1]/div[3]/div[2]/div/div[1]/button[1]",
+      "//*[@id=\"__nuxt\"]/div/div/div/div/main/div/div/div[2]/div/div/div/div[1]/div[2]/div/div[2]/div/form/div/div[1]/div[3]/div[2]/div/div[1]/button[4]",
+      "//*[@id=\"__nuxt\"]/div/div/div/div/main/div/div/div[2]/div/div/div/div[1]/div[2]/div/div[2]/div/form/div/div[1]/div[7]/div[2]/div/div[1]/button[1]",
+      "//*[@id=\"__nuxt\"]/div/div/div/div/main/div/div/div[2]/div/div/div/div[1]/div[2]/div/div[2]/div/form/div/div[1]/div[8]/div[2]/div/div[1]/button[1]",
+      {
+        "input": {
+          "xpath": "/html/body/div[1]/div/div/div/div/main/div/div/div[2]/div/div/div/div[1]/div[2]/div/div[2]/div/form/div/div[1]/div[6]/div[2]/div[1]/div/div/div/div[4]/input",
+          "text": "2025/07/10"
+        }
+      },
+      {
+        "input": {
+          "xpath": "/html/body/div[1]/div/div/div/div/main/div/div/div[2]/div/div/div/div[1]/div[2]/div/div[2]/div/form/div/div[1]/div[6]/div[2]/div[3]/div/div/div/div[4]/input",
+          "text": "2025/07/10"
+        }
+      },
+      "//*[@id=\"__nuxt\"]/div/div/div/div/main/div/div/div[2]/div/div/div/div[1]/div[2]/div/div[2]/div/div/button[1]",
+      {
+        "highlightElementWithoutPadding": [
+          "//*[@id=\"__nuxt\"]/div/div/div/div/main/div/div/div[2]/div/div/div/div[1]/div[2]/div/div[2]/div/form/div/div[1]/div[3]",
+          "//*[@id=\"__nuxt\"]/div/div/div/div/main/div/div/div[2]/div/div/div/div[1]/div[2]/div/div[2]/div/form/div/div[1]/div[6]",
+          "//*[@id=\"__nuxt\"]/div/div/div/div/main/div/div/div[2]/div/div/div/div[1]/div[2]/div/div[2]/div/div/button[1]"
+        ]
+      },
+      {
+        "takeScreenshot": "desktop"
+      },
+      "//*[@id=\"__nuxt\"]/div/div/div/div/main/div/div/div[2]/div/div/div/div[1]/div[2]/div/button",
+      {
+        "highlightElementWithoutPadding": [
+          "//*[@id=\"__nuxt\"]/div/div/div/div/main/div/div/div[2]/div/div/div/div[2]/div[3]/div[2]/div/div[1]/span"
+        ]
+      },
+      {
+        "takeScreenshot": "desktop"
+      }
+    ],
+    [
+      {
+        "url": "https://liberty-sc.com/property-manager/prop-002"
+      },
+      {
+        "sleep": 5000
+      },
+      {
+        "scrollTo": {
+          "element": "//*[@id=\"__nuxt\"]/div/div/div/div/main/div/div",
+          "position": "bottom"
+        }
+      }
+    ]
+  ],
+  "loginActs": [
+    [
+      "//*[@id=\"__nuxt\"]/div/div/main/div/div/div/button",
+      {
+        "input": {
+          "xpath": "//*[@id=\"email\"]",
+          "text": "dev-987494@liberty-hp.com"
+        }
+      },
+      {
+        "input": {
+          "xpath": "//*[@id=\"password\"]",
+          "text": "xmfZdW3S"
+        }
+      },
+      "/html/body/div/main/div/div/div/div/div[2]/form/button"
+    ]
+  ],
+  "testCases": {
+    "1": [
+      {
+        "url": "https://liberty-sc.com/property-manager/prop-002"
+      },
+      {
+        "highlightElementWithoutPadding": [
+          "//*[@id=\"__nuxt\"]/div/div/div/div/main/div/div/div[2]/div/div[2]/div/div/div/table/tr[1]/td[3]"
+        ]
+      },
+      {
+        "takeScreenshot": "desktop"
+      },
+      "//*[@id=\"__nuxt\"]/div/div/div/div/main/div/div/div[2]/div/div[2]/div/div/div/table/tr[1]/td[3]/a",
+      {
+        "useCommonAct": 0
+      },
+
+      {
+        "url": "https://liberty-sc.com/property-manager/prop-002"
+      },
+      {
+        "highlightElementWithoutPadding": [
+          "//*[@id=\"__nuxt\"]/div/div/div/div/main/div/div/div[2]/div/div[2]/div/div/div/table/tr[2]/td[3]"
+        ]
+      },
+      {
+        "takeScreenshot": "desktop"
+      },
+      "//*[@id=\"__nuxt\"]/div/div/div/div/main/div/div/div[2]/div/div[2]/div/div/div/table/tr[2]/td[3]/a",
+      {
+        "useCommonAct": 0
+      },
+
+      {
+        "url": "https://liberty-sc.com/property-manager/prop-002"
+      },
+      {
+        "highlightElementWithoutPadding": [
+          "//*[@id=\"__nuxt\"]/div/div/div/div/main/div/div/div[2]/div/div[2]/div/div/div/table/tr[3]/td[3]"
+        ]
+      },
+      {
+        "takeScreenshot": "desktop"
+      },
+      "//*[@id=\"__nuxt\"]/div/div/div/div/main/div/div/div[2]/div/div[2]/div/div/div/table/tr[3]/td[3]/a",
+      {
+        "useCommonAct": 0
+      },
+
+      {
+        "url": "https://liberty-sc.com/property-manager/prop-002"
+      },
+      {
+        "highlightElementWithoutPadding": [
+          "//*[@id=\"__nuxt\"]/div/div/div/div/main/div/div/div[2]/div/div[2]/div/div/div/table/tr[4]/td[3]"
+        ]
+      },
+      {
+        "takeScreenshot": "desktop"
+      },
+      "//*[@id=\"__nuxt\"]/div/div/div/div/main/div/div/div[2]/div/div[2]/div/div/div/table/tr[4]/td[3]/a",
+      {
+        "useCommonAct": 0
+      },
+
+      {
+        "url": "https://liberty-sc.com/property-manager/prop-002"
+      },
+      {
+        "highlightElementWithoutPadding": [
+          "//*[@id=\"__nuxt\"]/div/div/div/div/main/div/div/div[2]/div/div[2]/div/div/div/table/tr[5]/td[3]"
+        ]
+      },
+      {
+        "takeScreenshot": "desktop"
+      },
+      "//*[@id=\"__nuxt\"]/div/div/div/div/main/div/div/div[2]/div/div[2]/div/div/div/table/tr[5]/td[3]/a",
+      {
+        "useCommonAct": 0
+      },
+
+      {
+        "url": "https://liberty-sc.com/property-manager/prop-002"
+      },
+      {
+        "highlightElementWithoutPadding": [
+          "//*[@id=\"__nuxt\"]/div/div/div/div/main/div/div/div[2]/div/div[2]/div/div/div/table/tr[6]/td[3]"
+        ]
+      },
+      {
+        "takeScreenshot": "desktop"
+      },
+      "//*[@id=\"__nuxt\"]/div/div/div/div/main/div/div/div[2]/div/div[2]/div/div/div/table/tr[6]/td[3]/a",
+      {
+        "useCommonAct": 0
+      },
+
+      {
+        "url": "https://liberty-sc.com/property-manager/prop-002"
+      },
+      {
+        "highlightElementWithoutPadding": [
+          "//*[@id=\"__nuxt\"]/div/div/div/div/main/div/div/div[2]/div/div[2]/div/div/div/table/tr[7]/td[3]"
+        ]
+      },
+      {
+        "takeScreenshot": "desktop"
+      },
+      "//*[@id=\"__nuxt\"]/div/div/div/div/main/div/div/div[2]/div/div[2]/div/div/div/table/tr[7]/td[3]/a",
+      {
+        "useCommonAct": 0
+      },
+
+      {
+        "url": "https://liberty-sc.com/property-manager/prop-002"
+      },
+      {
+        "highlightElementWithoutPadding": [
+          "//*[@id=\"__nuxt\"]/div/div/div/div/main/div/div/div[2]/div/div[2]/div/div/div/table/tr[8]/td[3]"
+        ]
+      },
+      {
+        "takeScreenshot": "desktop"
+      },
+      "//*[@id=\"__nuxt\"]/div/div/div/div/main/div/div/div[2]/div/div[2]/div/div/div/table/tr[8]/td[3]/a",
+      {
+        "useCommonAct": 0
+      },
+
+      {
+        "url": "https://liberty-sc.com/property-manager/prop-002"
+      },
+      {
+        "highlightElementWithoutPadding": [
+          "//*[@id=\"__nuxt\"]/div/div/div/div/main/div/div/div[2]/div/div[2]/div/div/div/table/tr[9]/td[3]"
+        ]
+      },
+      {
+        "takeScreenshot": "desktop"
+      },
+      "//*[@id=\"__nuxt\"]/div/div/div/div/main/div/div/div[2]/div/div[2]/div/div/div/table/tr[9]/td[3]/a",
+      {
+        "useCommonAct": 0
+      },
+
+      {
+        "useCommonAct": 1
+      },
+      {
+        "highlightElementWithoutPadding": [
+          "//*[@id=\"__nuxt\"]/div/div/div/div/main/div/div/div[2]/div/div[2]/div/div/div/table/tr[10]/td[3]"
+        ]
+      },
+      {
+        "takeScreenshot": "desktop"
+      },
+      "//*[@id=\"__nuxt\"]/div/div/div/div/main/div/div/div[2]/div/div[2]/div/div/div/table/tr[10]/td[3]/a",
+      {
+        "useCommonAct": 0
+      },
+
+      {
+        "useCommonAct": 1
+      },
+      {
+        "highlightElementWithoutPadding": [
+          "//*[@id=\"__nuxt\"]/div/div/div/div/main/div/div/div[2]/div/div[2]/div/div/div/table/tr[12]/td[3]"
+        ]
+      },
+      {
+        "takeScreenshot": "desktop"
+      },
+      "//*[@id=\"__nuxt\"]/div/div/div/div/main/div/div/div[2]/div/div[2]/div/div/div/table/tr[12]/td[3]/a",
+      {
+        "useCommonAct": 0
+      },
+
+      {
+        "useCommonAct": 1
+      },
+      {
+        "highlightElementWithoutPadding": [
+          "//*[@id=\"__nuxt\"]/div/div/div/div/main/div/div/div[2]/div/div[2]/div/div/div/table/tr[13]/td[3]"
+        ]
+      },
+      {
+        "takeScreenshot": "desktop"
+      },
+      "//*[@id=\"__nuxt\"]/div/div/div/div/main/div/div/div[2]/div/div[2]/div/div/div/table/tr[13]/td[3]/a",
+      {
+        "useCommonAct": 0
+      },
+
+      {
+        "useCommonAct": 1
+      },
+      {
+        "highlightElementWithoutPadding": [
+          "//*[@id=\"__nuxt\"]/div/div/div/div/main/div/div/div[2]/div/div[2]/div/div/div/table/tr[16]/td[3]"
+        ]
+      },
+      {
+        "takeScreenshot": "desktop"
+      },
+      "//*[@id=\"__nuxt\"]/div/div/div/div/main/div/div/div[2]/div/div[2]/div/div/div/table/tr[16]/td[3]/a",
+      {
+        "useCommonAct": 0
+      },
+
+      {
+        "useCommonAct": 1
+      },
+      {
+        "highlightElementWithoutPadding": [
+          "//*[@id=\"__nuxt\"]/div/div/div/div/main/div/div/div[2]/div/div[2]/div/div/div/table/tr[17]/td[3]"
+        ]
+      },
+      {
+        "takeScreenshot": "desktop"
+      },
+      "//*[@id=\"__nuxt\"]/div/div/div/div/main/div/div/div[2]/div/div[2]/div/div/div/table/tr[17]/td[3]/a",
+      {
+        "useCommonAct": 0
+      }
+    ]
+  }
+}
