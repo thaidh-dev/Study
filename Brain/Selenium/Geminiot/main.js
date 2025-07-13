@@ -3,12 +3,9 @@ import { TEST_CASES_FOLDER } from "./common/constants.js";
 import { readdir, readFileSync, writeFile } from "fs";
 import path from "path";
 import chrome from "selenium-webdriver/chrome.js";
-import {
-  removeAndRecreateEvidencesFolder,
-} from "./events.js";
-import {
-  execTestCase,
-} from "./execTestCase.js";
+import yaml from "js-yaml";
+import { removeAndRecreateEvidencesFolder } from "./events.js";
+import { execTestCase } from "./execTestCase.js";
 
 export let driver;
 
@@ -22,9 +19,8 @@ const openWindow = async () => {
   await driver.manage().setTimeouts({ implicit: 10000 });
 };
 
-const main = async (jsonData) => {
-  const { testCaseName, evidencesFolder, loginActs, commonActs, testCases } =
-    jsonData;
+const main = async (yamlData) => {
+  const { testCaseName, evidencesFolder, testCases } = yamlData;
   const namesOfTestCases = Object.keys(testCases);
   const totalNumTestCases = namesOfTestCases.length;
   const testCasesFailed = [];
@@ -35,13 +31,7 @@ const main = async (jsonData) => {
     const testCase = namesOfTestCases[i];
     for (const event of testCases[testCase]) {
       try {
-        await execTestCase(
-          event,
-          evidencesFolder,
-          loginActs,
-          commonActs,
-          testCase
-        );
+        await execTestCase(event, evidencesFolder, testCase);
       } catch (error) {
         testCasesFailed.push(testCase);
         continue iterateOverTestCases;
@@ -93,14 +83,18 @@ const readTestCases = () => {
     for (const file of files) {
       const filePath = path.join(TEST_CASES_FOLDER, file);
 
-      // Check if the file has a .json extension
-      if (path.extname(file) === ".json") {
-        // Read and parse JSON files
-        const jsonData = readFileSync(filePath, {
-          encoding: "utf8",
-          flag: "r",
-        });
-        statistics.push(await main(JSON.parse(jsonData)));
+      // Check if the file has a .yaml or .yml extension
+      if ([".yaml", ".yml"].includes(path.extname(file))) {
+        try {
+          const yamlData = readFileSync(filePath, {
+            encoding: "utf8",
+            flag: "r",
+          });
+          const parsed = yaml.load(yamlData); // Sử dụng js-yaml để parse
+          statistics.push(await main(parsed));
+        } catch (err) {
+          console.error(`Error parsing YAML file ${file}:`, err);
+        }
       }
     }
 

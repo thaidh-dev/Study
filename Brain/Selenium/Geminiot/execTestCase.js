@@ -8,42 +8,17 @@ import {
 } from "./events.js";
 import { driver } from "./main.js";
 
-export const execTestCase = async (
-  event,
-  evidencesFolder,
-  loginActs,
-  commonActs,
-  testCase
-) => {
+export const execTestCase = async (event, evidencesFolder, testCase) => {
   switch (typeof event) {
     case "string":
       await onClick(event);
       break;
 
     case "object":
-      if (event.hasOwnProperty("useCommonAct")) {
-        for (const act of commonActs[event.useCommonAct]) {
-          await execTestCase(
-            act,
-            evidencesFolder,
-            loginActs,
-            commonActs,
-            testCase
-          );
+      if (event.hasOwnProperty("common")) {
+        for (const act of event.common) {
+          await execTestCase(act, evidencesFolder, testCase);
         }
-      }
-
-      if (event.hasOwnProperty("useLogin")) {
-        for (const action of loginActs[event.useLogin]) {
-          await execTestCase(
-            action,
-            evidencesFolder,
-            loginActs,
-            commonActs,
-            testCase
-          );
-        }
-        await driver.sleep(1000);
       }
 
       if (event.hasOwnProperty("highlightElementWithoutPadding")) {

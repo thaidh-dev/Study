@@ -2,6 +2,7 @@
   "type": "module",
   "dependencies": {
     "chromedriver": "^138.0.2",
+    "js-yaml": "^4.1.0",
     "screenshot-desktop": "^1.15.1",
     "selenium-webdriver": "^4.34.0"
   }
