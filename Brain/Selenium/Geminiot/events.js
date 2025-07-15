@@ -1,6 +1,6 @@
 import { By, until, Key } from "selenium-webdriver";
 import screenshot from "screenshot-desktop";
-import { existsSync, mkdirSync, rmSync, writeFileSync } from "fs";
+import { existsSync, mkdirSync, writeFileSync } from "fs";
 import { driver } from "./main.js";
 
 export const findElementByXPath = async (xpath) => {
@@ -81,11 +81,4 @@ export const takeScreenshot = async (screenshotType, folderPath, filename) => {
     mkdirSync(folderPath, { recursive: true });
   }
   writeFileSync(`${folderPath}/${filename}`, img, "base64");
-};
-
-export const removeAndRecreateEvidencesFolder = (evidencesFolder) => {
-  if (existsSync(evidencesFolder)) {
-    rmSync(evidencesFolder, { recursive: true, force: true });
-    mkdirSync(evidencesFolder, { recursive: true });
-  }
 };

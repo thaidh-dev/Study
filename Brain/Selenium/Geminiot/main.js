@@ -1,10 +1,16 @@
 import { Builder } from "selenium-webdriver";
 import { TEST_CASES_FOLDER } from "./common/constants.js";
-import { readdir, readFileSync, writeFile } from "fs";
+import {
+  readdir,
+  readFileSync,
+  writeFile,
+  existsSync,
+  mkdirSync,
+  rmSync,
+} from "fs";
 import path from "path";
 import chrome from "selenium-webdriver/chrome.js";
 import yaml from "js-yaml";
-import { removeAndRecreateEvidencesFolder } from "./events.js";
 import { execTestCase } from "./execTestCase.js";
 
 export let driver;
@@ -17,6 +23,13 @@ const openWindow = async () => {
     .setChromeOptions(options)
     .build();
   await driver.manage().setTimeouts({ implicit: 10000 });
+};
+
+const removeAndRecreateEvidencesFolder = (evidencesFolder) => {
+  if (existsSync(evidencesFolder)) {
+    rmSync(evidencesFolder, { recursive: true, force: true });
+    mkdirSync(evidencesFolder, { recursive: true });
+  }
 };
 
 const main = async (yamlData) => {
