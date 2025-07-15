@@ -1,17 +1,20 @@
-import { Key } from "selenium-webdriver";
 import {
   findElementByXPath,
-  onClick,
+  click,
+  select,
+  inputTypeContent,
+  goToUrl,
+  scrollTo,
+  sleep,
   highlightElementWithoutPadding,
   highlightElementWithPadding,
   takeScreenshot,
 } from "./events.js";
-import { driver } from "./main.js";
 
 export const execTestCase = async (event, evidencesFolder, testCase) => {
   switch (typeof event) {
     case "string":
-      await onClick(event);
+      await click(event);
       break;
 
     case "object":
@@ -44,43 +47,26 @@ export const execTestCase = async (event, evidencesFolder, testCase) => {
       }
 
       if (event.hasOwnProperty("select")) {
-        await findElementByXPath(event.select.xpath).sendKeys(
-          event.select.text,
-          Key.ENTER
-        );
+        const elementToSelect = await findElementByXPath(event.select.xpath);
+        await select(elementToSelect, event.select.text);
       }
 
       if (event.hasOwnProperty("input")) {
         const input = await findElementByXPath(event.input.xpath);
-        input.clear();
-        input.sendKeys(event.input.text);
+        await inputTypeContent(input, event.input.text);
       }
 
       if (event.hasOwnProperty("url")) {
-        await driver.get(event.url);
+        await goToUrl(event.url);
       }
 
       if (event.hasOwnProperty("scrollTo")) {
         const element = await findElementByXPath(event.scrollTo.element);
-        switch (event.scrollTo.position) {
-          case "top":
-            await driver.executeScript("arguments[0].scrollTop = 25;", element);
-            break;
-
-          case "bottom":
-            await driver.executeScript(
-              "arguments[0].scrollTop = arguments[0].scrollHeight / 3;",
-              element
-            );
-            break;
-
-          default:
-            break;
-        }
+        await scrollTo(element, event.scrollTo.position);
       }
 
       if (event.hasOwnProperty("sleep")) {
-        await driver.sleep(event.sleep);
+        await sleep(event.sleep);
       }
 
       break;

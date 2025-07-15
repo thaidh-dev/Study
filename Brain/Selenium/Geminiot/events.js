@@ -1,4 +1,4 @@
-import { By, until } from "selenium-webdriver";
+import { By, until, Key } from "selenium-webdriver";
 import screenshot from "screenshot-desktop";
 import { existsSync, mkdirSync, rmSync, writeFileSync } from "fs";
 import { driver } from "./main.js";
@@ -8,10 +8,44 @@ export const findElementByXPath = async (xpath) => {
   return await driver.wait(until.elementIsVisible(element));
 };
 
-export const onClick = async (xpath) => {
-  // Assuming 'driver' is your WebDriver instance and 'element' is the element you want to click
+export const click = async (xpath) => {
   const element = await findElementByXPath(xpath);
   await element.click();
+};
+
+export const select = async (element, option) => {
+  await element.sendKeys(option, Key.ENTER);
+};
+
+export const inputTypeContent = async (input, text) => {
+  await input.clear();
+  await input.sendKeys(text);
+};
+
+export const goToUrl = async (url) => {
+  await driver.get(url);
+};
+
+export const scrollTo = async (element, position) => {
+  switch (position) {
+    case "top":
+      await driver.executeScript("arguments[0].scrollTop = 25;", element);
+      break;
+
+    case "bottom":
+      await driver.executeScript(
+        "arguments[0].scrollTop = arguments[0].scrollHeight / 3;",
+        element
+      );
+      break;
+
+    default:
+      break;
+  }
+};
+
+export const sleep = async (duration) => {
+  await driver.sleep(duration);
 };
 
 export const highlightElementWithoutPadding = async (element) => {
