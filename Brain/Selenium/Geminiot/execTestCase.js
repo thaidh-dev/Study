@@ -18,55 +18,62 @@ export const execTestCase = async (event, evidencesFolder, testCase) => {
       break;
 
     case "object":
-      if (event.hasOwnProperty("common")) {
-        for (const act of event.common) {
-          await execTestCase(act, evidencesFolder, testCase);
-        }
-      }
+      const [key] = Object.keys(event);
 
-      if (event.hasOwnProperty("highlightElementWithoutPadding")) {
-        for (const e of event.highlightElementWithoutPadding) {
-          const elementToHighlight = await findElementByXPath(e);
-          await highlightElementWithoutPadding(elementToHighlight);
-        }
-      }
+      switch (key) {
+        case "common":
+          for (const act of event.common) {
+            await execTestCase(act, evidencesFolder, testCase);
+          }
+          break;
 
-      if (event.hasOwnProperty("highlightElementWithPadding")) {
-        for (const e of event.highlightElementWithPadding) {
-          const elementToHighlight = await findElementByXPath(e);
-          await highlightElementWithPadding(elementToHighlight);
-        }
-      }
+        case "highlightElementWithoutPadding":
+          for (const e of event.highlightElementWithoutPadding) {
+            const elementToHighlight = await findElementByXPath(e);
+            await highlightElementWithoutPadding(elementToHighlight);
+          }
+          break;
 
-      if (event.hasOwnProperty("takeScreenshot")) {
-        await takeScreenshot(
-          event.takeScreenshot,
-          `${evidencesFolder}\\${testCase}`,
-          `${Date.now().toString()}.png`
-        );
-      }
+        case "highlightElementWithPadding":
+          for (const e of event.highlightElementWithPadding) {
+            const elementToHighlight = await findElementByXPath(e);
+            await highlightElementWithPadding(elementToHighlight);
+          }
+          break;
 
-      if (event.hasOwnProperty("select")) {
-        const elementToSelect = await findElementByXPath(event.select.xpath);
-        await select(elementToSelect, event.select.text);
-      }
+        case "takeScreenshot":
+          await takeScreenshot(
+            event.takeScreenshot,
+            `${evidencesFolder}\\${testCase}`,
+            `${Date.now().toString()}.png`
+          );
+          break;
 
-      if (event.hasOwnProperty("input")) {
-        const input = await findElementByXPath(event.input.xpath);
-        await inputTypeContent(input, event.input.text);
-      }
+        case "select":
+          const elementToSelect = await findElementByXPath(event.select.xpath);
+          await select(elementToSelect, event.select.text);
+          break;
 
-      if (event.hasOwnProperty("url")) {
-        await goToUrl(event.url);
-      }
+        case "input":
+          const input = await findElementByXPath(event.input.xpath);
+          await inputTypeContent(input, event.input.text);
+          break;
 
-      if (event.hasOwnProperty("scrollTo")) {
-        const element = await findElementByXPath(event.scrollTo.element);
-        await scrollTo(element, event.scrollTo.position);
-      }
+        case "url":
+          await goToUrl(event.url);
+          break;
 
-      if (event.hasOwnProperty("sleep")) {
-        await sleep(event.sleep);
+        case "scrollTo":
+          const element = await findElementByXPath(event.scrollTo.element);
+          await scrollTo(element, event.scrollTo.position);
+          break;
+
+        case "sleep":
+          await sleep(event.sleep);
+          break;
+
+        default:
+          break;
       }
 
       break;
