@@ -3,13 +3,15 @@ import screenshot from "screenshot-desktop";
 import { existsSync, mkdirSync, writeFileSync } from "fs";
 import { driver } from "./main.js";
 
-export const findElementByXPath = async (xpath) => {
+export const findElementByXPath = async (xpath, index) => {
+  if (index) {
+    xpath = xpath.replace("${i}", index);
+  }
   let element = await driver.findElement(By.xpath(xpath));
   return await driver.wait(until.elementIsVisible(element));
 };
 
-export const click = async (xpath) => {
-  const element = await findElementByXPath(xpath);
+export const click = async (element) => {
   await element.click();
 };
 

@@ -11,10 +11,11 @@ import {
   takeScreenshot,
 } from "./events.js";
 
-export const execTestCase = async (event, evidencesFolder, testCase) => {
+export const execTestCase = async (event, evidencesFolder, testCase, index) => {
   switch (typeof event) {
     case "string":
-      await click(event);
+      const elementToClick = await findElementByXPath(event, index);
+      await click(elementToClick);
       break;
 
     case "object":
@@ -23,20 +24,20 @@ export const execTestCase = async (event, evidencesFolder, testCase) => {
       switch (key) {
         case "common":
           for (const act of event.common) {
-            await execTestCase(act, evidencesFolder, testCase);
+            await execTestCase(act, evidencesFolder, testCase, index);
           }
           break;
 
         case "highlightElementWithoutPadding":
           for (const e of event.highlightElementWithoutPadding) {
-            const elementToHighlight = await findElementByXPath(e);
+            const elementToHighlight = await findElementByXPath(e, index);
             await highlightElementWithoutPadding(elementToHighlight);
           }
           break;
 
         case "highlightElementWithPadding":
           for (const e of event.highlightElementWithPadding) {
-            const elementToHighlight = await findElementByXPath(e);
+            const elementToHighlight = await findElementByXPath(e, index);
             await highlightElementWithPadding(elementToHighlight);
           }
           break;
@@ -50,12 +51,15 @@ export const execTestCase = async (event, evidencesFolder, testCase) => {
           break;
 
         case "select":
-          const elementToSelect = await findElementByXPath(event.select.xpath);
+          const elementToSelect = await findElementByXPath(
+            event.select.xpath,
+            index
+          );
           await select(elementToSelect, event.select.text);
           break;
 
         case "input":
-          const input = await findElementByXPath(event.input.xpath);
+          const input = await findElementByXPath(event.input.xpath, index);
           await inputTypeContent(input, event.input.text);
           break;
 
@@ -64,7 +68,10 @@ export const execTestCase = async (event, evidencesFolder, testCase) => {
           break;
 
         case "scrollTo":
-          const element = await findElementByXPath(event.scrollTo.element);
+          const element = await findElementByXPath(
+            event.scrollTo.element,
+            index
+          );
           await scrollTo(element, event.scrollTo.position);
           break;
 
@@ -73,6 +80,30 @@ export const execTestCase = async (event, evidencesFolder, testCase) => {
           break;
 
         default:
+          break;
+
+        case "foreach":
+          const [array, from, to, doActions] = [
+            event.foreach.array,
+            event.foreach.from,
+            event.foreach.to,
+            event.foreach.doActions,
+          ];
+
+          if (array) {
+            for (const item of array) {
+              for (const action of doActions) {
+                await execTestCase(action, evidencesFolder, testCase, item);
+              }
+            }
+          } else {
+            for (let i = from; i <= to; i++) {
+              for (const action of doActions) {
+                await execTestCase(action, evidencesFolder, testCase, i);
+              }
+            }
+          }
+
           break;
       }
 
