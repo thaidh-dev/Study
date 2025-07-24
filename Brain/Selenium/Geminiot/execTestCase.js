@@ -9,6 +9,7 @@ import {
   highlightElementWithoutPadding,
   highlightElementWithPadding,
   takeScreenshot,
+  checkbox,
 } from "./events.js";
 
 export const execTestCase = async (event, evidencesFolder, testCase, index) => {
@@ -68,18 +69,23 @@ export const execTestCase = async (event, evidencesFolder, testCase, index) => {
           break;
 
         case "scrollTo":
-          const element = await findElementByXPath(
+          const elementToScroll = await findElementByXPath(
             event.scrollTo.element,
             index
           );
-          await scrollTo(element, event.scrollTo.position);
+          await scrollTo(elementToScroll, event.scrollTo.position);
           break;
 
         case "sleep":
           await sleep(event.sleep);
           break;
 
-        default:
+        case "checkbox":
+          const elementToCheck = await findElementByXPath(
+            event.checkbox.xpath,
+            index
+          );
+          await checkbox(elementToCheck, event.checkbox.checked);
           break;
 
         case "foreach":
@@ -104,6 +110,9 @@ export const execTestCase = async (event, evidencesFolder, testCase, index) => {
             }
           }
 
+          break;
+
+        default:
           break;
       }
 

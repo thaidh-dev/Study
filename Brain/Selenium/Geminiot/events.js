@@ -3,6 +3,13 @@ import screenshot from "screenshot-desktop";
 import { existsSync, mkdirSync, writeFileSync } from "fs";
 import { driver } from "./main.js";
 
+/*
+Do not use until.elementIsVisible() or element.isDisplayed() for:
+  opacity: 0
+  visibility: hidden
+  pointer-events: none
+  elements styled out of layout
+*/
 export const findElementByXPath = async (xpath, index) => {
   if (index) {
     xpath = xpath.replace("${i}", index);
@@ -31,17 +38,21 @@ export const goToUrl = async (url) => {
 export const scrollTo = async (element, position) => {
   switch (position) {
     case "top":
-      await driver.executeScript("arguments[0].scrollTop = 25;", element);
+      await driver.executeScript("arguments[0].scrollTop = 0;", element);
       break;
 
     case "bottom":
       await driver.executeScript(
-        "arguments[0].scrollTop = arguments[0].scrollHeight / 3;",
+        "arguments[0].scrollTop = arguments[0].scrollHeight;",
         element
       );
       break;
 
     default:
+      await driver.executeScript(
+        `arguments[0].scrollTop = ${position};`,
+        element
+      );
       break;
   }
 };
@@ -83,4 +94,11 @@ export const takeScreenshot = async (screenshotType, folderPath, filename) => {
     mkdirSync(folderPath, { recursive: true });
   }
   writeFileSync(`${folderPath}/${filename}`, img, "base64");
+};
+
+export const checkbox = async (element, checked) => {
+  let isSelected = await element.isSelected();
+  if (isSelected !== checked) {
+    await element.click();
+  }
 };
