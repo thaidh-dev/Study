@@ -1,0 +1,37 @@
+version: "3.8"
+
+services:
+  postgres:
+    image: postgres:latest
+    container_name: postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: imart
+      POSTGRES_INITDB_ARGS: "--locale=C"
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./volumes/pgdata:/var/lib/postgresql/data
+
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: imart
+    ports:
+      - "5050:80"
+    depends_on:
+      - postgres
+
+  resin:
+    build: ./resin
+    container_name: resin
+    ports:
+      - "8080:8080"
+      - "8443:8443"
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./volumes/resin/webapps:/opt/resin/webapps
+
