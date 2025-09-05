@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<fulfillmentToken fulfillmentType="buy" xmlns="http://ns.adobe.com/adept">
+    <distributor>urn:uuid:00000000-0000-0000-0000-000000000001</distributor>
+    <operatorURL>http://books.google.com/books/acs4/fulfillment</operatorURL>
+    <expiration>2025-09-05T04:29:31-07:00</expiration>
+    <transaction>ge:9f7c7be4-7688-b89f-6403-1294791d7d22:1757070871510949</transaction>
+    <userId>00947291697361369826</userId>
+    <resourceItemInfo>
+        <resource>urn:uuid:9f7c7be4-7688-b89f-6403-1294791d7d22</resource>
+        <resourceItem>1</resourceItem>
+        <src>https://books.google.com/books/download/Snowflake_SnowPro_Advanced_Data_Analyst.pdf?acsid=urn:uuid:9f7c7be4-7688-b89f-6403-1294791d7d22&amp;output=acs4_book_bytes&amp;ar=af124545a01b66e6eabe11e24e73d355</src>
+        <downloadType>simple</downloadType>
+    </resourceItemInfo>
+    <hmac>hDrk/h8ylTCkUmEVRnFSdOnH1jA=</hmac>
+</fulfillmentToken>
