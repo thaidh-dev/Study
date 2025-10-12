@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<fulfillmentToken fulfillmentType="buy" xmlns="http://ns.adobe.com/adept">
+    <distributor>urn:uuid:00000000-0000-0000-0000-000000000001</distributor>
+    <operatorURL>http://books.google.com/books/acs4/fulfillment</operatorURL>
+    <expiration>2025-09-05T04:29:41-07:00</expiration>
+    <transaction>ge:8002f642-9a4a-760a-8a2e-0e1f22806166:1757070881028457</transaction>
+    <userId>00947291697361369826</userId>
+    <resourceItemInfo>
+        <resource>urn:uuid:8002f642-9a4a-760a-8a2e-0e1f22806166</resource>
+        <resourceItem>1</resourceItem>
+        <src>https://books.google.com/books/download/Snowflake_SnowPro_Core_Certification_COF.pdf?acsid=urn:uuid:8002f642-9a4a-760a-8a2e-0e1f22806166&amp;output=acs4_book_bytes&amp;ar=be64b9e1206293ac0b518decf2ed7b33</src>
+        <downloadType>simple</downloadType>
+    </resourceItemInfo>
+    <hmac>PAIvysyw5jXvs+7/iV2mzYMJDok=</hmac>
+</fulfillmentToken>
