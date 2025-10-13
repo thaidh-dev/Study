@@ -1,0 +1,39 @@
+1: This table function can be used to query information about the staged data files included in the metadata for a specified external table.
+EXTERNAL_TABLE_FILE_REGISTRATION_HISTORY
+EXTERNAL_TABLE_FILES (correct answer)
+EXTERNAL_FUNCTIONS_HISTORY
+DYNAMIC_TABLES
+
+2
+SECURE_OBJECTS_ONLY
+
+3
+max file size when single = true (copy into location) => 5GB
+
+4
+nhiều copy into table (đọc 1 file duy nhất) run cùng lúc 
++ data sẽ bị trùng
++ báo lỗi
++ chỉ 1 file đc load
+
+5
+table nào ko thể dùng update command (2 đáp án)
++ temporary
++ hybrid
++ dynamic
++ transient
++ external table
+
+6
+In Snowflake's Snowpark, DataFrame operations are processed when 
++ collect
++ an action is triggered
++ quên mẹ nó rồi
+
+7 earch Optimization Service benefit when
++ query with COLLATE
++ query with cast funtion 
++ query with (quên mẹ nó rồi)
++ query with "and" or "or"
+
+
