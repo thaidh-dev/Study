@@ -36,4 +36,9 @@ In Snowflake's Snowpark, DataFrame operations are processed when
 + query with (quên mẹ nó rồi)
 + query with "and" or "or"
 
-
+8 ORGADMIN can create
++ account
++ reader account
++ replication
++ User
++ role

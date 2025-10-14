@@ -1,0 +1,1 @@
+select system$estimate_query_acceleration('01bf4e16-0306-8732-0010-13db0010c54e')

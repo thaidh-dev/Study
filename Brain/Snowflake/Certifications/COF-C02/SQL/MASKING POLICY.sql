@@ -1,0 +1,16 @@
+SHOW MASKING POLICIES IN ACCOUNT;
+
+
+ALTER TABLE TEST.PUBLIC.ABC ALTER COLUMN color SET MASKING POLICY mask_ssn;
+
+SELECT * FROM TABLE(
+  information_schema.policy_references(policy_name => 'test.public.mask_ssn')
+);
+
+ALTER view UTIL_DB.PUBLIC.SALES_VIEW ALTER COLUMN region SET MASKING POLICY mask_ssn;
+
+
+ALTER view UTIL_DB.PUBLIC.SALES_MV ALTER COLUMN region SET MASKING POLICY mask_ssn;
+
+
+
