@@ -42,3 +42,10 @@ In Snowflake's Snowpark, DataFrame operations are processed when
 + replication
 + User
 + role
+
+9 user type "service" thì login như nào
+https://docs.snowflake.com/en/user-guide/admin-user-management#types-of-users
++ password
++ SAML SSO
++ MFA
++ Key-pair authentication (correct answer)
