@@ -5,7 +5,12 @@ EXTERNAL_FUNCTIONS_HISTORY
 DYNAMIC_TABLES
 
 2
-SECURE_OBJECTS_ONLY
+What can be shared when the SECURE_OBJECTS_ONLY property is set to FALSE?
+A. A view
+B. A stored procedure
+C. Storage integration access
+D. A User-Defined Function (UDF)
+
 
 3
 max file size when single = true (copy into location) => 5GB
@@ -49,3 +54,8 @@ https://docs.snowflake.com/en/user-guide/admin-user-management#types-of-users
 + SAML SSO
 + MFA
 + Key-pair authentication (correct answer)
+
+
+10 vs array mà trong đó có nhiều nest nhiều array, trong các array con lại nest nhiều array khác nữa
++ dùng flatten có thể tự đọc đc tất cả từ thằng cha đến con
++ flatten chỉ có thể đọc mỗi thằng đầu tiên
