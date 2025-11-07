@@ -35,7 +35,7 @@ select * from snowflake.account_usage.table_storage_metrics
 
 -- This Account Usage view can be used to query Snowflake data loading history for the last 365 days (1 year). The view displays load activity for both COPY INTO <table> statements and continuous data loading using Snowpipe. The view avoids the 10,000 row limitation of the LOAD_HISTORY view.
 select * from snowflake.account_usage.copy_history
--- This Account Usage view enables you to retrieve the history of data loaded into tables using the COPY INTO <table> command within the last 365 days (1 year). The view displays one row for each file loaded.
+This Information Schema view enables you to retrieve the history of data loaded into tables using the COPY INTO <table> command within the last 14 days. The view displays one row for each file loaded.
 select * from snowflake.account_usage.load_history
 select * from snowflake.information_schema.load_history
 
