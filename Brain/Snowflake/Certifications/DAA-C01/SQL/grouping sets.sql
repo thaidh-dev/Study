@@ -29,6 +29,16 @@ GROUP BY GROUPING SETS (
     () -- () (empty grouping) → represents the grand total across all rows.
 );
 
+SELECT medical_license, null as radio_license, COUNT(*)
+FROM nurses
+GROUP BY medical_license
+UNION ALL
+SELECT null as medical_license, radio_license, COUNT(*)
+FROM nurses
+GROUP BY radio_license
+UNION ALL
+SELECT null as medical_license, null as radio_license, COUNT(*) 
+FROM nurses;
 
 
 select COUNT(*), medical_license, radio_license 
